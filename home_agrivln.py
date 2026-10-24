@@ -59,8 +59,8 @@ if __name__ == '__main__':
       exp = 'token-AgriVLN'
    else:
       exp = 'AgriVLN'
-   LLM = 'deepseek-r1:32b'
-   VLM = 'qwen2.5vl:32b'
+   LLM = 'qwen2.5vl:7b'
+   VLM = 'qwen2.5vl:7b'
 
    print(f'[INFO] Experiment: {exp}')
    print(f'[INFO] LLM: {LLM}')
