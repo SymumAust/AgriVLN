@@ -1,0 +1,658 @@
+[
+   {
+      "time": "1'2",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "doing",
+         "done",
+         "pending"
+      ]
+   },
+   {
+      "time": "1'4",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "doing",
+         "done",
+         "pending"
+      ]
+   },
+   {
+      "time": "1'6",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "doing",
+         "done",
+         "doing"
+      ]
+   },
+   {
+      "time": "2'4",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "2'6",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "2'8",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "3'0",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "3'2",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "3'4",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "3'6",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "3'8",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "4'0",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "4'4",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "4'8",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "5'2",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "6'4",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "6'6",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "7'2",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "8'0",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "8'2",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "9'4",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "9'8",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "10'0",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "10'4",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "10'6",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "11'0",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "11'2",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "11'8",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "12'2",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "12'4",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "12'6",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "12'8",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "13'4",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "13'6",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "13'8",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "14'0",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "14'2",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "14'4",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "15'0",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "15'6",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "15'8",
+      "wanted": "[STOP]",
+      "answers": [
+         "NO",
+         "NO",
+         "NO"
+      ],
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "done",
+         "done",
+         "done"
+      ]
+   }
+]

@@ -1,0 +1,21 @@
+condition,description,episode,repeat,temperature,seed,switches_kept,backwards_kept,switches_proposed,first_stop_wanted,first_stop_executed,stops_blocked,type,SR,NE,minutes
+base,original AgriVLN (no tracker),garden_2,1,0.0,42,10,4,10,3.8,3.8,0,valid_stop,0,13.725,1.0
+q6gate,tracker pi/6 + strict done + gate,garden_2,1,0.0,42,2,0,6,3.4,,16,no_stop,0,0,3.4
+base,original AgriVLN (no tracker),garden_2,1,0.0,42,10,4,10,3.8,3.8,0,valid_stop,0,13.725,1.0
+base,original AgriVLN (no tracker),garden_1,1,0.0,42,2,0,2,1.2,1.2,0,valid_stop,0,14.733,0.6
+q6gate,tracker pi/6 + strict done + gate,garden_1,1,0.0,42,1,0,3,2.4,,18,no_stop,0,0,3.4
+base,original AgriVLN (no tracker),garden_1,1,0.0,42,2,0,2,1.2,1.2,0,valid_stop,0,14.733,0.6
+check,original states + arrival check (k/k YES),garden_1,1,0.0,42,2,0,2,1.2,,41,no_stop,0,0,4.4
+q6check,tracker pi/6 + arrival check (k/k YES),garden_1,1,0.0,42,1,0,5,2.4,,35,no_stop,0,0,4.5
+q6gate,tracker pi/6 + strict done + all-done gate,garden_1,1,0.0,42,1,0,5,2.4,,24,no_stop,0,0,3.5
+q6last,tracker pi/6 + strict done + last-subtask gate,garden_1,1,0.0,42,1,0,5,2.4,12.8,11,valid_stop,0,2.493,3.2
+base,original AgriVLN (no tracker),garden_2,1,0.0,42,10,4,10,3.8,3.8,0,valid_stop,0,13.725,1.0
+q6last,tracker pi/6 + strict done + last-subtask gate,garden_2,1,0.0,42,4,1,6,3.4,9.0,11,valid_stop,0,7.875,2.0
+q3last,tracker pi/3 + strict done + last-subtask gate,garden_1,1,0.0,42,2,0,2,2.6,11.8,11,valid_stop,0,3.627,2.8
+q3last,tracker pi/3 + strict done + last-subtask gate,garden_2,1,0.0,42,10,4,12,5.0,7.0,3,valid_stop,0,10.125,1.8
+q8last,tracker pi/8 + strict done + last-subtask gate,garden_1,1,0.0,42,1,0,5,2.4,,24,no_stop,0,0,3.6
+q8last,tracker pi/8 + strict done + last-subtask gate,garden_2,1,0.0,42,4,1,8,5.0,9.4,9,valid_stop,0,7.425,2.3
+q12last,tracker pi/12 + strict done + last-subtask gate,garden_1,1,0.0,42,1,0,3,2.4,,16,no_stop,0,0,3.6
+q12last,tracker pi/12 + strict done + last-subtask gate,garden_2,1,0.0,42,2,0,6,5.0,,16,no_stop,0,0,3.8
+c6last,"CLASSICAL counter (same as q6last, no qubit)",garden_1,1,0.0,42,1,0,5,2.4,12.8,11,valid_stop,0,2.493,3.2
+c6last,"CLASSICAL counter (same as q6last, no qubit)",garden_2,1,0.0,42,4,1,8,5.0,9.0,8,valid_stop,0,7.875,2.3

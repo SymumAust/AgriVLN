@@ -1,0 +1,14 @@
+{
+   "exp": "X-q6gate-T0-r1",
+   "episode_id": "garden_2",
+   "SR": 0,
+   "NE": 0,
+   "ISR": [
+      2,
+      3
+   ],
+   "stop_t": 16.0,
+   "type": "no_stop",
+   "path_length": 18.0,
+   "label_stop_time": 16.0
+}

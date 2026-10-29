@@ -1,0 +1,20 @@
+[
+   {
+      "step": 1,
+      "subtask": "Start moving forward along the path.",
+      "start_condition": "always",
+      "end_condition": "round stone basin with bamboo spout visible"
+   },
+   {
+      "step": 2,
+      "subtask": "Bearing slightly to the right, continue moving forward.",
+      "start_condition": "round stone basin with bamboo spout visible",
+      "end_condition": "round stone basin with bamboo spout fills the center of the camera view"
+   },
+   {
+      "step": 3,
+      "subtask": "Stop when the round stone basin with the bamboo spout is directly in front of you and fills the centre of the camera view.",
+      "start_condition": "round stone basin with bamboo spout fills the center of the camera view",
+      "end_condition": "stop"
+   }
+]
