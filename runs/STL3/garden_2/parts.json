@@ -1,0 +1,6 @@
+{
+   "source": "text rules",
+   "movement": "Go straight along the corridor.",
+   "target": "the tall rectangular concrete planter",
+   "arrival": "the tall rectangular concrete planter is right beside you, filling the left half of the camera view from top to bottom"
+}

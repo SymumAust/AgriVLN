@@ -1,4 +1,5 @@
 {
   "instruction": "Go straight along the corridor and stop when the tall rectangular concrete planter is right beside you, filling the left half of the camera view from top to bottom.",
-  "length": 18.0
+  "length": 18.0,
+  "target": "tall rectangular concrete planter"
 }

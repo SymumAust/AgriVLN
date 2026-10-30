@@ -1,0 +1,20 @@
+[
+   {
+      "step": 1,
+      "subtask": "Go straight along the corridor.",
+      "start_condition": "always",
+      "end_condition": "the tall rectangular concrete planter is visible ahead (it may still be small and far)"
+   },
+   {
+      "step": 2,
+      "subtask": "Keep moving toward the tall rectangular concrete planter.",
+      "start_condition": "the tall rectangular concrete planter is visible ahead (it may still be small and far)",
+      "end_condition": "the tall rectangular concrete planter is the largest object in view and its details are clearly visible"
+   },
+   {
+      "step": 3,
+      "subtask": "Stop when the tall rectangular concrete planter is right beside you, filling the left half of the camera view from top to bottom.",
+      "start_condition": "the tall rectangular concrete planter is the largest object in view and its details are clearly visible",
+      "end_condition": "the tall rectangular concrete planter is right beside the robot, filling the left half of the camera view from top to bottom"
+   }
+]

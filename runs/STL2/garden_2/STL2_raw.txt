@@ -1,0 +1,11 @@
+<thought> The planter can be seen from far down the corridor, so seeing it is not arriving. Near = the planter is the largest object in view and fills the left half of the camera view. Arrived = the planter is right beside the robot, filling the left half of the camera view from top to bottom. </thought>
+<subtask_list>
+[
+   {"step": 1, "subtask": "Drive forward along the corridor.", "start_condition": "always",
+    "end_condition": "a tall rectangular concrete planter is visible ahead (it may still be small and far)"},
+   {"step": 2, "subtask": "Keep driving forward toward the tall rectangular concrete planter.", "start_condition": "a tall rectangular concrete planter is visible ahead (it may still be small and far)",
+    "end_condition": "the tall rectangular concrete planter is the largest object in view and fills the left half of the camera view from top to bottom"},
+   {"step": 3, "subtask": "Stop when the tall rectangular concrete planter is right beside you, filling the left half of the camera view from top to bottom.", "start_condition": "the tall rectangular concrete planter is the largest object in view and fills the left half of the camera view from top to bottom",
+    "end_condition": "the tall rectangular concrete planter is right beside the robot, filling the left half of the camera view from top to bottom and is no longer ahead of the robot"}
+]
+</subtask_list>

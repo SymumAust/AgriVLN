@@ -1,0 +1,20 @@
+[
+   {
+      "step": 1,
+      "subtask": "Walk forward along the path, bearing slightly to the right.",
+      "start_condition": "always",
+      "end_condition": "a round stone basin with a bamboo spout is visible ahead (it may still be small and far)"
+   },
+   {
+      "step": 2,
+      "subtask": "Keep moving forward toward the round stone basin.",
+      "start_condition": "a round stone basin with a bamboo spout is visible ahead (it may still be small and far)",
+      "end_condition": "the round stone basin with a bamboo spout is the largest object in view and fills the centre of the camera view"
+   },
+   {
+      "step": 3,
+      "subtask": "Stop when the round stone basin with a bamboo spout is directly in front of you and fills the centre of the camera view.",
+      "start_condition": "the round stone basin with a bamboo spout is the largest object in view and fills the centre of the camera view",
+      "end_condition": "the round stone basin with a bamboo spout is directly in front of the robot and fills the centre of the camera view"
+   }
+]

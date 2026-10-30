@@ -1,0 +1,14 @@
+{
+   "exp": "X4-q6last-T0-r1",
+   "episode_id": "garden_3",
+   "SR": 0,
+   "NE": 3.4,
+   "ISR": [
+      0,
+      3
+   ],
+   "stop_t": 9.6,
+   "type": "valid_stop",
+   "path_length": 17.0,
+   "label_stop_time": 12.0
+}

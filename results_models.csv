@@ -1,0 +1,4 @@
+condition,model,description,episode,repeat,temperature,seed,switches_kept,backwards_kept,switches_proposed,first_stop_wanted,first_stop_executed,stops_blocked,type,SR,NE,minutes
+base,qwen2.5vl:7b,original AgriVLN (no tracker),garden_3,1,0.0,42,3,0,3,2.2,2.2,0,valid_stop,0,14.633,2.7
+q6last,qwen2.5vl:7b,tracker pi/6 + strict done + last-subtask gate,garden_3,1,0.0,42,2,0,12,5.8,9.6,8,valid_stop,0,6.671,14.1
+c6last,qwen2.5vl:7b,"CLASSICAL counter (same as q6last, no qubit)",garden_3,1,0.0,42,2,0,12,5.8,9.6,8,valid_stop,0,3.4,16.6

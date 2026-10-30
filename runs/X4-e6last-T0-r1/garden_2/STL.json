@@ -1,0 +1,20 @@
+[
+   {
+      "step": 1,
+      "subtask": "Move forward along the corridor",
+      "start_condition": "always",
+      "end_condition": "tall rectangular concrete planter visible"
+   },
+   {
+      "step": 2,
+      "subtask": "Continue moving forward until the tall rectangular concrete planter is right beside you, filling the left half of the camera view from top to bottom",
+      "start_condition": "tall rectangular concrete planter visible",
+      "end_condition": "tall rectangular concrete planter is right beside you, filling the left half of the camera view from top to bottom"
+   },
+   {
+      "step": 3,
+      "subtask": "Stop when the tall rectangular concrete planter is right beside you, filling the left half of the camera view from top to bottom",
+      "start_condition": "tall rectangular concrete planter is right beside you, filling the left half of the camera view from top to bottom",
+      "end_condition": "stop"
+   }
+]

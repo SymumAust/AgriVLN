@@ -3,6 +3,8 @@
 #   python run_experiment.py --place garden --ids 1 2                 # all conditions, temperature 0
 #   python run_experiment.py --place garden --ids 2 --conditions base q6gate
 #   python run_experiment.py --place garden --ids 1 2 --temperature 0.7 --repeats 3
+#   python run_experiment.py --place garden --ids 1 2 --conditions base q6last c6last --stl v2
+#        (--stl v2: use the frozen "approach, then confirm" lists from make_stl_v2.py)
 #
 # Every condition uses the SAME subtask list (copied from runs/AgriVLN/<ep>/STL.json)
 # and the SAME model settings (temperature, seed), so only the decision logic differs.
@@ -13,6 +15,7 @@ import csv
 import json
 import math
 import os
+import re
 import shutil
 import time
 
@@ -30,11 +33,14 @@ CONDITIONS = {
    "q8last":   ("tracker pi/8 + strict done + last-subtask gate",    math.pi / 8,   True,   "last_done", False),
    "q12last":  ("tracker pi/12 + strict done + last-subtask gate",   math.pi / 12,  True,   "last_done", False),
    "c6last":   ("CLASSICAL counter (same as q6last, no qubit)",      math.pi / 6,   True,   "last_done", True),
+   "e6last":   ("ENTANGLED qubits pi/6 (order) + last-subtask gate", math.pi / 6,   True,   "last_done", False),
+   "ec6last":  ("CLASSICAL chain (same as e6last, no circuit)",      math.pi / 6,   True,   "last_done", True),
    "depth":    ("original states + perception gate (detector + depth)", math.pi,   False,  "percept",   False),
    "q6depth":  ("tracker pi/6 last-subtask gate + perception gate",  math.pi / 6,   True,   "last+percept", False),
    "check":    ("original states + arrival check (k/k YES)",         math.pi,       False,  "check",     False),
    "q6check":  ("tracker pi/6 + arrival check (k/k YES)",            math.pi / 6,   False,  "check",     False),
 }
+ENTANGLED = {"e6last", "ec6last"}
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--place", default="garden")
@@ -46,6 +52,8 @@ parser.add_argument("--repeats", type=int, default=1)
 parser.add_argument("--model", default="qwen2.5vl:7b")
 parser.add_argument("--score_min", type=float, default=0.35, help="perception gate: detector score")
 parser.add_argument("--depth_max", type=float, default=2.0, help="perception gate: max distance (m)")
+parser.add_argument("--stl", choices=["orig", "v2", "v3"], default="orig",
+                    help="orig: runs/AgriVLN/<ep>/STL.json   v2: runs/STL2 (make_stl_v2.py)   v3: runs/STL3 (make_stl_v3.py, template)")
 parser.add_argument("--check_k", type=int, default=3, help="arrival check: YES needed out of k")
 args = parser.parse_args()
 
@@ -74,13 +82,15 @@ for r in range(args.repeats):
    SAMPLING["seed"] = args.seed + r
    for cond in args.conditions:
       desc, delta, strict, gate, classical = CONDITIONS[cond]
-      exp = f"X4-{cond}-T{args.temperature:g}-r{r + 1}"
+      exp = {"orig": f"X4-{cond}", "v2": f"X5-{cond}-STL2", "v3": f"X6-{cond}-STL3"}[args.stl] + f"-T{args.temperature:g}-r{r + 1}"
+      if args.model != "qwen2.5vl:7b":                 # other model: own folder, nothing overwritten
+         exp += "-" + re.sub(r"[^A-Za-z0-9.]+", "_", args.model)
       for id in args.ids:
          ep = f"{args.place}_{id}"
          run_dir = f"runs/{exp}/{ep}"
-         base_stl = f"runs/AgriVLN/{ep}/STL.json"
+         base_stl = {"orig": f"runs/AgriVLN/{ep}/STL.json", "v2": f"runs/STL2/{ep}/STL.json", "v3": f"runs/STL3/{ep}/STL.json"}[args.stl]
          if not os.path.exists(base_stl):
-            print(f"[ERROR] {base_stl} not found: run home_agrivln.py once first.")
+            print(f"[ERROR] {base_stl} not found: run " + {"orig": "home_agrivln.py", "v2": "make_stl_v2.py", "v3": "make_stl_v3.py"}[args.stl] + " first.")
             continue
          if not check_label_format(f"dataset/{ep}/label.json"):
             continue
@@ -95,23 +105,26 @@ for r in range(args.repeats):
             decide(args.model, exp, args.place, id, 'False')
          else:
             decide_quantum(args.model, exp, args.place, id, 'False', delta=delta, strict=strict, gate=gate, check_k=args.check_k, classical=classical,
-                           score_min=args.score_min, depth_max=args.depth_max)
+                           score_min=args.score_min, depth_max=args.depth_max, entangled=cond in ENTANGLED)
          evaluate(exp, args.place, id)
          row = summarise(run_dir)
-         row.update(condition=cond, description=desc, episode=ep, repeat=r + 1,
+         row.update(condition=cond if args.stl == "orig" else f"{cond}-{args.stl.replace('v', 'STL')}", description=desc, episode=ep, repeat=r + 1, model=args.model,
                     temperature=args.temperature, seed=SAMPLING["seed"], minutes=round((time.time() - t0) / 60, 1))
          rows.append(row)
 
 if rows:
-   keys = ["condition", "description", "episode", "repeat", "temperature", "seed", "switches_kept",
+   keys = ["condition", "model", "description", "episode", "repeat", "temperature", "seed", "switches_kept",
            "backwards_kept", "switches_proposed", "first_stop_wanted", "first_stop_executed",
            "stops_blocked", "type", "SR", "NE", "minutes"]
-   new = not os.path.exists("results.csv")
-   with open("results.csv", "a", newline="") as f:
+   out_csv = "results.csv"
+   if os.path.exists(out_csv) and "model" not in open(out_csv).readline():
+      out_csv = "results_models.csv"            # old file has no model column: keep it untouched
+   new = not os.path.exists(out_csv)
+   with open(out_csv, "a", newline="") as f:
       w = csv.DictWriter(f, fieldnames=keys, extrasaction="ignore")
       if new:
          w.writeheader()
       w.writerows(rows)
-   print("\nSaved to results.csv. Summary:\n")
+   print(f"\nSaved to {out_csv}. Summary:\n")
    from compare_switching import print_table
    print_table(rows)

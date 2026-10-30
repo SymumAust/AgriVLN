@@ -1,0 +1,14 @@
+{
+   "exp": "X5-base-STL2-T0-r1",
+   "episode_id": "garden_1",
+   "SR": 0,
+   "NE": 12.013,
+   "ISR": [
+      0,
+      3
+   ],
+   "stop_t": 4.4,
+   "type": "valid_stop",
+   "path_length": 17.0,
+   "label_stop_time": 15.0
+}

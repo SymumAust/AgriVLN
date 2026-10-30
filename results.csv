@@ -19,3 +19,19 @@ q12last,tracker pi/12 + strict done + last-subtask gate,garden_1,1,0.0,42,1,0,3,
 q12last,tracker pi/12 + strict done + last-subtask gate,garden_2,1,0.0,42,2,0,6,5.0,,16,no_stop,0,0,3.8
 c6last,"CLASSICAL counter (same as q6last, no qubit)",garden_1,1,0.0,42,1,0,5,2.4,12.8,11,valid_stop,0,2.493,3.2
 c6last,"CLASSICAL counter (same as q6last, no qubit)",garden_2,1,0.0,42,4,1,8,5.0,9.0,8,valid_stop,0,7.875,2.3
+base-STL2,original AgriVLN (no tracker),garden_1,1,0.0,42,4,1,4,4.4,4.4,0,valid_stop,0,12.013,3.1
+base-STL2,original AgriVLN (no tracker),garden_2,1,0.0,42,3,0,3,11.8,11.8,0,valid_stop,0,4.725,3.1
+q6last-STL2,tracker pi/6 + strict done + last-subtask gate,garden_1,1,0.0,42,4,1,38,13.6,,3,no_stop,0,0,3.7
+q6last-STL2,tracker pi/6 + strict done + last-subtask gate,garden_2,1,0.0,42,4,1,8,12.0,,2,no_stop,0,0,3.7
+c6last-STL2,"CLASSICAL counter (same as q6last, no qubit)",garden_1,1,0.0,42,4,1,38,13.6,,3,no_stop,0,0,3.7
+c6last-STL2,"CLASSICAL counter (same as q6last, no qubit)",garden_2,1,0.0,42,4,1,8,12.0,,2,no_stop,0,0,3.7
+base-STL3,original AgriVLN (no tracker),garden_1,1,0.0,42,3,0,3,3.6,3.6,0,valid_stop,0,12.92,3.3
+base-STL3,original AgriVLN (no tracker),garden_2,1,0.0,42,8,3,8,8.8,8.8,0,valid_stop,0,8.1,2.4
+q6last-STL3,tracker pi/6 + strict done + last-subtask gate,garden_1,1,0.0,42,2,1,4,3.6,,10,no_stop,0,0,3.6
+q6last-STL3,tracker pi/6 + strict done + last-subtask gate,garden_2,1,0.0,42,2,0,16,,,0,no_stop,0,0,3.8
+c6last-STL3,"CLASSICAL counter (same as q6last, no qubit)",garden_1,1,0.0,42,2,1,4,3.6,,10,no_stop,0,0,3.6
+c6last-STL3,"CLASSICAL counter (same as q6last, no qubit)",garden_2,1,0.0,42,2,0,16,,,0,no_stop,0,0,3.8
+e6last,ENTANGLED qubits pi/6 (order) + last-subtask gate,garden_1,1,0.0,42,1,0,5,2.4,12.8,11,valid_stop,0,2.493,3.2
+e6last,ENTANGLED qubits pi/6 (order) + last-subtask gate,garden_2,1,0.0,42,4,1,8,5.0,9.4,9,valid_stop,0,7.425,2.3
+ec6last,"CLASSICAL chain (same as e6last, no circuit)",garden_1,1,0.0,42,1,0,5,2.4,12.8,11,valid_stop,0,2.493,3.1
+ec6last,"CLASSICAL chain (same as e6last, no circuit)",garden_2,1,0.0,42,4,1,8,5.0,9.4,9,valid_stop,0,7.425,2.3

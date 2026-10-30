@@ -1,0 +1,123 @@
+[
+   {
+      "time": "5'8",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "doing",
+         "doing",
+         "pending"
+      ]
+   },
+   {
+      "time": "7'0",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "doing",
+         "doing",
+         "pending"
+      ]
+   },
+   {
+      "time": "7'4",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "doing",
+         "doing",
+         "pending"
+      ]
+   },
+   {
+      "time": "7'8",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "doing",
+         "doing",
+         "doing"
+      ]
+   },
+   {
+      "time": "8'0",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "doing",
+         "doing",
+         "doing"
+      ]
+   },
+   {
+      "time": "8'4",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "doing",
+         "doing",
+         "doing"
+      ]
+   },
+   {
+      "time": "8'6",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "doing",
+         "doing",
+         "doing"
+      ]
+   },
+   {
+      "time": "9'4",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "doing",
+         "doing",
+         "doing"
+      ]
+   },
+   {
+      "time": "9'6",
+      "wanted": "[STOP]",
+      "executed": "[STOP]",
+      "blocked": false,
+      "kept": [
+         "doing",
+         "doing",
+         "done"
+      ]
+   },
+   {
+      "time": "9'8",
+      "wanted": "[STOP]",
+      "executed": "[STOP]",
+      "blocked": false,
+      "kept": [
+         "doing",
+         "doing",
+         "done"
+      ]
+   },
+   {
+      "time": "10'0",
+      "wanted": "[STOP]",
+      "executed": "[STOP]",
+      "blocked": false,
+      "kept": [
+         "doing",
+         "doing",
+         "done"
+      ]
+   }
+]

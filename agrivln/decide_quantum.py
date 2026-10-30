@@ -29,6 +29,7 @@ from agrivln.for_json import get_stop_start_time, clean_format_stl_state, append
 from agrivln.decide import (get_system_prompt, get_user_prompt, extract, extract_state,
                             append_stl_state, merge_stl_and_state)
 from agrivln.quantum_tracker import QubitTracker, BACKEND
+from agrivln.entangled_tracker import EntangledTracker
 
 
 def parse_claim(state_text):
@@ -66,7 +67,7 @@ def arrival_check(my_model, instruction, image_path, k=3, temperature=0.7, seed=
 
 def decide_quantum(my_model, exp, place, id, if_token, delta=math.pi / 3, strict=False,
                    gate=None, check_k=3, classical=False,
-                   score_min=0.35, depth_max=2.0):
+                   score_min=0.35, depth_max=2.0, entangled=False):
 
    if gate is True:          # backwards compatibility with v2 (--gate)
       gate = "all_done"
@@ -95,7 +96,7 @@ def decide_quantum(my_model, exp, place, id, if_token, delta=math.pi / 3, strict
    print("[INFO] Label STOP begins at: ", stop_start_time)
    max_time = float(stop_start_time) + (1 / FPS) * safe_redundancy
    print(f'[INFO] Max time step: {max_time}')
-   print(f'[INFO] Qubit tracker: delta = {delta:.3f} rad, strict = {strict}, gate = {gate}, backend = {"classical counter" if classical else BACKEND}')
+   print(f'[INFO] Qubit tracker: delta = {delta:.3f} rad, strict = {strict}, gate = {gate}, backend = {"classical" if classical else BACKEND}, entangled = {entangled}')
 
    run_dir = f"runs/{exp}/{place}_{id}"
    STL_path, log_path = f"{run_dir}/STL.json", f"{run_dir}/log.json"
@@ -119,7 +120,8 @@ def decide_quantum(my_model, exp, place, id, if_token, delta=math.pi / 3, strict
 
       STL = merge_stl_and_state(STL_path, log_path, current_time=t)
       if tracker is None:
-         tracker = QubitTracker(len(STL), delta, strict, classical)
+         tracker = (EntangledTracker(len(STL), delta, classical) if entangled
+                    else QubitTracker(len(STL), delta, strict, classical))
       steps = [s["step"] for s in STL]
 
       image_path = f"dataset/{place}_{id}/frames/frame_{t}.jpg"
