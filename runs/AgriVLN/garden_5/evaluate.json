@@ -1,0 +1,14 @@
+{
+   "exp": "AgriVLN",
+   "episode_id": "garden_5",
+   "SR": 0,
+   "NE": 18.0,
+   "ISR": [
+      0,
+      2
+   ],
+   "stop_t": 0.0,
+   "type": "deviation",
+   "path_length": 18.0,
+   "label_stop_time": 15.2
+}

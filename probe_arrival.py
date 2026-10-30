@@ -28,7 +28,11 @@ parser.add_argument("--models", nargs="+", default=["qwen2.5vl:7b"])
 parser.add_argument("--eps", nargs="+", default=["garden_1", "garden_2"])
 parser.add_argument("--every", type=int, default=1, help="use every n-th frame (2 = half the calls)")
 parser.add_argument("--seed", type=int, default=42)
+parser.add_argument("--mode", choices=["yesno", "choice"], default="yesno",
+                    help="yesno: 'is this true? YES/NO' (v2).  choice: 'A = still need to move forward, B = there now' (v3)")
+parser.add_argument("--out", default=None, help="default: probe_results_v2.csv (yesno) / probe_results_v3.csv (choice)")
 args = parser.parse_args()
+args.out = args.out or ("probe_results_v2.csv" if args.mode == "yesno" else "probe_results_v3.csv")
 
 
 def tsec(path):
@@ -36,8 +40,28 @@ def tsec(path):
     return int(m.group(1)) + int(m.group(2)) / 10
 
 
+def ask_choice(model, image, condition):
+    """v3: forced choice instead of yes/no. Models tend to agree with a yes/no statement once the
+    object is clearly visible; here they must choose between 'not yet, keep moving' and 'there now'."""
+    q = ("This image comes from the front camera of a small ground robot. The camera is where the robot is.\n"
+         f"Target position from the instruction: \"{condition}\"\n"
+         "Which is true right now?\n"
+         "A) Not yet: the robot would still need to move forward to be in that position "
+         "(for example, the object is still ahead of the camera, or only partly matches the description).\n"
+         "B) Yes: the robot is in that position now, exactly as described.\n"
+         "Answer with one letter: A or B.")
+    r = ollama.chat(model=model, messages=[{"role": "user", "content": q, "images": [image]}],
+                    options={"temperature": 0, "seed": args.seed})
+    text = r["message"]["content"]
+    m = re.search(r"\b([AB])\b", text)
+    a = {"A": "NO", "B": "YES"}[m.group(1)] if m else "?"
+    return a, text.strip().replace("\n", " ")[:200]
+
+
 def ask(model, image, condition):
-    q = ("This is the front camera image of a small ground robot.\n"
+    if args.mode == "choice":
+        return ask_choice(model, image, condition)
+    q = ("This image comes from the front camera of a small ground robot. The camera is where the robot is.\n"
          f"Is the following true in this image right now: \"{condition}\"?\n"
          "Seeing the object from a distance is NOT enough; it must be true exactly as written.\n"
          "Answer with one word: YES or NO.")
@@ -55,7 +79,8 @@ for model in args.models:
         labels = json.load(open(f"dataset/{ep}/label.json"))
         stop_t = next(l["time_range"][0] for l in labels if l["action"] == "[STOP]")
         _, _, arrival = split_instruction(info["instruction"])
-        condition = re.sub(r"\byou\b", "the robot", arrival)
+        # v2 bug fix: "the robot" made models answer NO because no robot is visible in the image
+        condition = re.sub(r"\byour\b", "the camera's", re.sub(r"\byou\b", "the camera", arrival))
         frames = sorted(glob.glob(f"dataset/{ep}/frames/frame_*.jpg"), key=tsec)[::args.every]
         print(f"\n### {model} / {ep}: {len(frames)} frames, condition: \"{condition}\"")
         t0, answers = time.time(), []
@@ -77,8 +102,8 @@ for model in args.models:
         summary.append((model, ep, stop_t, neg.count("YES") / max(len(neg), 1), pos.count("YES") / max(len(pos), 1),
                         first_yes, first3, sum(a == "?" for _, a, _ in answers), (time.time() - t0) / 60))
 
-new = not os.path.exists("probe_results.csv")
-with open("probe_results.csv", "a", newline="") as fh:
+new = not os.path.exists(args.out)
+with open(args.out, "a", newline="") as fh:
     w = csv.DictWriter(fh, fieldnames=["model", "episode", "time", "answer", "truth", "raw"])
     if new:
         w.writeheader()
@@ -88,4 +113,4 @@ print(f"\n{'model':<16} {'episode':<9} {'real stop':>9} {'false YES':>9} {'true 
 for m, ep, st, fy, ty, f1, f3, unk, mins in summary:
     f = lambda v: "-" if v is None else f"{v:.1f}"
     print(f"{m:<16} {ep:<9} {st:>9.1f} {fy:>9.0%} {ty:>8.0%} {f(f1):>9} {f(f3):>11} {unk:>7} {mins:>5.1f}")
-print("\nSaved every answer to probe_results.csv")
+print(f"\nSaved every answer to {args.out}")

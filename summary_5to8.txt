@@ -1,0 +1,56 @@
+===== NAVIGATION RUNS (run_experiment) =====
+AgriVLN                garden_5  stop   0.0  type deviation    NE    18.0  SR 0  label 15.2
+AgriVLN                garden_6  stop   0.0  type deviation    NE    18.0  SR 0  label 18.0
+AgriVLN                garden_7  stop   0.0  type deviation    NE    18.0  SR 0  label 17.4
+AgriVLN                garden_8  stop   0.0  type deviation    NE    18.0  SR 0  label 15.8
+X4-base-T0-r1          garden_5  stop   0.0  type deviation    NE    18.0  SR 0  label 15.2
+X4-base-T0-r1          garden_6  stop   0.0  type deviation    NE    18.0  SR 0  label 18.0
+X4-base-T0-r1          garden_7  stop   0.0  type deviation    NE    18.0  SR 0  label 17.4
+X4-base-T0-r1          garden_8  stop   0.0  type deviation    NE    18.0  SR 0  label 15.8
+X4-c6last-T0-r1        garden_5  stop   5.0  type valid_stop   NE  12.079  SR 0  label 15.2
+X4-c6last-T0-r1        garden_6  stop   2.2  type valid_stop   NE    15.8  SR 0  label 18.0
+X4-c6last-T0-r1        garden_7  stop   5.8  type valid_stop   NE    12.0  SR 0  label 17.4
+X4-c6last-T0-r1        garden_8  stop   9.4  type valid_stop   NE   7.291  SR 0  label 15.8
+X4-q6last-T0-r1        garden_5  stop   5.0  type valid_stop   NE  12.079  SR 0  label 15.2
+X4-q6last-T0-r1        garden_6  stop   2.2  type valid_stop   NE    15.8  SR 0  label 18.0
+X4-q6last-T0-r1        garden_7  stop   5.8  type valid_stop   NE    12.0  SR 0  label 17.4
+X4-q6last-T0-r1        garden_8  stop   9.4  type valid_stop   NE   7.291  SR 0  label 15.8
+
+===== PROBE SUMMARY (probe_arrival) =====
+qwen2.5vl:7b   garden_1  label  15.0  false YES 0/65  true YES 9/10  unclear 0
+qwen2.5vl:7b   garden_2  label  14.4  false YES 17/62  true YES 18/18  unclear 0
+qwen2.5vl:7b   garden_3  label  12.0  false YES 6/50  true YES 16/20  unclear 0
+qwen2.5vl:7b   garden_4  label  15.0  false YES 3/65  true YES 18/18  unclear 0
+qwen2.5vl:7b   garden_5  label  15.2  false YES 26/66  true YES 22/22  unclear 0
+qwen2.5vl:7b   garden_6  label  18.0  false YES 33/80  true YES 14/14  unclear 0
+qwen2.5vl:7b   garden_7  label  17.4  false YES 24/77  true YES 12/12  unclear 0
+qwen2.5vl:7b   garden_8  label  15.8  false YES 13/69  true YES 14/14  unclear 0
+qwen3-vl:4b    garden_1  label  15.0  false YES 0/65  true YES 1/10  unclear 0
+qwen3-vl:4b    garden_2  label  14.4  false YES 11/62  true YES 18/18  unclear 0
+qwen3-vl:4b    garden_3  label  12.0  false YES 2/50  true YES 11/20  unclear 11
+qwen3-vl:4b    garden_4  label  15.0  false YES 0/65  true YES 18/18  unclear 1
+qwen3-vl:4b    garden_5  label  15.2  false YES 19/66  true YES 22/22  unclear 0
+qwen3-vl:4b    garden_6  label  18.0  false YES 21/80  true YES 14/14  unclear 0
+qwen3-vl:4b    garden_7  label  17.4  false YES 11/77  true YES 12/12  unclear 3
+qwen3-vl:4b    garden_8  label  15.8  false YES 14/69  true YES 14/14  unclear 3
+
+===== LAST-10-VOTES RULE (window_rule) =====
+model            episode    label           >=6/10           >=8/10          >=10/10
+qwen2.5vl:7b     garden_1    15.0   14.8s 0.24m OK   15.2s 0.00m OK   15.8s 0.00m OK
+qwen2.5vl:7b     garden_2    14.4      10.2s 5.25m      10.6s 4.75m      11.0s 4.25m
+qwen2.5vl:7b     garden_3    12.0       9.8s 3.30m      10.4s 2.40m          no stop
+qwen2.5vl:7b     garden_4    15.0   14.6s 0.48m OK   15.0s 0.00m OK   15.6s 0.00m OK
+qwen2.5vl:7b     garden_5    15.2       8.0s 8.53m       8.6s 7.82m      12.4s 3.32m
+qwen2.5vl:7b     garden_6    18.0       9.4s 8.60m       9.8s 8.20m      10.4s 7.60m
+qwen2.5vl:7b     garden_7    17.4      10.4s 7.24m      10.8s 6.83m      11.4s 6.21m
+qwen2.5vl:7b     garden_8    15.8      13.6s 2.51m      14.0s 2.05m   14.4s 1.59m OK
+qwen3-vl:4b      garden_1    15.0          no stop          no stop          no stop
+qwen3-vl:4b      garden_2    14.4      11.4s 3.75m      12.4s 2.50m   14.8s 0.00m OK
+qwen3-vl:4b      garden_3    12.0   11.6s 0.60m OK          no stop          no stop
+qwen3-vl:4b      garden_4    15.0   14.6s 0.48m OK   15.0s 0.00m OK   15.6s 0.00m OK
+qwen3-vl:4b      garden_5    15.2       8.6s 7.82m       9.0s 7.34m   14.6s 0.71m OK
+qwen3-vl:4b      garden_6    18.0       9.4s 8.60m       9.8s 8.20m   16.6s 1.40m OK
+qwen3-vl:4b      garden_7    17.4   16.0s 1.45m OK   16.4s 1.03m OK   17.0s 0.41m OK
+qwen3-vl:4b      garden_8    15.8      2.4s 15.27m   14.6s 1.37m OK   15.2s 0.68m OK
+
+NE = (label stop - our stop) / label stop x path length, as in evaluate.py. OK = NE < 2 m (success).

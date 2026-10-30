@@ -1,0 +1,14 @@
+[
+   {
+      "step": 1,
+      "subtask": "Walk forward",
+      "start_condition": "always",
+      "end_condition": "tall rectangular concrete planter visible"
+   },
+   {
+      "step": 2,
+      "subtask": "Stop when tall rectangular concrete planter is right in front of you",
+      "start_condition": "tall rectangular concrete planter visible",
+      "end_condition": "tall rectangular concrete planter is right in front of you"
+   }
+]

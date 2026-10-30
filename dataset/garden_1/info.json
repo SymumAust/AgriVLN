@@ -1,5 +1,7 @@
 {
   "instruction": "Walk forward along the path, bearing slightly to the right, and keep moving until the round stone basin with the bamboo spout is directly in front of you and fills the centre of the camera view, then stop.",
-  "length": 17.0,
-  "target": "round stone basin with a bamboo spout"
+  "length": 18.0,
+  "target": "round stone basin with a bamboo spout",
+  "length_old": 17.0,
+  "length_note": "fixed 18 m for all videos"
 }

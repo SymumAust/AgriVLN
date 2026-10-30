@@ -13,9 +13,9 @@ out = f"dataset/{a.place}_{a.id}"
 frames, tmp = f"{out}/frames", f"{out}/_tmp"
 os.makedirs(frames, exist_ok=True); os.makedirs(tmp, exist_ok=True)
 
-# 5 frames per second, same as AgriVLN (FPS = 5.0)
+# 5 frames per second, same as AgriVLN (FPS = 5.0); long side 1280 px (portrait videos stay portrait)
 subprocess.run(["ffmpeg", "-loglevel", "error", "-i", a.video,
-                "-vf", "fps=5,scale=1280:-2", "-q:v", "2", f"{tmp}/%06d.jpg"], check=True)
+                "-vf", "fps=5,scale='if(gt(iw,ih),1280,-2)':'if(gt(iw,ih),-2,1280)'", "-q:v", "2", f"{tmp}/%06d.jpg"], check=True)
 
 files = sorted(glob.glob(f"{tmp}/*.jpg"))
 for i, f in enumerate(files):
@@ -23,7 +23,10 @@ for i, f in enumerate(files):
     os.replace(f, f"{frames}/frame_{t_a}'{t_b}.jpg")
 shutil.rmtree(tmp)
 
-json.dump({"instruction": a.instruction, "length": a.length},
+from PIL import Image
+w, h = Image.open(sorted(glob.glob(f"{frames}/*.jpg"))[0]).size
+json.dump({"instruction": a.instruction, "length": a.length,
+           "orientation": "portrait" if h > w else "landscape", "frame_size": [w, h]},
           open(f"{out}/info.json", "w"), indent=2)
 
 dur = len(files) / 5

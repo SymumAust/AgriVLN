@@ -37,7 +37,9 @@ bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
 prev = None
 fwd, shake = [0.0], [0.0]
 for f in frames:
-    g = cv2.resize(cv2.imread(f, cv2.IMREAD_GRAYSCALE), (640, 360))
+    im = cv2.imread(f, cv2.IMREAD_GRAYSCALE)
+    k = 640 / max(im.shape)                      # long side 640 px, aspect kept (landscape or portrait)
+    g = cv2.resize(im, (round(im.shape[1] * k), round(im.shape[0] * k)))
     kp, des = orb.detectAndCompute(g, None)
     if prev is not None:
         kp0, des0 = prev
@@ -50,7 +52,7 @@ for f in frames:
                 M, inl = cv2.estimateAffinePartial2D(p0, p1, method=cv2.RANSAC, ransacReprojThreshold=3.0)
                 if M is not None and inl is not None and inl.sum() >= 10:
                     s = float(np.hypot(M[0, 0], M[1, 0]))          # scale of the similarity
-                    dx = float(np.hypot(M[0, 2], M[1, 2])) / 640 * 100
+                    dx = float(np.hypot(M[0, 2], M[1, 2])) / g.shape[1] * 100
         fwd.append((s - 1) * 100 if s == s else np.nan)
         shake.append(dx)
     prev = (kp, des)

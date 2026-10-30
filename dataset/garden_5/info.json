@@ -1,0 +1,11 @@
+{
+  "instruction": "Walk forward and stop when the terracotta plant pot with the small palm tree is right in front of you.",
+  "length": 18.0,
+  "orientation": "landscape",
+  "frame_size": [
+    1280,
+    720
+  ],
+  "length_note": "fixed 18 m for all videos",
+  "length_old": 18.2
+}

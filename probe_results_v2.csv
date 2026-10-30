@@ -1,0 +1,1485 @@
+model,episode,time,answer,truth,raw
+qwen2.5vl:7b,garden_1,0.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,0.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,0.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,0.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,0.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,1.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,1.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,1.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,3.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,3.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,3.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,3.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,3.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,4.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,4.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,4.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,4.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,4.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,5.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,5.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,5.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,5.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,5.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,6.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,6.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,6.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,6.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,6.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,7.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,7.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,7.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,7.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,7.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,8.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,8.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,8.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,8.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,8.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,9.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,9.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,9.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,9.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,9.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,10.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,10.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,10.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,10.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,10.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,11.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,11.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,11.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,11.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,11.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,12.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,12.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,12.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,12.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,12.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_1,13.0,NO,last 2 s,NO.
+qwen2.5vl:7b,garden_1,13.2,NO,last 2 s,NO.
+qwen2.5vl:7b,garden_1,13.4,NO,last 2 s,NO.
+qwen2.5vl:7b,garden_1,13.6,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_1,13.8,NO,last 2 s,NO.
+qwen2.5vl:7b,garden_1,14.0,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_1,14.2,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_1,14.4,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_1,14.6,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_1,14.8,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_1,15.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_1,15.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_1,15.4,YES,arrived,YES.
+qwen2.5vl:7b,garden_1,15.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_1,15.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_1,16.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_1,16.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_1,16.4,YES,arrived,YES.
+qwen2.5vl:7b,garden_1,16.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_1,16.8,NO,arrived,NO.
+qwen2.5vl:7b,garden_2,0.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,0.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,0.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,0.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,0.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,1.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,1.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,1.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,3.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,3.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,3.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,3.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,3.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,4.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,4.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,4.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,4.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,4.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,5.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,5.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,5.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,5.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,5.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,6.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,6.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,6.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,6.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,6.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,7.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,7.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,7.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,7.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,7.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,8.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_2,8.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,8.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,8.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,8.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,9.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_2,9.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,9.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_2,9.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,9.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,10.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,10.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,10.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_2,10.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_2,10.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_2,11.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_2,11.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_2,11.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_2,11.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_2,11.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,12.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,12.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,12.4,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,12.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,12.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,13.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,13.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_2,13.4,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,13.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,13.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_2,14.0,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_2,14.2,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_2,14.4,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_2,14.6,YES,last 2 s,YES
+qwen2.5vl:7b,garden_2,14.8,YES,last 2 s,YES
+qwen2.5vl:7b,garden_2,15.0,YES,last 2 s,YES
+qwen2.5vl:7b,garden_2,15.2,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_2,15.4,YES,last 2 s,YES
+qwen2.5vl:7b,garden_2,15.6,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_2,15.8,YES,last 2 s,YES
+qwen2.5vl:7b,garden_2,16.0,YES,arrived,YES
+qwen2.5vl:7b,garden_2,16.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_2,16.4,YES,arrived,YES
+qwen2.5vl:7b,garden_2,16.6,YES,arrived,YES
+qwen2.5vl:7b,garden_2,16.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_2,17.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_2,17.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_2,17.4,YES,arrived,YES.
+qwen2.5vl:7b,garden_2,17.6,YES,arrived,YES
+qwen2.5vl:7b,garden_2,17.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,0.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,0.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,0.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,0.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,0.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,1.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,1.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,1.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,3.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,3.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,3.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,3.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,3.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,4.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,4.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,4.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,4.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,4.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,5.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,5.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,5.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,5.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,5.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,6.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,6.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,6.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,6.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,6.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,7.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,7.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,7.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,7.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,7.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,8.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,8.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,8.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,8.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_3,8.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_3,9.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_3,9.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_3,9.4,YES,not arrived,YES.
+qwen2.5vl:7b,garden_3,9.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_3,9.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_3,10.0,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_3,10.2,NO,last 2 s,NO.
+qwen2.5vl:7b,garden_3,10.4,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_3,10.6,NO,last 2 s,NO.
+qwen2.5vl:7b,garden_3,10.8,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_3,11.0,NO,last 2 s,NO.
+qwen2.5vl:7b,garden_3,11.2,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_3,11.4,NO,last 2 s,NO.
+qwen2.5vl:7b,garden_3,11.6,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_3,11.8,YES,last 2 s,YES
+qwen2.5vl:7b,garden_3,12.0,YES,arrived,YES
+qwen2.5vl:7b,garden_3,12.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,12.4,NO,arrived,NO.
+qwen2.5vl:7b,garden_3,12.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,12.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,13.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,13.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,13.4,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,13.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,13.8,NO,arrived,NO.
+qwen2.5vl:7b,garden_3,14.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,14.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,14.4,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,14.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,14.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,15.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,15.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,15.4,NO,arrived,NO.
+qwen2.5vl:7b,garden_3,15.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_3,15.8,NO,arrived,NO.
+qwen2.5vl:7b,garden_4,0.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,0.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,0.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,0.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,0.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,1.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,1.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,1.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,3.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,3.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,3.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,3.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,3.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,4.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,4.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,4.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,4.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,4.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,5.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,5.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,5.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,5.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,5.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,6.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,6.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,6.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,6.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,6.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,7.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,7.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,7.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,7.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,7.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,8.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,8.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,8.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,8.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_4,8.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_4,9.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,9.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,9.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,9.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_4,9.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,10.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,10.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,10.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,10.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,10.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,11.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,11.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,11.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,11.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,11.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,12.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,12.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,12.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,12.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,12.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_4,13.0,NO,last 2 s,NO.
+qwen2.5vl:7b,garden_4,13.2,NO,last 2 s,NO.
+qwen2.5vl:7b,garden_4,13.4,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_4,13.6,NO,last 2 s,NO.
+qwen2.5vl:7b,garden_4,13.8,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_4,14.0,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_4,14.2,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_4,14.4,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_4,14.6,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_4,14.8,YES,last 2 s,YES
+qwen2.5vl:7b,garden_4,15.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_4,15.2,YES,arrived,YES
+qwen2.5vl:7b,garden_4,15.4,YES,arrived,YES
+qwen2.5vl:7b,garden_4,15.6,YES,arrived,YES
+qwen2.5vl:7b,garden_4,15.8,YES,arrived,YES
+qwen2.5vl:7b,garden_4,16.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_4,16.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_4,16.4,YES,arrived,YES
+qwen2.5vl:7b,garden_4,16.6,YES,arrived,YES
+qwen2.5vl:7b,garden_4,16.8,YES,arrived,YES
+qwen2.5vl:7b,garden_4,17.0,YES,arrived,YES
+qwen2.5vl:7b,garden_4,17.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_4,17.4,YES,arrived,YES
+qwen2.5vl:7b,garden_4,17.6,YES,arrived,YES
+qwen2.5vl:7b,garden_4,17.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_4,18.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_4,18.2,YES,arrived,YES
+qwen2.5vl:7b,garden_4,18.4,YES,arrived,YES.
+qwen3-vl:4b,garden_1,0.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,0.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,0.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,0.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,0.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,1.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,1.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,1.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,1.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,1.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,2.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,2.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,2.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,2.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,2.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,3.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,3.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,3.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,3.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,3.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,4.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,4.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,4.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,4.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,4.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,5.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,5.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,5.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,5.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,5.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,6.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,6.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,6.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,6.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,6.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,7.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,7.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,7.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,7.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,7.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,8.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,8.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,8.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,8.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,8.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,9.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,9.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,9.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,9.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,9.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,10.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,10.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,10.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,10.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,10.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,11.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,11.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,11.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,11.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,11.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,12.0,NO,not arrived,NO
+qwen3-vl:4b,garden_1,12.2,NO,not arrived,NO
+qwen3-vl:4b,garden_1,12.4,NO,not arrived,NO
+qwen3-vl:4b,garden_1,12.6,NO,not arrived,NO
+qwen3-vl:4b,garden_1,12.8,NO,not arrived,NO
+qwen3-vl:4b,garden_1,13.0,NO,last 2 s,NO
+qwen3-vl:4b,garden_1,13.2,NO,last 2 s,NO
+qwen3-vl:4b,garden_1,13.4,NO,last 2 s,NO
+qwen3-vl:4b,garden_1,13.6,NO,last 2 s,NO
+qwen3-vl:4b,garden_1,13.8,NO,last 2 s,NO
+qwen3-vl:4b,garden_1,14.0,NO,last 2 s,NO
+qwen3-vl:4b,garden_1,14.2,NO,last 2 s,NO
+qwen3-vl:4b,garden_1,14.4,NO,last 2 s,NO
+qwen3-vl:4b,garden_1,14.6,NO,last 2 s,NO
+qwen3-vl:4b,garden_1,14.8,NO,last 2 s,NO
+qwen3-vl:4b,garden_1,15.0,NO,arrived,NO
+qwen3-vl:4b,garden_1,15.2,NO,arrived,NO
+qwen3-vl:4b,garden_1,15.4,NO,arrived,NO
+qwen3-vl:4b,garden_1,15.6,NO,arrived,NO
+qwen3-vl:4b,garden_1,15.8,NO,arrived,NO
+qwen3-vl:4b,garden_1,16.0,NO,arrived,NO
+qwen3-vl:4b,garden_1,16.2,NO,arrived,NO
+qwen3-vl:4b,garden_1,16.4,NO,arrived,NO
+qwen3-vl:4b,garden_1,16.6,NO,arrived,NO
+qwen3-vl:4b,garden_1,16.8,YES,arrived,YES
+qwen3-vl:4b,garden_2,0.0,NO,not arrived,NO
+qwen3-vl:4b,garden_2,0.2,NO,not arrived,NO
+qwen3-vl:4b,garden_2,0.4,NO,not arrived,NO
+qwen3-vl:4b,garden_2,0.6,NO,not arrived,NO
+qwen3-vl:4b,garden_2,0.8,NO,not arrived,NO
+qwen3-vl:4b,garden_2,1.0,NO,not arrived,NO
+qwen3-vl:4b,garden_2,1.2,NO,not arrived,NO
+qwen3-vl:4b,garden_2,1.4,NO,not arrived,NO
+qwen3-vl:4b,garden_2,1.6,NO,not arrived,NO
+qwen3-vl:4b,garden_2,1.8,NO,not arrived,NO
+qwen3-vl:4b,garden_2,2.0,NO,not arrived,NO
+qwen3-vl:4b,garden_2,2.2,NO,not arrived,NO
+qwen3-vl:4b,garden_2,2.4,NO,not arrived,NO
+qwen3-vl:4b,garden_2,2.6,NO,not arrived,NO
+qwen3-vl:4b,garden_2,2.8,NO,not arrived,NO
+qwen3-vl:4b,garden_2,3.0,NO,not arrived,NO
+qwen3-vl:4b,garden_2,3.2,NO,not arrived,NO
+qwen3-vl:4b,garden_2,3.4,NO,not arrived,NO
+qwen3-vl:4b,garden_2,3.6,NO,not arrived,NO
+qwen3-vl:4b,garden_2,3.8,NO,not arrived,NO
+qwen3-vl:4b,garden_2,4.0,NO,not arrived,NO
+qwen3-vl:4b,garden_2,4.2,NO,not arrived,NO
+qwen3-vl:4b,garden_2,4.4,NO,not arrived,NO
+qwen3-vl:4b,garden_2,4.6,NO,not arrived,NO
+qwen3-vl:4b,garden_2,4.8,NO,not arrived,NO
+qwen3-vl:4b,garden_2,5.0,NO,not arrived,NO
+qwen3-vl:4b,garden_2,5.2,NO,not arrived,NO
+qwen3-vl:4b,garden_2,5.4,NO,not arrived,NO
+qwen3-vl:4b,garden_2,5.6,NO,not arrived,NO
+qwen3-vl:4b,garden_2,5.8,NO,not arrived,NO
+qwen3-vl:4b,garden_2,6.0,NO,not arrived,NO
+qwen3-vl:4b,garden_2,6.2,NO,not arrived,NO
+qwen3-vl:4b,garden_2,6.4,NO,not arrived,NO
+qwen3-vl:4b,garden_2,6.6,NO,not arrived,NO
+qwen3-vl:4b,garden_2,6.8,NO,not arrived,NO
+qwen3-vl:4b,garden_2,7.0,NO,not arrived,NO
+qwen3-vl:4b,garden_2,7.2,NO,not arrived,NO
+qwen3-vl:4b,garden_2,7.4,NO,not arrived,NO
+qwen3-vl:4b,garden_2,7.6,NO,not arrived,NO
+qwen3-vl:4b,garden_2,7.8,YES,not arrived,YES
+qwen3-vl:4b,garden_2,8.0,YES,not arrived,YES
+qwen3-vl:4b,garden_2,8.2,YES,not arrived,YES
+qwen3-vl:4b,garden_2,8.4,NO,not arrived,NO
+qwen3-vl:4b,garden_2,8.6,NO,not arrived,NO
+qwen3-vl:4b,garden_2,8.8,NO,not arrived,NO
+qwen3-vl:4b,garden_2,9.0,NO,not arrived,NO
+qwen3-vl:4b,garden_2,9.2,NO,not arrived,NO
+qwen3-vl:4b,garden_2,9.4,NO,not arrived,NO
+qwen3-vl:4b,garden_2,9.6,NO,not arrived,NO
+qwen3-vl:4b,garden_2,9.8,YES,not arrived,YES
+qwen3-vl:4b,garden_2,10.0,NO,not arrived,NO
+qwen3-vl:4b,garden_2,10.2,NO,not arrived,NO
+qwen3-vl:4b,garden_2,10.4,NO,not arrived,NO
+qwen3-vl:4b,garden_2,10.6,YES,not arrived,YES
+qwen3-vl:4b,garden_2,10.8,YES,not arrived,YES
+qwen3-vl:4b,garden_2,11.0,YES,not arrived,YES
+qwen3-vl:4b,garden_2,11.2,YES,not arrived,YES
+qwen3-vl:4b,garden_2,11.4,YES,not arrived,YES
+qwen3-vl:4b,garden_2,11.6,NO,not arrived,NO
+qwen3-vl:4b,garden_2,11.8,YES,not arrived,YES
+qwen3-vl:4b,garden_2,12.0,NO,not arrived,NO
+qwen3-vl:4b,garden_2,12.2,YES,not arrived,YES
+qwen3-vl:4b,garden_2,12.4,YES,not arrived,YES
+qwen3-vl:4b,garden_2,12.6,YES,not arrived,YES
+qwen3-vl:4b,garden_2,12.8,NO,not arrived,NO
+qwen3-vl:4b,garden_2,13.0,YES,not arrived,YES
+qwen3-vl:4b,garden_2,13.2,YES,not arrived,YES
+qwen3-vl:4b,garden_2,13.4,YES,not arrived,YES
+qwen3-vl:4b,garden_2,13.6,YES,not arrived,YES
+qwen3-vl:4b,garden_2,13.8,YES,not arrived,YES
+qwen3-vl:4b,garden_2,14.0,YES,last 2 s,YES
+qwen3-vl:4b,garden_2,14.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_2,14.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_2,14.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_2,14.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_2,15.0,YES,last 2 s,YES
+qwen3-vl:4b,garden_2,15.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_2,15.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_2,15.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_2,15.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_2,16.0,YES,arrived,YES
+qwen3-vl:4b,garden_2,16.2,YES,arrived,YES
+qwen3-vl:4b,garden_2,16.4,YES,arrived,YES
+qwen3-vl:4b,garden_2,16.6,YES,arrived,YES
+qwen3-vl:4b,garden_2,16.8,YES,arrived,YES
+qwen3-vl:4b,garden_2,17.0,YES,arrived,YES
+qwen3-vl:4b,garden_2,17.2,YES,arrived,YES
+qwen3-vl:4b,garden_2,17.4,YES,arrived,YES
+qwen3-vl:4b,garden_2,17.6,YES,arrived,YES
+qwen3-vl:4b,garden_2,17.8,YES,arrived,YES
+qwen3-vl:4b,garden_3,0.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,0.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,0.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,0.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,0.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,1.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,1.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,1.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,1.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,1.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,2.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,2.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,2.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,2.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,2.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,3.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,3.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,3.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,3.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,3.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,4.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,4.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,4.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,4.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,4.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,5.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,5.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,5.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,5.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,5.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,6.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,6.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,6.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,6.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,6.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,7.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,7.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,7.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,7.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,7.8,?,not arrived,
+qwen3-vl:4b,garden_3,8.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,8.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,8.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,8.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,8.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,9.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,9.2,YES,not arrived,YES
+qwen3-vl:4b,garden_3,9.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,9.6,?,not arrived,
+qwen3-vl:4b,garden_3,9.8,YES,not arrived,YES
+qwen3-vl:4b,garden_3,10.0,NO,last 2 s,NO
+qwen3-vl:4b,garden_3,10.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_3,10.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_3,10.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_3,10.8,NO,last 2 s,NO
+qwen3-vl:4b,garden_3,11.0,NO,last 2 s,NO
+qwen3-vl:4b,garden_3,11.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_3,11.4,NO,last 2 s,NO
+qwen3-vl:4b,garden_3,11.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_3,11.8,?,last 2 s,
+qwen3-vl:4b,garden_3,12.0,YES,arrived,YES
+qwen3-vl:4b,garden_3,12.2,YES,arrived,YES
+qwen3-vl:4b,garden_3,12.4,YES,arrived,YES
+qwen3-vl:4b,garden_3,12.6,?,arrived,
+qwen3-vl:4b,garden_3,12.8,?,arrived,
+qwen3-vl:4b,garden_3,13.0,YES,arrived,YES
+qwen3-vl:4b,garden_3,13.2,YES,arrived,YES
+qwen3-vl:4b,garden_3,13.4,NO,arrived,NO
+qwen3-vl:4b,garden_3,13.6,?,arrived,
+qwen3-vl:4b,garden_3,13.8,?,arrived,
+qwen3-vl:4b,garden_3,14.0,YES,arrived,YES
+qwen3-vl:4b,garden_3,14.2,?,arrived,
+qwen3-vl:4b,garden_3,14.4,?,arrived,
+qwen3-vl:4b,garden_3,14.6,?,arrived,
+qwen3-vl:4b,garden_3,14.8,YES,arrived,YES
+qwen3-vl:4b,garden_3,15.0,?,arrived,
+qwen3-vl:4b,garden_3,15.2,YES,arrived,YES
+qwen3-vl:4b,garden_3,15.4,YES,arrived,YES
+qwen3-vl:4b,garden_3,15.6,YES,arrived,YES
+qwen3-vl:4b,garden_3,15.8,YES,arrived,YES
+qwen3-vl:4b,garden_4,0.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,0.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,0.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,0.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,0.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,1.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,1.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,1.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,1.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,1.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,2.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,2.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,2.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,2.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,2.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,3.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,3.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,3.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,3.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,3.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,4.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,4.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,4.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,4.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,4.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,5.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,5.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,5.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,5.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,5.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,6.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,6.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,6.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,6.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,6.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,7.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,7.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,7.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,7.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,7.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,8.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,8.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,8.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,8.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,8.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,9.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,9.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,9.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,9.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,9.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,10.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,10.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,10.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,10.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,10.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,11.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,11.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,11.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,11.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,11.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,12.0,NO,not arrived,NO
+qwen3-vl:4b,garden_4,12.2,NO,not arrived,NO
+qwen3-vl:4b,garden_4,12.4,NO,not arrived,NO
+qwen3-vl:4b,garden_4,12.6,NO,not arrived,NO
+qwen3-vl:4b,garden_4,12.8,NO,not arrived,NO
+qwen3-vl:4b,garden_4,13.0,NO,last 2 s,NO
+qwen3-vl:4b,garden_4,13.2,?,last 2 s,
+qwen3-vl:4b,garden_4,13.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_4,13.6,NO,last 2 s,NO
+qwen3-vl:4b,garden_4,13.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_4,14.0,YES,last 2 s,YES
+qwen3-vl:4b,garden_4,14.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_4,14.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_4,14.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_4,14.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_4,15.0,YES,arrived,YES
+qwen3-vl:4b,garden_4,15.2,YES,arrived,YES
+qwen3-vl:4b,garden_4,15.4,YES,arrived,YES
+qwen3-vl:4b,garden_4,15.6,YES,arrived,YES
+qwen3-vl:4b,garden_4,15.8,YES,arrived,YES
+qwen3-vl:4b,garden_4,16.0,YES,arrived,YES
+qwen3-vl:4b,garden_4,16.2,YES,arrived,YES
+qwen3-vl:4b,garden_4,16.4,YES,arrived,YES
+qwen3-vl:4b,garden_4,16.6,YES,arrived,YES
+qwen3-vl:4b,garden_4,16.8,YES,arrived,YES
+qwen3-vl:4b,garden_4,17.0,YES,arrived,YES
+qwen3-vl:4b,garden_4,17.2,YES,arrived,YES
+qwen3-vl:4b,garden_4,17.4,YES,arrived,YES
+qwen3-vl:4b,garden_4,17.6,YES,arrived,YES
+qwen3-vl:4b,garden_4,17.8,YES,arrived,YES
+qwen3-vl:4b,garden_4,18.0,YES,arrived,YES
+qwen3-vl:4b,garden_4,18.2,YES,arrived,YES
+qwen3-vl:4b,garden_4,18.4,YES,arrived,YES
+qwen2.5vl:7b,garden_5,0.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,0.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,0.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,0.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,0.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,1.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,1.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,1.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,3.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,3.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,3.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,3.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,3.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,4.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,4.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,4.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,4.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,4.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,5.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,5.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,5.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,5.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,5.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,6.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,6.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,6.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,6.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,6.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,7.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_5,7.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,7.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_5,7.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_5,7.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,8.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,8.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,8.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_5,8.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,8.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,9.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,9.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,9.4,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,9.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,9.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,10.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,10.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,10.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_5,10.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,10.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,11.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,11.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_5,11.4,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,11.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_5,11.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_5,12.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,12.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_5,12.4,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,12.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_5,12.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_5,13.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_5,13.2,YES,last 2 s,YES
+qwen2.5vl:7b,garden_5,13.4,YES,last 2 s,YES
+qwen2.5vl:7b,garden_5,13.6,YES,last 2 s,YES
+qwen2.5vl:7b,garden_5,13.8,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_5,14.0,YES,last 2 s,YES
+qwen2.5vl:7b,garden_5,14.2,YES,last 2 s,YES
+qwen2.5vl:7b,garden_5,14.4,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_5,14.6,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_5,14.8,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_5,15.0,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_5,15.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_5,15.4,YES,arrived,YES.
+qwen2.5vl:7b,garden_5,15.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_5,15.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_5,16.0,YES,arrived,YES
+qwen2.5vl:7b,garden_5,16.2,YES,arrived,YES
+qwen2.5vl:7b,garden_5,16.4,YES,arrived,YES
+qwen2.5vl:7b,garden_5,16.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_5,16.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_5,17.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_5,17.2,YES,arrived,YES
+qwen2.5vl:7b,garden_5,17.4,YES,arrived,YES
+qwen2.5vl:7b,garden_5,17.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_5,17.8,YES,arrived,YES
+qwen2.5vl:7b,garden_5,18.0,YES,arrived,YES
+qwen2.5vl:7b,garden_5,18.2,YES,arrived,YES
+qwen2.5vl:7b,garden_5,18.4,YES,arrived,YES
+qwen2.5vl:7b,garden_5,18.6,YES,arrived,YES
+qwen2.5vl:7b,garden_5,18.8,YES,arrived,YES
+qwen2.5vl:7b,garden_5,19.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_5,19.2,YES,arrived,YES
+qwen2.5vl:7b,garden_5,19.4,YES,arrived,YES
+qwen2.5vl:7b,garden_6,0.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,0.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,0.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,0.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,0.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,1.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,1.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,1.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,3.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,3.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,3.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,3.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,3.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,4.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,4.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,4.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,4.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,4.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,5.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,5.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,5.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,5.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,5.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,6.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,6.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,6.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,6.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,6.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,7.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,7.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,7.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,7.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,7.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,8.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,8.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,8.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,8.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,8.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,9.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,9.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,9.4,YES,not arrived,YES.
+qwen2.5vl:7b,garden_6,9.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,9.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,10.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_6,10.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,10.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,10.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,10.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,11.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,11.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,11.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,11.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,11.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,12.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_6,12.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,12.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,12.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,12.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,13.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,13.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,13.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,13.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_6,13.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,14.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,14.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,14.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_6,14.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,14.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,15.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,15.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,15.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,15.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,15.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_6,16.0,YES,last 2 s,YES
+qwen2.5vl:7b,garden_6,16.2,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_6,16.4,YES,last 2 s,YES
+qwen2.5vl:7b,garden_6,16.6,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_6,16.8,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_6,17.0,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_6,17.2,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_6,17.4,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_6,17.6,YES,last 2 s,YES
+qwen2.5vl:7b,garden_6,17.8,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_6,18.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_6,18.2,YES,arrived,YES
+qwen2.5vl:7b,garden_6,18.4,YES,arrived,YES
+qwen2.5vl:7b,garden_6,18.6,YES,arrived,YES
+qwen2.5vl:7b,garden_6,18.8,YES,arrived,YES
+qwen2.5vl:7b,garden_6,19.0,YES,arrived,YES
+qwen2.5vl:7b,garden_6,19.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_6,19.4,YES,arrived,YES
+qwen2.5vl:7b,garden_6,19.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_6,19.8,YES,arrived,YES
+qwen2.5vl:7b,garden_6,20.0,YES,arrived,YES
+qwen2.5vl:7b,garden_6,20.2,YES,arrived,YES
+qwen2.5vl:7b,garden_6,20.4,YES,arrived,YES
+qwen2.5vl:7b,garden_6,20.6,YES,arrived,YES
+qwen2.5vl:7b,garden_7,0.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,0.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,0.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,0.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,0.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,1.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,1.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,1.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,3.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,3.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,3.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,3.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,3.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,4.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,4.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,4.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,4.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,4.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,5.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,5.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,5.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,5.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,5.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,6.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,6.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,6.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,6.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,6.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,7.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,7.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,7.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,7.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,7.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,8.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,8.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,8.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,8.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,8.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,9.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,9.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,9.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,9.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,9.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,10.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,10.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,10.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_7,10.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,10.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,11.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_7,11.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,11.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_7,11.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,11.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_7,12.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_7,12.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_7,12.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_7,12.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,12.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,13.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,13.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,13.4,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,13.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,13.8,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,14.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,14.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,14.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,14.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,14.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_7,15.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_7,15.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_7,15.4,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_7,15.6,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_7,15.8,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_7,16.0,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_7,16.2,YES,last 2 s,YES
+qwen2.5vl:7b,garden_7,16.4,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_7,16.6,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_7,16.8,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_7,17.0,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_7,17.2,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_7,17.4,YES,arrived,YES.
+qwen2.5vl:7b,garden_7,17.6,YES,arrived,YES
+qwen2.5vl:7b,garden_7,17.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_7,18.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_7,18.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_7,18.4,YES,arrived,YES.
+qwen2.5vl:7b,garden_7,18.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_7,18.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_7,19.0,YES,arrived,YES
+qwen2.5vl:7b,garden_7,19.2,YES,arrived,YES
+qwen2.5vl:7b,garden_7,19.4,YES,arrived,YES
+qwen2.5vl:7b,garden_7,19.6,YES,arrived,YES
+qwen2.5vl:7b,garden_8,0.0,YES,not arrived,YES
+qwen2.5vl:7b,garden_8,0.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_8,0.4,YES,not arrived,YES
+qwen2.5vl:7b,garden_8,0.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_8,0.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,1.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,1.2,YES,not arrived,YES
+qwen2.5vl:7b,garden_8,1.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,3.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,3.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,3.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,3.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,3.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,4.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,4.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,4.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,4.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,4.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,5.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,5.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,5.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,5.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,5.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,6.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,6.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,6.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,6.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,6.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,7.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,7.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,7.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,7.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,7.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,8.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,8.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,8.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,8.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,8.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,9.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_8,9.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,9.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,9.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_8,9.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,10.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,10.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,10.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,10.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,10.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,11.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,11.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,11.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,11.6,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,11.8,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,12.0,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,12.2,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,12.4,NO,not arrived,NO.
+qwen2.5vl:7b,garden_8,12.6,YES,not arrived,YES
+qwen2.5vl:7b,garden_8,12.8,YES,not arrived,YES
+qwen2.5vl:7b,garden_8,13.0,YES,not arrived,YES.
+qwen2.5vl:7b,garden_8,13.2,YES,not arrived,YES.
+qwen2.5vl:7b,garden_8,13.4,YES,not arrived,YES.
+qwen2.5vl:7b,garden_8,13.6,YES,not arrived,YES.
+qwen2.5vl:7b,garden_8,13.8,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_8,14.0,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_8,14.2,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_8,14.4,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_8,14.6,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_8,14.8,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_8,15.0,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_8,15.2,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_8,15.4,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_8,15.6,YES,last 2 s,YES.
+qwen2.5vl:7b,garden_8,15.8,YES,arrived,YES
+qwen2.5vl:7b,garden_8,16.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,16.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,16.4,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,16.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,16.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,17.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,17.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,17.4,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,17.6,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,17.8,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,18.0,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,18.2,YES,arrived,YES.
+qwen2.5vl:7b,garden_8,18.4,YES,arrived,YES
+qwen3-vl:4b,garden_5,0.0,NO,not arrived,NO
+qwen3-vl:4b,garden_5,0.2,NO,not arrived,NO
+qwen3-vl:4b,garden_5,0.4,NO,not arrived,NO
+qwen3-vl:4b,garden_5,0.6,NO,not arrived,NO
+qwen3-vl:4b,garden_5,0.8,NO,not arrived,NO
+qwen3-vl:4b,garden_5,1.0,NO,not arrived,NO
+qwen3-vl:4b,garden_5,1.2,NO,not arrived,NO
+qwen3-vl:4b,garden_5,1.4,NO,not arrived,NO
+qwen3-vl:4b,garden_5,1.6,NO,not arrived,NO
+qwen3-vl:4b,garden_5,1.8,NO,not arrived,NO
+qwen3-vl:4b,garden_5,2.0,NO,not arrived,NO
+qwen3-vl:4b,garden_5,2.2,NO,not arrived,NO
+qwen3-vl:4b,garden_5,2.4,NO,not arrived,NO
+qwen3-vl:4b,garden_5,2.6,NO,not arrived,NO
+qwen3-vl:4b,garden_5,2.8,NO,not arrived,NO
+qwen3-vl:4b,garden_5,3.0,NO,not arrived,NO
+qwen3-vl:4b,garden_5,3.2,NO,not arrived,NO
+qwen3-vl:4b,garden_5,3.4,NO,not arrived,NO
+qwen3-vl:4b,garden_5,3.6,NO,not arrived,NO
+qwen3-vl:4b,garden_5,3.8,NO,not arrived,NO
+qwen3-vl:4b,garden_5,4.0,NO,not arrived,NO
+qwen3-vl:4b,garden_5,4.2,NO,not arrived,NO
+qwen3-vl:4b,garden_5,4.4,NO,not arrived,NO
+qwen3-vl:4b,garden_5,4.6,NO,not arrived,NO
+qwen3-vl:4b,garden_5,4.8,YES,not arrived,YES
+qwen3-vl:4b,garden_5,5.0,YES,not arrived,YES
+qwen3-vl:4b,garden_5,5.2,NO,not arrived,NO
+qwen3-vl:4b,garden_5,5.4,YES,not arrived,YES
+qwen3-vl:4b,garden_5,5.6,NO,not arrived,NO
+qwen3-vl:4b,garden_5,5.8,NO,not arrived,NO
+qwen3-vl:4b,garden_5,6.0,NO,not arrived,NO
+qwen3-vl:4b,garden_5,6.2,NO,not arrived,NO
+qwen3-vl:4b,garden_5,6.4,NO,not arrived,NO
+qwen3-vl:4b,garden_5,6.6,NO,not arrived,NO
+qwen3-vl:4b,garden_5,6.8,NO,not arrived,NO
+qwen3-vl:4b,garden_5,7.0,NO,not arrived,NO
+qwen3-vl:4b,garden_5,7.2,YES,not arrived,YES
+qwen3-vl:4b,garden_5,7.4,YES,not arrived,YES
+qwen3-vl:4b,garden_5,7.6,YES,not arrived,YES
+qwen3-vl:4b,garden_5,7.8,NO,not arrived,NO
+qwen3-vl:4b,garden_5,8.0,YES,not arrived,YES
+qwen3-vl:4b,garden_5,8.2,NO,not arrived,NO
+qwen3-vl:4b,garden_5,8.4,YES,not arrived,YES
+qwen3-vl:4b,garden_5,8.6,YES,not arrived,YES
+qwen3-vl:4b,garden_5,8.8,YES,not arrived,YES
+qwen3-vl:4b,garden_5,9.0,YES,not arrived,YES
+qwen3-vl:4b,garden_5,9.2,YES,not arrived,YES
+qwen3-vl:4b,garden_5,9.4,NO,not arrived,NO
+qwen3-vl:4b,garden_5,9.6,NO,not arrived,NO
+qwen3-vl:4b,garden_5,9.8,NO,not arrived,NO
+qwen3-vl:4b,garden_5,10.0,NO,not arrived,NO
+qwen3-vl:4b,garden_5,10.2,YES,not arrived,YES
+qwen3-vl:4b,garden_5,10.4,NO,not arrived,NO
+qwen3-vl:4b,garden_5,10.6,NO,not arrived,NO
+qwen3-vl:4b,garden_5,10.8,NO,not arrived,NO
+qwen3-vl:4b,garden_5,11.0,NO,not arrived,NO
+qwen3-vl:4b,garden_5,11.2,YES,not arrived,YES
+qwen3-vl:4b,garden_5,11.4,YES,not arrived,YES
+qwen3-vl:4b,garden_5,11.6,NO,not arrived,NO
+qwen3-vl:4b,garden_5,11.8,NO,not arrived,NO
+qwen3-vl:4b,garden_5,12.0,YES,not arrived,YES
+qwen3-vl:4b,garden_5,12.2,YES,not arrived,YES
+qwen3-vl:4b,garden_5,12.4,NO,not arrived,NO
+qwen3-vl:4b,garden_5,12.6,NO,not arrived,NO
+qwen3-vl:4b,garden_5,12.8,YES,not arrived,YES
+qwen3-vl:4b,garden_5,13.0,YES,not arrived,YES
+qwen3-vl:4b,garden_5,13.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_5,13.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_5,13.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_5,13.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_5,14.0,YES,last 2 s,YES
+qwen3-vl:4b,garden_5,14.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_5,14.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_5,14.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_5,14.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_5,15.0,YES,last 2 s,YES
+qwen3-vl:4b,garden_5,15.2,YES,arrived,YES
+qwen3-vl:4b,garden_5,15.4,YES,arrived,YES
+qwen3-vl:4b,garden_5,15.6,YES,arrived,YES
+qwen3-vl:4b,garden_5,15.8,YES,arrived,YES
+qwen3-vl:4b,garden_5,16.0,YES,arrived,YES
+qwen3-vl:4b,garden_5,16.2,YES,arrived,YES
+qwen3-vl:4b,garden_5,16.4,YES,arrived,YES
+qwen3-vl:4b,garden_5,16.6,YES,arrived,YES
+qwen3-vl:4b,garden_5,16.8,YES,arrived,YES
+qwen3-vl:4b,garden_5,17.0,YES,arrived,YES
+qwen3-vl:4b,garden_5,17.2,YES,arrived,YES
+qwen3-vl:4b,garden_5,17.4,YES,arrived,YES
+qwen3-vl:4b,garden_5,17.6,YES,arrived,YES
+qwen3-vl:4b,garden_5,17.8,YES,arrived,YES
+qwen3-vl:4b,garden_5,18.0,YES,arrived,YES
+qwen3-vl:4b,garden_5,18.2,YES,arrived,YES
+qwen3-vl:4b,garden_5,18.4,YES,arrived,YES
+qwen3-vl:4b,garden_5,18.6,YES,arrived,YES
+qwen3-vl:4b,garden_5,18.8,YES,arrived,YES
+qwen3-vl:4b,garden_5,19.0,YES,arrived,YES
+qwen3-vl:4b,garden_5,19.2,YES,arrived,YES
+qwen3-vl:4b,garden_5,19.4,YES,arrived,YES
+qwen3-vl:4b,garden_6,0.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,0.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,0.4,NO,not arrived,NO
+qwen3-vl:4b,garden_6,0.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,0.8,NO,not arrived,NO
+qwen3-vl:4b,garden_6,1.0,YES,not arrived,YES
+qwen3-vl:4b,garden_6,1.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,1.4,NO,not arrived,NO
+qwen3-vl:4b,garden_6,1.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,1.8,NO,not arrived,NO
+qwen3-vl:4b,garden_6,2.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,2.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,2.4,NO,not arrived,NO
+qwen3-vl:4b,garden_6,2.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,2.8,NO,not arrived,NO
+qwen3-vl:4b,garden_6,3.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,3.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,3.4,NO,not arrived,NO
+qwen3-vl:4b,garden_6,3.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,3.8,NO,not arrived,NO
+qwen3-vl:4b,garden_6,4.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,4.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,4.4,NO,not arrived,NO
+qwen3-vl:4b,garden_6,4.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,4.8,NO,not arrived,NO
+qwen3-vl:4b,garden_6,5.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,5.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,5.4,NO,not arrived,NO
+qwen3-vl:4b,garden_6,5.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,5.8,NO,not arrived,NO
+qwen3-vl:4b,garden_6,6.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,6.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,6.4,NO,not arrived,NO
+qwen3-vl:4b,garden_6,6.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,6.8,NO,not arrived,NO
+qwen3-vl:4b,garden_6,7.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,7.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,7.4,NO,not arrived,NO
+qwen3-vl:4b,garden_6,7.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,7.8,NO,not arrived,NO
+qwen3-vl:4b,garden_6,8.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,8.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,8.4,YES,not arrived,YES
+qwen3-vl:4b,garden_6,8.6,YES,not arrived,YES
+qwen3-vl:4b,garden_6,8.8,YES,not arrived,YES
+qwen3-vl:4b,garden_6,9.0,YES,not arrived,YES
+qwen3-vl:4b,garden_6,9.2,YES,not arrived,YES
+qwen3-vl:4b,garden_6,9.4,YES,not arrived,YES
+qwen3-vl:4b,garden_6,9.6,YES,not arrived,YES
+qwen3-vl:4b,garden_6,9.8,YES,not arrived,YES
+qwen3-vl:4b,garden_6,10.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,10.2,YES,not arrived,YES
+qwen3-vl:4b,garden_6,10.4,YES,not arrived,YES
+qwen3-vl:4b,garden_6,10.6,YES,not arrived,YES
+qwen3-vl:4b,garden_6,10.8,NO,not arrived,NO
+qwen3-vl:4b,garden_6,11.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,11.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,11.4,NO,not arrived,NO
+qwen3-vl:4b,garden_6,11.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,11.8,NO,not arrived,NO
+qwen3-vl:4b,garden_6,12.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,12.2,YES,not arrived,YES
+qwen3-vl:4b,garden_6,12.4,NO,not arrived,NO
+qwen3-vl:4b,garden_6,12.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,12.8,YES,not arrived,YES
+qwen3-vl:4b,garden_6,13.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,13.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,13.4,NO,not arrived,NO
+qwen3-vl:4b,garden_6,13.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,13.8,NO,not arrived,NO
+qwen3-vl:4b,garden_6,14.0,NO,not arrived,NO
+qwen3-vl:4b,garden_6,14.2,NO,not arrived,NO
+qwen3-vl:4b,garden_6,14.4,YES,not arrived,YES
+qwen3-vl:4b,garden_6,14.6,NO,not arrived,NO
+qwen3-vl:4b,garden_6,14.8,YES,not arrived,YES
+qwen3-vl:4b,garden_6,15.0,YES,not arrived,YES
+qwen3-vl:4b,garden_6,15.2,YES,not arrived,YES
+qwen3-vl:4b,garden_6,15.4,YES,not arrived,YES
+qwen3-vl:4b,garden_6,15.6,YES,not arrived,YES
+qwen3-vl:4b,garden_6,15.8,YES,not arrived,YES
+qwen3-vl:4b,garden_6,16.0,YES,last 2 s,YES
+qwen3-vl:4b,garden_6,16.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_6,16.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_6,16.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_6,16.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_6,17.0,YES,last 2 s,YES
+qwen3-vl:4b,garden_6,17.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_6,17.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_6,17.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_6,17.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_6,18.0,YES,arrived,YES
+qwen3-vl:4b,garden_6,18.2,YES,arrived,YES
+qwen3-vl:4b,garden_6,18.4,YES,arrived,YES
+qwen3-vl:4b,garden_6,18.6,YES,arrived,YES
+qwen3-vl:4b,garden_6,18.8,YES,arrived,YES
+qwen3-vl:4b,garden_6,19.0,YES,arrived,YES
+qwen3-vl:4b,garden_6,19.2,YES,arrived,YES
+qwen3-vl:4b,garden_6,19.4,YES,arrived,YES
+qwen3-vl:4b,garden_6,19.6,YES,arrived,YES
+qwen3-vl:4b,garden_6,19.8,YES,arrived,YES
+qwen3-vl:4b,garden_6,20.0,YES,arrived,YES
+qwen3-vl:4b,garden_6,20.2,YES,arrived,YES
+qwen3-vl:4b,garden_6,20.4,YES,arrived,YES
+qwen3-vl:4b,garden_6,20.6,YES,arrived,YES
+qwen3-vl:4b,garden_7,0.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,0.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,0.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,0.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,0.8,NO,not arrived,NO
+qwen3-vl:4b,garden_7,1.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,1.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,1.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,1.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,1.8,NO,not arrived,NO
+qwen3-vl:4b,garden_7,2.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,2.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,2.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,2.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,2.8,NO,not arrived,NO
+qwen3-vl:4b,garden_7,3.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,3.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,3.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,3.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,3.8,NO,not arrived,NO
+qwen3-vl:4b,garden_7,4.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,4.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,4.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,4.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,4.8,NO,not arrived,NO
+qwen3-vl:4b,garden_7,5.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,5.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,5.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,5.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,5.8,NO,not arrived,NO
+qwen3-vl:4b,garden_7,6.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,6.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,6.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,6.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,6.8,NO,not arrived,NO
+qwen3-vl:4b,garden_7,7.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,7.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,7.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,7.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,7.8,NO,not arrived,NO
+qwen3-vl:4b,garden_7,8.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,8.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,8.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,8.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,8.8,?,not arrived,
+qwen3-vl:4b,garden_7,9.0,YES,not arrived,YES
+qwen3-vl:4b,garden_7,9.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,9.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,9.6,YES,not arrived,YES
+qwen3-vl:4b,garden_7,9.8,?,not arrived,
+qwen3-vl:4b,garden_7,10.0,YES,not arrived,YES
+qwen3-vl:4b,garden_7,10.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,10.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,10.6,YES,not arrived,YES
+qwen3-vl:4b,garden_7,10.8,YES,not arrived,YES
+qwen3-vl:4b,garden_7,11.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,11.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,11.4,YES,not arrived,YES
+qwen3-vl:4b,garden_7,11.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,11.8,NO,not arrived,NO
+qwen3-vl:4b,garden_7,12.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,12.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,12.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,12.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,12.8,?,not arrived,
+qwen3-vl:4b,garden_7,13.0,YES,not arrived,YES
+qwen3-vl:4b,garden_7,13.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,13.4,YES,not arrived,YES
+qwen3-vl:4b,garden_7,13.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,13.8,YES,not arrived,YES
+qwen3-vl:4b,garden_7,14.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,14.2,NO,not arrived,NO
+qwen3-vl:4b,garden_7,14.4,NO,not arrived,NO
+qwen3-vl:4b,garden_7,14.6,NO,not arrived,NO
+qwen3-vl:4b,garden_7,14.8,YES,not arrived,YES
+qwen3-vl:4b,garden_7,15.0,NO,not arrived,NO
+qwen3-vl:4b,garden_7,15.2,YES,not arrived,YES
+qwen3-vl:4b,garden_7,15.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_7,15.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_7,15.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_7,16.0,YES,last 2 s,YES
+qwen3-vl:4b,garden_7,16.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_7,16.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_7,16.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_7,16.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_7,17.0,YES,last 2 s,YES
+qwen3-vl:4b,garden_7,17.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_7,17.4,YES,arrived,YES
+qwen3-vl:4b,garden_7,17.6,YES,arrived,YES
+qwen3-vl:4b,garden_7,17.8,YES,arrived,YES
+qwen3-vl:4b,garden_7,18.0,YES,arrived,YES
+qwen3-vl:4b,garden_7,18.2,YES,arrived,YES
+qwen3-vl:4b,garden_7,18.4,YES,arrived,YES
+qwen3-vl:4b,garden_7,18.6,YES,arrived,YES
+qwen3-vl:4b,garden_7,18.8,YES,arrived,YES
+qwen3-vl:4b,garden_7,19.0,YES,arrived,YES
+qwen3-vl:4b,garden_7,19.2,YES,arrived,YES
+qwen3-vl:4b,garden_7,19.4,YES,arrived,YES
+qwen3-vl:4b,garden_7,19.6,YES,arrived,YES
+qwen3-vl:4b,garden_8,0.0,NO,not arrived,NO
+qwen3-vl:4b,garden_8,0.2,NO,not arrived,NO
+qwen3-vl:4b,garden_8,0.4,NO,not arrived,NO
+qwen3-vl:4b,garden_8,0.6,NO,not arrived,NO
+qwen3-vl:4b,garden_8,0.8,NO,not arrived,NO
+qwen3-vl:4b,garden_8,1.0,YES,not arrived,YES
+qwen3-vl:4b,garden_8,1.2,YES,not arrived,YES
+qwen3-vl:4b,garden_8,1.4,YES,not arrived,YES
+qwen3-vl:4b,garden_8,1.6,YES,not arrived,YES
+qwen3-vl:4b,garden_8,1.8,NO,not arrived,NO
+qwen3-vl:4b,garden_8,2.0,YES,not arrived,YES
+qwen3-vl:4b,garden_8,2.2,NO,not arrived,NO
+qwen3-vl:4b,garden_8,2.4,YES,not arrived,YES
+qwen3-vl:4b,garden_8,2.6,NO,not arrived,NO
+qwen3-vl:4b,garden_8,2.8,NO,not arrived,NO
+qwen3-vl:4b,garden_8,3.0,NO,not arrived,NO
+qwen3-vl:4b,garden_8,3.2,NO,not arrived,NO
+qwen3-vl:4b,garden_8,3.4,NO,not arrived,NO
+qwen3-vl:4b,garden_8,3.6,NO,not arrived,NO
+qwen3-vl:4b,garden_8,3.8,NO,not arrived,NO
+qwen3-vl:4b,garden_8,4.0,NO,not arrived,NO
+qwen3-vl:4b,garden_8,4.2,NO,not arrived,NO
+qwen3-vl:4b,garden_8,4.4,NO,not arrived,NO
+qwen3-vl:4b,garden_8,4.6,NO,not arrived,NO
+qwen3-vl:4b,garden_8,4.8,NO,not arrived,NO
+qwen3-vl:4b,garden_8,5.0,NO,not arrived,NO
+qwen3-vl:4b,garden_8,5.2,?,not arrived,
+qwen3-vl:4b,garden_8,5.4,NO,not arrived,NO
+qwen3-vl:4b,garden_8,5.6,NO,not arrived,NO
+qwen3-vl:4b,garden_8,5.8,?,not arrived,
+qwen3-vl:4b,garden_8,6.0,NO,not arrived,NO
+qwen3-vl:4b,garden_8,6.2,NO,not arrived,NO
+qwen3-vl:4b,garden_8,6.4,NO,not arrived,NO
+qwen3-vl:4b,garden_8,6.6,NO,not arrived,NO
+qwen3-vl:4b,garden_8,6.8,NO,not arrived,NO
+qwen3-vl:4b,garden_8,7.0,NO,not arrived,NO
+qwen3-vl:4b,garden_8,7.2,NO,not arrived,NO
+qwen3-vl:4b,garden_8,7.4,NO,not arrived,NO
+qwen3-vl:4b,garden_8,7.6,NO,not arrived,NO
+qwen3-vl:4b,garden_8,7.8,NO,not arrived,NO
+qwen3-vl:4b,garden_8,8.0,NO,not arrived,NO
+qwen3-vl:4b,garden_8,8.2,NO,not arrived,NO
+qwen3-vl:4b,garden_8,8.4,YES,not arrived,YES
+qwen3-vl:4b,garden_8,8.6,NO,not arrived,NO
+qwen3-vl:4b,garden_8,8.8,NO,not arrived,NO
+qwen3-vl:4b,garden_8,9.0,YES,not arrived,YES
+qwen3-vl:4b,garden_8,9.2,YES,not arrived,YES
+qwen3-vl:4b,garden_8,9.4,NO,not arrived,NO
+qwen3-vl:4b,garden_8,9.6,YES,not arrived,YES
+qwen3-vl:4b,garden_8,9.8,YES,not arrived,YES
+qwen3-vl:4b,garden_8,10.0,NO,not arrived,NO
+qwen3-vl:4b,garden_8,10.2,NO,not arrived,NO
+qwen3-vl:4b,garden_8,10.4,NO,not arrived,NO
+qwen3-vl:4b,garden_8,10.6,NO,not arrived,NO
+qwen3-vl:4b,garden_8,10.8,NO,not arrived,NO
+qwen3-vl:4b,garden_8,11.0,NO,not arrived,NO
+qwen3-vl:4b,garden_8,11.2,NO,not arrived,NO
+qwen3-vl:4b,garden_8,11.4,NO,not arrived,NO
+qwen3-vl:4b,garden_8,11.6,NO,not arrived,NO
+qwen3-vl:4b,garden_8,11.8,NO,not arrived,NO
+qwen3-vl:4b,garden_8,12.0,NO,not arrived,NO
+qwen3-vl:4b,garden_8,12.2,NO,not arrived,NO
+qwen3-vl:4b,garden_8,12.4,NO,not arrived,NO
+qwen3-vl:4b,garden_8,12.6,NO,not arrived,NO
+qwen3-vl:4b,garden_8,12.8,YES,not arrived,YES
+qwen3-vl:4b,garden_8,13.0,?,not arrived,
+qwen3-vl:4b,garden_8,13.2,NO,not arrived,NO
+qwen3-vl:4b,garden_8,13.4,YES,not arrived,YES
+qwen3-vl:4b,garden_8,13.6,YES,not arrived,YES
+qwen3-vl:4b,garden_8,13.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_8,14.0,YES,last 2 s,YES
+qwen3-vl:4b,garden_8,14.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_8,14.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_8,14.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_8,14.8,YES,last 2 s,YES
+qwen3-vl:4b,garden_8,15.0,YES,last 2 s,YES
+qwen3-vl:4b,garden_8,15.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_8,15.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_8,15.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_8,15.8,YES,arrived,YES
+qwen3-vl:4b,garden_8,16.0,YES,arrived,YES
+qwen3-vl:4b,garden_8,16.2,YES,arrived,YES
+qwen3-vl:4b,garden_8,16.4,YES,arrived,YES
+qwen3-vl:4b,garden_8,16.6,YES,arrived,YES
+qwen3-vl:4b,garden_8,16.8,YES,arrived,YES
+qwen3-vl:4b,garden_8,17.0,YES,arrived,YES
+qwen3-vl:4b,garden_8,17.2,YES,arrived,YES
+qwen3-vl:4b,garden_8,17.4,YES,arrived,YES
+qwen3-vl:4b,garden_8,17.6,YES,arrived,YES
+qwen3-vl:4b,garden_8,17.8,YES,arrived,YES
+qwen3-vl:4b,garden_8,18.0,YES,arrived,YES
+qwen3-vl:4b,garden_8,18.2,YES,arrived,YES
+qwen3-vl:4b,garden_8,18.4,YES,arrived,YES

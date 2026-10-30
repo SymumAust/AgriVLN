@@ -20,10 +20,11 @@ from collections import defaultdict
 p = argparse.ArgumentParser()
 p.add_argument("--window", type=int, default=10)
 p.add_argument("--k", type=int, nargs="+", default=[6, 8, 10])
+p.add_argument("--csv", default="probe_results.csv")
 a = p.parse_args()
 
 answers = defaultdict(dict)
-for r in csv.DictReader(open("probe_results.csv")):
+for r in csv.DictReader(open(a.csv)):
     answers[(r["model"], r["episode"])][float(r["time"])] = r["answer"] == "YES"   # last run wins
 
 print(f"{'model':<16} {'episode':<9} {'label':>6} " + " ".join(f"{'>=' + str(k) + '/' + str(a.window):>16}" for k in a.k))

@@ -1,0 +1,14 @@
+[
+   {
+      "step": 1,
+      "subtask": "Start walking forward",
+      "start_condition": "always",
+      "end_condition": "terracotta plant pot with small palm tree visible"
+   },
+   {
+      "step": 2,
+      "subtask": "Stop when the terracotta plant pot with the small palm tree is right in front of you",
+      "start_condition": "terracotta plant pot with small palm tree visible",
+      "end_condition": "stop"
+   }
+]

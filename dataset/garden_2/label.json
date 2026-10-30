@@ -2,13 +2,13 @@
   {
     "time_range": [
       0.0,
-      16.0
+      14.4
     ],
     "action": "[FORWARD]"
   },
   {
     "time_range": [
-      16.0,
+      14.4,
       18.0
     ],
     "action": "[STOP]"
