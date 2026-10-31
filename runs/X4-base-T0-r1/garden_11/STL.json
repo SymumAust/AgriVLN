@@ -1,0 +1,20 @@
+[
+   {
+      "step": 1,
+      "subtask": "Start walking forward",
+      "start_condition": "always",
+      "end_condition": "right turn"
+   },
+   {
+      "step": 2,
+      "subtask": "Turn slightly to the right",
+      "start_condition": "right turn",
+      "end_condition": "orange traffic cone visible"
+   },
+   {
+      "step": 3,
+      "subtask": "Stop when the orange traffic cone is right in front of you",
+      "start_condition": "orange traffic cone visible",
+      "end_condition": "stop"
+   }
+]

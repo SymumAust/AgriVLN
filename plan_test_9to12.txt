@@ -1,0 +1,25 @@
+PRE-REGISTERED TEST PLAN: garden_9 .. garden_12   (written 31 Oct 2026, before any model was run on these videos)
+
+Videos (landscape, outdoor, new targets, never used for any design choice):
+  garden_9   blue metal pole                                forward, then sharp right turn, stop
+  garden_10  nearest yellow-and-black striped bollard       forward, then sharp right turn, stop   (row of identical bollards = lookalike test)
+  garden_11  orange traffic cone                            forward, slight right, stop
+  garden_12  brown wooden planter box with black corners    forward, then sharp right turn, stop
+
+Labels: STOP = end of forward motion (forward_motion.py); a turn at the end is labelled [RIGHT ROTATE];
+        length fixed at 18 m for every video. Success = NE < 2 m.
+
+MAIN METHOD (decided on garden_1..8):
+  qwen3-vl:4b, plain YES/NO arrival question with "the camera" wording (probe_arrival.py, yesno mode),
+  STOP when 10 of the last 10 answers are YES  (window_rule.py, column >=10/10).
+
+ALSO REPORTED (comparisons, not the main claim):
+  qwen2.5vl:7b with the same rule (>=10/10);  both models with >=6/10;
+  original AgriVLN (base), tracker pi/6 + gate (q6last), classical counter (c6last);
+  fusion (VLM + detector) only after its code is frozen on garden_1..8.
+
+COLOUR TEST (added before running): the four targets have strong colours. Same frames, same model and
+  rule, asked twice: with the colour words (main) and with colour words removed (probe_arrival.py --no_color).
+  If false YES rises without colour, colour words help the model reject lookalikes.
+
+NOT ALLOWED after seeing results: changing instructions, labels, models, thresholds or the window.

@@ -1,0 +1,12 @@
+{
+  "instruction": "Walk forward, bearing slightly to the right, and stop when the orange traffic cone is right in front of you.",
+  "length": 18.0,
+  "orientation": "landscape",
+  "frame_size": [
+    1280,
+    720
+  ],
+  "target": "orange traffic cone",
+  "length_note": "fixed 18 m for all videos",
+  "split": "test"
+}

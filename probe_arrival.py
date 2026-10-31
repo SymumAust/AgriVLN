@@ -30,9 +30,13 @@ parser.add_argument("--every", type=int, default=1, help="use every n-th frame (
 parser.add_argument("--seed", type=int, default=42)
 parser.add_argument("--mode", choices=["yesno", "choice"], default="yesno",
                     help="yesno: 'is this true? YES/NO' (v2).  choice: 'A = still need to move forward, B = there now' (v3)")
+parser.add_argument("--no_color", action="store_true",
+                    help="colour test: remove colour words from the condition (same frames, same question otherwise)")
 parser.add_argument("--out", default=None, help="default: probe_results_v2.csv (yesno) / probe_results_v3.csv (choice)")
 args = parser.parse_args()
-args.out = args.out or ("probe_results_v2.csv" if args.mode == "yesno" else "probe_results_v3.csv")
+args.out = args.out or ("probe_results_nocolor.csv" if args.no_color else
+                        "probe_results_v2.csv" if args.mode == "yesno" else "probe_results_v3.csv")
+COLORS = r"\b(yellow-and-black|black-and-yellow|brown|blue|yellow|black|orange|red|green|white|grey|gray|terracotta)\b\s*"
 
 
 def tsec(path):
@@ -81,6 +85,8 @@ for model in args.models:
         _, _, arrival = split_instruction(info["instruction"])
         # v2 bug fix: "the robot" made models answer NO because no robot is visible in the image
         condition = re.sub(r"\byour\b", "the camera's", re.sub(r"\byou\b", "the camera", arrival))
+        if args.no_color:
+            condition = re.sub(r"\s{2,}", " ", re.sub(COLORS, "", condition, flags=re.I)).strip()
         frames = sorted(glob.glob(f"dataset/{ep}/frames/frame_*.jpg"), key=tsec)[::args.every]
         print(f"\n### {model} / {ep}: {len(frames)} frames, condition: \"{condition}\"")
         t0, answers = time.time(), []

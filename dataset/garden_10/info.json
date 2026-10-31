@@ -1,0 +1,12 @@
+{
+  "instruction": "Walk forward, then turn right and stop when the nearest yellow-and-black striped bollard is right in front of you.",
+  "length": 18.0,
+  "orientation": "landscape",
+  "frame_size": [
+    1280,
+    720
+  ],
+  "target": "yellow and black striped bollard",
+  "length_note": "fixed 18 m for all videos",
+  "split": "test"
+}

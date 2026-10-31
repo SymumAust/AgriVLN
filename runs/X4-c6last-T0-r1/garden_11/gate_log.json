@@ -1,0 +1,156 @@
+[
+   {
+      "time": "1'0",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "pending",
+         "doing",
+         "pending"
+      ]
+   },
+   {
+      "time": "1'2",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "pending",
+         "doing",
+         "pending"
+      ]
+   },
+   {
+      "time": "1'4",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "pending",
+         "doing",
+         "pending"
+      ]
+   },
+   {
+      "time": "1'6",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "pending",
+         "doing",
+         "pending"
+      ]
+   },
+   {
+      "time": "1'8",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "pending",
+         "doing",
+         "pending"
+      ]
+   },
+   {
+      "time": "2'0",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "pending",
+         "doing",
+         "pending"
+      ]
+   },
+   {
+      "time": "2'2",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "pending",
+         "done",
+         "pending"
+      ]
+   },
+   {
+      "time": "2'8",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "pending",
+         "done",
+         "doing"
+      ]
+   },
+   {
+      "time": "3'0",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "pending",
+         "done",
+         "doing"
+      ]
+   },
+   {
+      "time": "3'2",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "pending",
+         "done",
+         "doing"
+      ]
+   },
+   {
+      "time": "3'4",
+      "wanted": "[STOP]",
+      "executed": "[FORWARD]",
+      "blocked": true,
+      "kept": [
+         "pending",
+         "done",
+         "doing"
+      ]
+   },
+   {
+      "time": "3'6",
+      "wanted": "[STOP]",
+      "executed": "[STOP]",
+      "blocked": false,
+      "kept": [
+         "pending",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "3'8",
+      "wanted": "[STOP]",
+      "executed": "[STOP]",
+      "blocked": false,
+      "kept": [
+         "pending",
+         "done",
+         "done"
+      ]
+   },
+   {
+      "time": "4'0",
+      "wanted": "[STOP]",
+      "executed": "[STOP]",
+      "blocked": false,
+      "kept": [
+         "pending",
+         "done",
+         "done"
+      ]
+   }
+]

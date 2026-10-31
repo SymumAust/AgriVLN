@@ -1,0 +1,12 @@
+{
+  "instruction": "Walk forward, then turn right and stop when the blue metal pole is right in front of you.",
+  "length": 18.0,
+  "orientation": "landscape",
+  "frame_size": [
+    1280,
+    720
+  ],
+  "target": "blue metal pole",
+  "length_note": "fixed 18 m for all videos",
+  "split": "test"
+}

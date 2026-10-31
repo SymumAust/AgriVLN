@@ -1,0 +1,20 @@
+[
+   {
+      "step": 1,
+      "subtask": "Walk forward",
+      "start_condition": "always",
+      "end_condition": "after step 1 is complete"
+   },
+   {
+      "step": 2,
+      "subtask": "Turn right",
+      "start_condition": "after step 1 is complete",
+      "end_condition": "after step 2 is complete"
+   },
+   {
+      "step": 3,
+      "subtask": "Stop when the brown wooden planter box with black corners is right in front of you",
+      "start_condition": "after step 2 is complete",
+      "end_condition": "stop"
+   }
+]

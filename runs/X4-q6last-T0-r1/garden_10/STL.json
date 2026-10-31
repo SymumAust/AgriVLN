@@ -1,0 +1,20 @@
+[
+   {
+      "step": 1,
+      "subtask": "Walk forward",
+      "start_condition": "always",
+      "end_condition": "after walking forward"
+   },
+   {
+      "step": 2,
+      "subtask": "Turn right",
+      "start_condition": "after walking forward",
+      "end_condition": "after turning right"
+   },
+   {
+      "step": 3,
+      "subtask": "Stop when the nearest yellow-and-black striped bollard is right in front of you",
+      "start_condition": "after turning right",
+      "end_condition": "stop"
+   }
+]

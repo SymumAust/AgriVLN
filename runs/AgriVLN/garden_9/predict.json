@@ -1,0 +1,387 @@
+[
+   {
+      "time": "0'0",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path ahead with trees and bushes on the right. The subtask list indicates that the robot should walk forward first. Since the start condition for step 1 is always true, the robot should begin by moving forward. The path ahead is clear, and there are no obstacles in the immediate vicinity. The next step is to turn right, but this requires the blue metal pole to be visible, which is not the case in the current image. Therefore, the robot should proceed with the first subtask, which is to walk forward.",
+      "state": "Subtask NO.1 changes from pending to doing",
+      "judge": "True"
+   },
+   {
+      "time": "0'2",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path ahead and some greenery on the right. The subtask list indicates that the robot is currently in the process of walking forward (step 1). The next step is to turn right (step 2), which is currently in the pending state. The start condition for turning right is met because the robot is already moving forward. The end condition for turning right is to see the blue metal pole, which is not visible in the current image. Therefore, the robot should continue walking forward to reach the next subtask.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "0'4",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path with trees and bushes on the right side. The subtask list indicates that the robot is currently in the process of walking forward (step 1). The next step is to turn right (step 2), which is pending. The start condition for turning right is met because the robot is already moving forward. The end condition for turning right is to see the blue metal pole, which is not visible in the current image. Therefore, the robot should continue walking forward to reach the next subtask.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "0'6",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path ahead with trees and a bush with red berries on the right. The subtask list indicates that the robot is currently in the process of walking forward (step 1). The next step is to turn right (step 2), which is pending. The start condition for turning right is met because the robot is already moving forward. The end condition for turning right is to see the blue metal pole, which is not visible in the current image. Therefore, the robot should continue walking forward to reach the blue metal pole.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "0'8",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path with a bush in the foreground and trees in the background. The subtask list indicates that the robot is currently in the process of walking forward (step 1). The next subtask is to turn right (step 2), which is pending. The start condition for this subtask is that step 1 is complete, which it is, as the robot is already moving forward. The end condition is that the blue metal pole should be visible, but the image does not show the pole yet. Therefore, the robot should continue walking forward to reach the blue metal pole.",
+      "state": "Subtask NO.2 changes from pending to doing",
+      "judge": "True"
+   },
+   {
+      "time": "1'0",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path ahead with trees and bushes on the right. The subtask list indicates that the robot is currently in the process of walking forward (step 1). The next step is to turn right (step 2), which is the current subtask in the doing state. The end condition for this subtask is to see the blue metal pole, which is not visible in the current image. Therefore, the robot should continue walking forward to reach the next turning point where the blue metal pole might be visible.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "1'2",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path with a bush in the foreground and trees in the background. The subtask list indicates that the robot is currently in the process of walking forward (step 1). The next subtask is to turn right (step 2), which is currently in the doing state. The end condition for this subtask is to see the blue metal pole, which is not visible in the current image. Therefore, the robot should continue walking forward to reach the next subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "1'4",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path with a hedge on the right side. The subtask list indicates that the robot is currently in the process of walking forward (step 1). The next step is to turn right (step 2), which is the current subtask in the state of doing. The end condition for this subtask is to see the blue metal pole, which is not visible in the current image. Therefore, the robot should continue walking forward to reach the blue metal pole.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "1'6",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path with a bush in the foreground and trees in the background. The subtask list indicates that the robot is currently in the process of walking forward (step 1). The next step is to turn right (step 2), which is the current subtask in the \"doing\" state. The end condition for this subtask is to see the blue metal pole, which is not visible in the current image. Therefore, the robot should continue walking forward to reach the blue metal pole.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "1'8",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path with a tree and some red berries in the foreground. The subtask list indicates that the robot is currently in the process of walking forward (step 1). The next step is to turn right (step 2), which is the current subtask in the \"doing\" state. The end condition for this subtask is to see the blue metal pole, which is not visible in the current image. Therefore, the robot should continue walking forward to reach the blue metal pole.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "2'0",
+      "action": "[FORWARD]",
+      "thought": "The robot is currently in the process of walking forward as indicated by the subtask list. The camera image shows a path ahead with trees and a bush with red berries on the right. The blue metal pole mentioned in the subtask list is not visible in the current image, so the robot should continue walking forward. The next action should be to move forward to reach the blue metal pole, which is the next subtask in the list.",
+      "state": "Subtask NO.1 changes from doing to done",
+      "judge": "True"
+   },
+   {
+      "time": "2'2",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path with a bush in the foreground and trees in the background. The subtask list indicates that the robot should turn right and stop when the blue metal pole is visible. However, the image does not show the blue metal pole, so the subtask \"Turn right\" is still in the \"doing\" state. The robot should continue moving forward to reach the blue metal pole.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "2'4",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a path with trees and bushes on the right side. The subtask list indicates that the robot should turn right and stop when the blue metal pole is in front of it. The subtask \"Turn right\" is currently in the \"doing\" state, which means the robot is in the process of turning right. The next logical step is to continue this action until the blue metal pole is visible, at which point the subtask will be marked as \"done.\" The image does not show the blue metal pole yet, so the robot should continue turning right.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "2'6",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a path with a bush in the foreground and trees in the background. The subtask list indicates that the robot should turn right and stop when the blue metal pole is in front of it. The current state shows that the robot is in the process of turning right, as indicated by the \"doing\" state for subtask 2. The end condition for subtask 2 is \"blue metal pole visible,\" which suggests that the robot should continue turning right until the blue metal pole is in view. The current image does not show the blue metal pole, so the robot should continue turning right.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "2'8",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a path with trees and a bush in the foreground. The subtask list indicates that the robot should turn right and stop when the blue metal pole is in front of it. The current state shows that the robot is in the process of turning right, as indicated by the \"doing\" state for subtask 2. The end condition for subtask 2 is not yet met because the blue metal pole is not visible in the current image. Therefore, the robot should continue to turn right until the blue metal pole is visible.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "3'0",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a path with trees and bushes on the right side. The subtask list indicates that the robot should turn right and stop when the blue metal pole is in front of it. The current state shows that the robot is in the process of turning right, as indicated by the \"doing\" state of subtask 2. The next logical action is to continue this turn to the right, as the subtask is still in progress and the end condition (blue metal pole visible) has not been met yet.",
+      "state": "Subtask NO.2 changes from doing to done",
+      "judge": "False"
+   },
+   {
+      "time": "3'2",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path with a tree and some bushes on the right side. The subtask list indicates that the robot should turn right and stop when the blue metal pole is in front of it. However, the image does not show the blue metal pole, so the subtask for turning right and stopping is not yet applicable. The robot should continue moving forward to reach the blue metal pole.",
+      "state": "Subtask NO.3 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "3'4",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path ahead with trees on both sides. The subtask list indicates that the robot should walk forward, turn right, and stop when the blue metal pole is in front of it. The first subtask is already done, and the second subtask is also done as the robot has turned right. Now, the third subtask needs to be started, which is to stop when the blue metal pole is in front of the robot. However, the image does not show the blue metal pole, so the robot should continue moving forward to reach it.",
+      "state": "Subtask NO.3 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "3'6",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path with trees and bushes on either side. The subtask list indicates that the robot should turn right and stop when the blue metal pole is in front of it. The current state of the subtask list shows that the first subtask is done, and the second subtask is pending. The third subtask is pending and requires the blue metal pole to be visible. Since the blue metal pole is not visible in the current image, the robot should continue moving forward to reach the blue metal pole.",
+      "state": "Subtask NO.3 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "3'8",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path ahead with trees on both sides. The subtask list indicates that the robot should walk forward, turn right, and stop when the blue metal pole is in front of it. The first subtask is already done, and the second subtask is also done as the path continues straight ahead. The third subtask is pending, and the start condition is not yet satisfied because the blue metal pole is not visible in the current image. Therefore, the robot should continue walking forward.",
+      "state": "Subtask NO.3 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "4'0",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path ahead with trees and foliage on the sides. The subtask list indicates that the robot should walk forward, turn right, and stop when the blue metal pole is in front of it. The first subtask is already done, and the second subtask is also done as the path continues straight ahead. The third subtask is pending, and the start condition is not yet satisfied because the blue metal pole is not visible in the current image. Therefore, the robot should continue walking forward.",
+      "state": "Subtask NO.3 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "4'2",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path ahead with trees on both sides. The subtask list indicates that the robot should walk forward and then turn right. The path appears clear, and there is no immediate obstacle or object that would require stopping or turning right yet. The next logical action is to continue walking forward.",
+      "state": "Subtask NO.3 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "4'4",
+      "action": "[FORWARD]",
+      "thought": "The robot is currently on a path and needs to turn right to proceed towards the blue metal pole. The current image shows a path with trees and foliage on the right side, but no blue metal pole is visible yet. The next logical action is to move forward to continue the path and look for the blue metal pole.",
+      "state": "Subtask NO.3 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "4'6",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot is currently on a path and needs to turn right to proceed towards the blue metal pole. The current image shows a path with trees and foliage, but no blue metal pole is visible. The next logical action is to rotate the robot to the right to align with the path and continue moving forward.",
+      "state": "Subtask NO.2 changes from done to pending",
+      "judge": "False"
+   },
+   {
+      "time": "4'8",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a path ahead with trees on both sides. The subtask list indicates that the robot should turn right after completing the first subtask, which is already done. The next step is to turn right, as the start condition for the second subtask is met. The end condition for the second subtask is to see the blue metal pole, which is not visible in the current image. Therefore, the robot should proceed to turn right.",
+      "state": "Subtask NO.2 changes from pending to doing",
+      "judge": "False"
+   },
+   {
+      "time": "5'0",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot is currently in the process of turning right as per the subtask list. The camera image shows a path leading forward and a wall to the right, but no blue metal pole is visible yet. This suggests that the robot is still in the process of turning right and hasn't reached the end condition of the subtask yet. Therefore, the robot should continue to turn right until the blue metal pole is visible.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "5'2",
+      "action": "[FORWARD]",
+      "thought": "The robot is currently in the process of turning right as instructed by the subtask list. The camera image shows a path ahead and some trees on the right, but no blue metal pole is visible yet. The robot needs to continue moving forward to reach the blue metal pole, which is the next step in the subtask list.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "5'4",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a path with trees and a wall on the right side. The subtask list indicates that the robot should turn right and stop when the blue metal pole is in front of it. The current state shows that the robot is in the process of turning right, as indicated by the \"doing\" state of subtask 2. The next logical action is to continue turning right to align with the end condition of subtask 2, which is to stop when the blue metal pole is visible.",
+      "state": "Subtask NO.2 changes from doing to done",
+      "judge": "False"
+   },
+   {
+      "time": "5'6",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path with trees on both sides and a wall to the right. The subtask list indicates that the robot should turn right and stop when the blue metal pole is in front of it. However, the image does not show the blue metal pole, so the subtask for turning right and stopping is not yet applicable. The robot should continue moving forward to reach the blue metal pole.",
+      "state": "Subtask NO.3 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "5'8",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a path ahead and some trees on the right. The subtask list indicates that the robot should turn right after completing the first step. The start condition for the second subtask is met because the first step is done. The next action should be to turn right to align with the start condition of the second subtask.",
+      "state": "Subtask NO.2 changes from pending to doing",
+      "judge": "False"
+   },
+   {
+      "time": "6'0",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path with trees and a wall on the right side. The subtask list indicates that the robot should turn right and stop when the blue metal pole is in front of it. However, the image does not show a blue metal pole, so the subtask for turning right and stopping is not yet applicable. The robot should continue moving forward to reach the next subtask.",
+      "state": "Subtask NO.3 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "6'2",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a path with a tree on the right side and a wall on the left. The subtask list indicates that the robot should turn right after completing step 1. The start condition for step 2 is met since step 1 is done. The next action should be to turn right to align with the start condition of step 2.",
+      "state": "Subtask NO.2 changes from pending to doing",
+      "judge": "False"
+   },
+   {
+      "time": "6'4",
+      "action": "[STOP]",
+      "thought": "The robot is currently in the process of walking forward as indicated by the subtask list. The camera image shows a path ahead with trees and a blue metal pole visible in the distance. The subtask \"Turn right\" is already done, and the next step is to stop when the blue metal pole is directly in front of the robot. The blue metal pole is visible in the image, so the condition for the next subtask is met. Therefore, the robot should stop to complete the current subtask.",
+      "state": "Subtask NO.3 changes from pending to doing",
+      "judge": "False"
+   },
+   {
+      "time": "6'6",
+      "action": "[STOP]",
+      "thought": "The robot is currently in the process of turning right as per the subtask list. The blue metal pole is visible in the image, indicating that the robot has completed the turning action and is now stopped as per the end condition of the third subtask. Therefore, the state of the third subtask should be changed to done.",
+      "state": "Subtask NO.3 changes from doing to done",
+      "judge": "False"
+   },
+   {
+      "time": "6'8",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a path with trees and a wall on the right side. The subtask list indicates that the robot has already completed the first subtask (Walk forward) and is now at the second subtask (Turn right). The start condition for the second subtask is met because the robot is moving forward and needs to turn right. The next action should be to rotate the robot to the right to align with the path.",
+      "state": "Subtask NO.2 changes from pending to doing",
+      "judge": "False"
+   },
+   {
+      "time": "7'0",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path leading forward with trees on both sides. The subtask list indicates that the robot has already completed the first step of walking forward. The next step is to turn right, which is the second subtask. The start condition for this subtask is met because the first step has been completed. The end condition is to turn right until the blue metal pole is visible. Since the path is straight and there is no indication of a blue metal pole in the current image, the robot should continue moving forward to see if the blue metal pole appears further down the path.",
+      "state": "Subtask NO.2 keeps state of done",
+      "judge": "True"
+   },
+   {
+      "time": "7'2",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot has already completed the first subtask of walking forward, as indicated by the \"done\" state. The next step is to turn right, which is the second subtask. The current image shows a path with trees and a blue metal pole visible in the distance, suggesting that the robot is on the right path to complete the turn. The start condition for the second subtask is met, so the robot should proceed to the next action.",
+      "state": "Subtask NO.2 changes from pending to doing",
+      "judge": "False"
+   },
+   {
+      "time": "7'4",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path leading forward with trees on both sides. The blue metal pole mentioned in the subtask list is not visible in this image. The subtask list indicates that the robot should turn right after completing step 1, which is to walk forward. Since the path is straight and there are no visible obstacles or the blue metal pole, the next logical action is to continue walking forward.",
+      "state": "Subtask NO.2 keeps state of done",
+      "judge": "True"
+   },
+   {
+      "time": "7'6",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a path leading forward with trees on both sides. The subtask list indicates that the robot has already completed the first subtask (Walk forward) and is now at the second subtask (Turn right). The start condition for the second subtask is met because the blue metal pole is visible in the image. The next logical action is to rotate the robot to the right to align with the path leading to the blue metal pole.",
+      "state": "Subtask NO.2 changes from done to doing",
+      "judge": "False"
+   },
+   {
+      "time": "7'8",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot has already completed the first subtask of walking forward, as indicated by the \"done\" state. The current image shows the robot approaching a blue metal pole, which matches the start condition for the second subtask. The robot should now turn right to align with the blue metal pole. The end condition for the second subtask is met when the blue metal pole is visible directly in front of the robot.",
+      "state": "Subtask NO.2 changes from doing to done",
+      "judge": "False"
+   },
+   {
+      "time": "8'0",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot has already completed the first subtask of walking forward, as indicated by the \"done\" state. The next subtask is to turn right, and the current image shows a blue metal pole visible to the right. This means the robot should now focus on turning right to align with the next subtask's end condition.",
+      "state": "Subtask NO.2 changes from done to doing",
+      "judge": "False"
+   },
+   {
+      "time": "8'2",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot has already completed the first subtask of walking forward, as indicated by the \"done\" state. The current image shows the robot approaching a blue metal pole, which matches the start condition for the second subtask. The robot should now turn right to align with the blue metal pole. The end condition for the second subtask is met when the blue metal pole is visible directly in front of the robot.",
+      "state": "Subtask NO.2 changes from doing to done",
+      "judge": "False"
+   },
+   {
+      "time": "8'4",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot has already completed the first subtask of walking forward, as indicated by the \"done\" state. The next subtask is to turn right, and the current image shows a path leading forward with a blue metal pole visible to the right. The robot should now turn right to align with the blue metal pole.",
+      "state": "Subtask NO.2 changes from done to doing",
+      "judge": "False"
+   },
+   {
+      "time": "8'6",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a path leading forward with trees on both sides. The blue metal pole is visible to the right, indicating that the robot should turn right as per the subtask list. The subtask \"Turn right\" is currently in the \"doing\" state, which means the robot should continue moving forward until the blue metal pole is directly in front of it.",
+      "state": "Subtask NO.2 changes from doing to done",
+      "judge": "False"
+   },
+   {
+      "time": "8'8",
+      "action": "[FORWARD]",
+      "thought": "The robot has already completed the first subtask, \"Walk forward,\" as indicated by the \"done\" state. The next subtask is to \"Turn right,\" which requires the robot to rotate its body to the right. The current image shows a path with trees on both sides, and the blue metal pole is not visible yet, so the robot should continue moving forward to reach the blue metal pole.",
+      "state": "Subtask NO.2 keeps state of done",
+      "judge": "True"
+   },
+   {
+      "time": "9'0",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot is currently on a path and needs to turn right to proceed towards the blue metal pole. The current image shows a path with trees on both sides, and the blue metal pole is not visible yet. The next action should be to turn right to align with the path leading towards the pole.",
+      "state": "Subtask NO.2 changes from pending to doing",
+      "judge": "False"
+   },
+   {
+      "time": "9'2",
+      "action": "[FORWARD]",
+      "thought": "The robot has already completed the first subtask of walking forward, as indicated by the \"done\" state. The next subtask is to turn right, and the current image shows a path curving to the right, which suggests the robot is on the correct path to reach the blue metal pole. The start condition for the second subtask is met because the robot is already on the path. The end condition for the second subtask is to see the blue metal pole, which is not visible in the current image, so the robot should continue moving forward to reach the pole.",
+      "state": "Subtask NO.2 keeps state of done",
+      "judge": "True"
+   },
+   {
+      "time": "9'4",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot has already completed the first subtask of walking forward, as indicated by the \"done\" state. The next step is to turn right, which is the second subtask. The current image shows a path leading forward and a blue metal pole to the right, which aligns with the start condition for the second subtask. Therefore, the robot should proceed to turn right.",
+      "state": "Subtask NO.2 changes from done to doing",
+      "judge": "False"
+   },
+   {
+      "time": "9'6",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot has already completed the first subtask of walking forward, as indicated by the \"done\" state. The current subtask is to turn right, and the blue metal pole is visible in the image, which means the robot should now focus on completing the turn right subtask. The robot needs to rotate to the right to align with the blue metal pole.",
+      "state": "Subtask NO.2 changes from doing to done",
+      "judge": "False"
+   },
+   {
+      "time": "9'8",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot has already completed the first subtask of walking forward, as indicated by the \"done\" state. The next step is to turn right, which is the second subtask. The current image shows a path leading forward and a blue metal pole to the right, which aligns with the start condition for the second subtask. Therefore, the robot should proceed to turn right.",
+      "state": "Subtask NO.2 changes from pending to doing",
+      "judge": "False"
+   },
+   {
+      "time": "10'0",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot has already completed the first subtask of walking forward, as indicated by the \"done\" state. The next subtask is to turn right, and the current image shows a blue metal pole to the right, which means the robot should be ready to execute the turn right action. The end condition for this subtask is that the blue metal pole should be visible directly in front of the robot. Since the pole is visible, the robot should proceed to the next action, which is to turn right.",
+      "state": "Subtask NO.2 changes from done to doing",
+      "judge": "False"
+   },
+   {
+      "time": "10'2",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a path leading forward with a blue metal pole visible to the right. The subtask list indicates that the robot should turn right and stop when the blue metal pole is directly in front of it. Since the blue metal pole is visible and the robot is currently in the process of turning right, the next logical action is to continue moving forward to align with the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "10'4",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The robot has already completed the first subtask of walking forward, as indicated by the \"done\" state. The current subtask is to turn right, and the blue metal pole is visible in the image, which means the robot should now focus on completing this subtask. The robot needs to rotate to the right to align with the blue metal pole.",
+      "state": "Subtask NO.2 changes from doing to done",
+      "judge": "False"
+   },
+   {
+      "time": "10'6",
+      "action": "[RIGHT ROTATE]",
+      "thought": "The current camera image shows a view of a garden with a blue metal pole visible in the background. The subtask list indicates that the robot should turn right and stop when the blue metal pole is directly in front of it. Since the blue metal pole is visible, the next action should be to turn right to align with the subtask's end condition.",
+      "state": "Subtask NO.2 changes from done to doing",
+      "judge": "False"
+   },
+   {
+      "time": "10'8",
+      "action": "[STOP]",
+      "thought": "The current camera image shows a blue metal pole, which matches the end condition for the subtask \"Turn right\". This indicates that the robot has successfully completed the turn right action. Therefore, the next step should be to stop the robot as the blue metal pole is now directly in front of it, fulfilling the end condition for the subtask \"Stop when blue metal pole is right in front of you\".",
+      "state": "Subtask NO.3 changes from done to done",
+      "judge": "False"
+   }
+]
