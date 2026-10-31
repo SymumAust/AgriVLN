@@ -32,6 +32,8 @@ parser.add_argument("--mode", choices=["yesno", "choice"], default="yesno",
                     help="yesno: 'is this true? YES/NO' (v2).  choice: 'A = still need to move forward, B = there now' (v3)")
 parser.add_argument("--no_color", action="store_true",
                     help="colour test: remove colour words from the condition (same frames, same question otherwise)")
+parser.add_argument("--condition", default=None, help="diagnostic: use this arrival text instead of the one from info.json")
+parser.add_argument("--retry_empty", type=int, default=0, help="ask again (new seed) up to N times when the answer is empty/unclear")
 parser.add_argument("--out", default=None, help="default: probe_results_v2.csv (yesno) / probe_results_v3.csv (choice)")
 args = parser.parse_args()
 args.out = args.out or ("probe_results_nocolor.csv" if args.no_color else
@@ -63,6 +65,15 @@ def ask_choice(model, image, condition):
 
 
 def ask(model, image, condition):
+    a, raw = ask_once(model, image, condition, args.seed)
+    for k in range(args.retry_empty):
+        if a != "?":
+            break
+        a, raw = ask_once(model, image, condition, args.seed + 1 + k)
+    return a, raw
+
+
+def ask_once(model, image, condition, seed):
     if args.mode == "choice":
         return ask_choice(model, image, condition)
     q = ("This image comes from the front camera of a small ground robot. The camera is where the robot is.\n"
@@ -70,7 +81,7 @@ def ask(model, image, condition):
          "Seeing the object from a distance is NOT enough; it must be true exactly as written.\n"
          "Answer with one word: YES or NO.")
     r = ollama.chat(model=model, messages=[{"role": "user", "content": q, "images": [image]}],
-                    options={"temperature": 0, "seed": args.seed})
+                    options={"temperature": 0, "seed": seed})
     text = r["message"]["content"]
     m = re.findall(r"\b(yes|no)\b", text.lower())
     return (m[-1].upper() if m else "?"), text.strip().replace("\n", " ")[:200]
@@ -83,6 +94,8 @@ for model in args.models:
         labels = json.load(open(f"dataset/{ep}/label.json"))
         stop_t = next(l["time_range"][0] for l in labels if l["action"] == "[STOP]")
         _, _, arrival = split_instruction(info["instruction"])
+        if args.condition:
+            arrival = args.condition
         # v2 bug fix: "the robot" made models answer NO because no robot is visible in the image
         condition = re.sub(r"\byour\b", "the camera's", re.sub(r"\byou\b", "the camera", arrival))
         if args.no_color:

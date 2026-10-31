@@ -1,0 +1,81 @@
+model,episode,time,answer,truth,raw
+qwen3-vl:4b,garden_3,0.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,0.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,0.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,0.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,0.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,1.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,1.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,1.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,1.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,1.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,2.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,2.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,2.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,2.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,2.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,3.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,3.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,3.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,3.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,3.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,4.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,4.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,4.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,4.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,4.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,5.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,5.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,5.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,5.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,5.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,6.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,6.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,6.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,6.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,6.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,7.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,7.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,7.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,7.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,7.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,8.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,8.2,NO,not arrived,NO
+qwen3-vl:4b,garden_3,8.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,8.6,NO,not arrived,NO
+qwen3-vl:4b,garden_3,8.8,NO,not arrived,NO
+qwen3-vl:4b,garden_3,9.0,NO,not arrived,NO
+qwen3-vl:4b,garden_3,9.2,YES,not arrived,YES
+qwen3-vl:4b,garden_3,9.4,NO,not arrived,NO
+qwen3-vl:4b,garden_3,9.6,YES,not arrived,YES
+qwen3-vl:4b,garden_3,9.8,YES,not arrived,YES
+qwen3-vl:4b,garden_3,10.0,NO,last 2 s,NO
+qwen3-vl:4b,garden_3,10.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_3,10.4,YES,last 2 s,YES
+qwen3-vl:4b,garden_3,10.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_3,10.8,NO,last 2 s,NO
+qwen3-vl:4b,garden_3,11.0,NO,last 2 s,NO
+qwen3-vl:4b,garden_3,11.2,YES,last 2 s,YES
+qwen3-vl:4b,garden_3,11.4,NO,last 2 s,NO
+qwen3-vl:4b,garden_3,11.6,YES,last 2 s,YES
+qwen3-vl:4b,garden_3,11.8,?,last 2 s,
+qwen3-vl:4b,garden_3,12.0,YES,arrived,YES
+qwen3-vl:4b,garden_3,12.2,YES,arrived,YES
+qwen3-vl:4b,garden_3,12.4,YES,arrived,YES
+qwen3-vl:4b,garden_3,12.6,?,arrived,
+qwen3-vl:4b,garden_3,12.8,NO,arrived,NO
+qwen3-vl:4b,garden_3,13.0,YES,arrived,YES
+qwen3-vl:4b,garden_3,13.2,YES,arrived,YES
+qwen3-vl:4b,garden_3,13.4,NO,arrived,NO
+qwen3-vl:4b,garden_3,13.6,YES,arrived,YES
+qwen3-vl:4b,garden_3,13.8,?,arrived,
+qwen3-vl:4b,garden_3,14.0,YES,arrived,YES
+qwen3-vl:4b,garden_3,14.2,YES,arrived,YES
+qwen3-vl:4b,garden_3,14.4,YES,arrived,YES
+qwen3-vl:4b,garden_3,14.6,YES,arrived,YES
+qwen3-vl:4b,garden_3,14.8,YES,arrived,YES
+qwen3-vl:4b,garden_3,15.0,?,arrived,
+qwen3-vl:4b,garden_3,15.2,YES,arrived,YES
+qwen3-vl:4b,garden_3,15.4,YES,arrived,YES
+qwen3-vl:4b,garden_3,15.6,YES,arrived,YES
+qwen3-vl:4b,garden_3,15.8,YES,arrived,YES
