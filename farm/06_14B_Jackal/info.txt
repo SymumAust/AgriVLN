@@ -1,0 +1,14 @@
+camera /zed-left: 3022 messages, format 'h264'
+GPS /gnss: 3024 fixes
+/ground-truth.plot example: {"x": 0.0, "y": -0.0, "z": 0.0}
+/sequence text: timestamp {
+  seconds: 1689715775
+  nanos: 788000000
+}
+data: "field 14B: 06_14B_Jackal"
+
+decoding try 1: exit 0, 3022 frames
+decoded 3022 frames from 3022 messages
+kept 1511 frames at 5 Hz, path driven 354.6 m, saved farm/06_14B_Jackal/frames.csv
+contact sheets: farm/06_14B_Jackal/sheets/ (26 sheets, 60 frames = 12 s each)
+trajectory: farm/06_14B_Jackal/trajectory.png

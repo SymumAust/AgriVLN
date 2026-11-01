@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
-*.bak
+*.bakfarm/*/frames/
+farm/*/frames/
+farm/*/_all/
