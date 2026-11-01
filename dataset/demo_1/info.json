@@ -1,0 +1,9 @@
+{
+  "instruction": "Walk along the orchard path and stop when the red apple is right in front of you.",
+  "length": 18.0,
+  "orientation": "landscape",
+  "frame_size": [
+    1280,
+    720
+  ]
+}

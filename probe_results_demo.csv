@@ -1,0 +1,153 @@
+model,episode,time,answer,truth,raw
+qwen3-vl:4b,demo_1,0.0,NO,not arrived,NO
+qwen3-vl:4b,demo_1,0.2,NO,not arrived,NO
+qwen3-vl:4b,demo_1,0.4,NO,not arrived,NO
+qwen3-vl:4b,demo_1,0.6,NO,not arrived,NO
+qwen3-vl:4b,demo_1,0.8,NO,not arrived,NO
+qwen3-vl:4b,demo_1,1.0,NO,not arrived,NO
+qwen3-vl:4b,demo_1,1.2,NO,not arrived,NO
+qwen3-vl:4b,demo_1,1.4,NO,not arrived,NO
+qwen3-vl:4b,demo_1,1.6,NO,not arrived,NO
+qwen3-vl:4b,demo_1,1.8,NO,not arrived,NO
+qwen3-vl:4b,demo_1,2.0,NO,not arrived,NO
+qwen3-vl:4b,demo_1,2.2,NO,not arrived,NO
+qwen3-vl:4b,demo_1,2.4,NO,not arrived,NO
+qwen3-vl:4b,demo_1,2.6,NO,not arrived,NO
+qwen3-vl:4b,demo_1,2.8,NO,not arrived,NO
+qwen3-vl:4b,demo_1,3.0,NO,not arrived,NO
+qwen3-vl:4b,demo_1,3.2,NO,not arrived,NO
+qwen3-vl:4b,demo_1,3.4,NO,not arrived,NO
+qwen3-vl:4b,demo_1,3.6,NO,not arrived,NO
+qwen3-vl:4b,demo_1,3.8,NO,not arrived,NO
+qwen3-vl:4b,demo_1,4.0,NO,not arrived,NO
+qwen3-vl:4b,demo_1,4.2,NO,not arrived,NO
+qwen3-vl:4b,demo_1,4.4,NO,not arrived,NO
+qwen3-vl:4b,demo_1,4.6,NO,not arrived,NO
+qwen3-vl:4b,demo_1,4.8,NO,not arrived,NO
+qwen3-vl:4b,demo_1,5.0,NO,not arrived,NO
+qwen3-vl:4b,demo_1,5.2,NO,not arrived,NO
+qwen3-vl:4b,demo_1,5.4,NO,not arrived,NO
+qwen3-vl:4b,demo_1,5.6,NO,not arrived,NO
+qwen3-vl:4b,demo_1,5.8,NO,not arrived,NO
+qwen3-vl:4b,demo_1,6.0,NO,not arrived,NO
+qwen3-vl:4b,demo_1,6.2,NO,not arrived,NO
+qwen3-vl:4b,demo_1,6.4,NO,not arrived,NO
+qwen3-vl:4b,demo_1,6.6,NO,not arrived,NO
+qwen3-vl:4b,demo_1,6.8,NO,not arrived,NO
+qwen3-vl:4b,demo_1,7.0,NO,not arrived,NO
+qwen3-vl:4b,demo_1,7.2,NO,not arrived,NO
+qwen3-vl:4b,demo_1,7.4,NO,not arrived,NO
+qwen3-vl:4b,demo_1,7.6,NO,not arrived,NO
+qwen3-vl:4b,demo_1,7.8,NO,not arrived,NO
+qwen3-vl:4b,demo_1,8.0,NO,not arrived,NO
+qwen3-vl:4b,demo_1,8.2,NO,not arrived,NO
+qwen3-vl:4b,demo_1,8.4,NO,not arrived,NO
+qwen3-vl:4b,demo_1,8.6,NO,not arrived,NO
+qwen3-vl:4b,demo_1,8.8,NO,not arrived,NO
+qwen3-vl:4b,demo_1,9.0,NO,not arrived,NO
+qwen3-vl:4b,demo_1,9.2,NO,not arrived,NO
+qwen3-vl:4b,demo_1,9.4,YES,not arrived,YES
+qwen3-vl:4b,demo_1,9.6,YES,not arrived,YES
+qwen3-vl:4b,demo_1,9.8,YES,not arrived,YES
+qwen3-vl:4b,demo_1,10.0,YES,not arrived,YES
+qwen3-vl:4b,demo_1,10.2,YES,last 2 s,YES
+qwen3-vl:4b,demo_1,10.4,YES,last 2 s,YES
+qwen3-vl:4b,demo_1,10.6,YES,last 2 s,YES
+qwen3-vl:4b,demo_1,10.8,YES,last 2 s,YES
+qwen3-vl:4b,demo_1,11.0,YES,last 2 s,YES
+qwen3-vl:4b,demo_1,11.2,YES,last 2 s,YES
+qwen3-vl:4b,demo_1,11.4,YES,last 2 s,YES
+qwen3-vl:4b,demo_1,11.6,YES,last 2 s,YES
+qwen3-vl:4b,demo_1,11.8,YES,last 2 s,YES
+qwen3-vl:4b,demo_1,12.0,YES,last 2 s,YES
+qwen3-vl:4b,demo_1,12.2,YES,arrived,YES
+qwen3-vl:4b,demo_1,12.4,YES,arrived,YES
+qwen3-vl:4b,demo_1,12.6,YES,arrived,YES
+qwen3-vl:4b,demo_1,12.8,YES,arrived,YES
+qwen3-vl:4b,demo_1,13.0,YES,arrived,YES
+qwen3-vl:4b,demo_1,13.2,YES,arrived,YES
+qwen3-vl:4b,demo_1,13.4,YES,arrived,YES
+qwen3-vl:4b,demo_1,13.6,YES,arrived,YES
+qwen3-vl:4b,demo_1,13.8,YES,arrived,YES
+qwen3-vl:4b,demo_1,14.0,YES,arrived,YES
+qwen3-vl:4b,demo_1,14.2,YES,arrived,YES
+qwen3-vl:4b,demo_1,14.4,YES,arrived,YES
+qwen3-vl:4b,demo_1,14.6,YES,arrived,YES
+qwen3-vl:4b,demo_1,14.8,YES,arrived,YES
+qwen3-vl:4b,demo_1,15.0,YES,arrived,YES
+qwen2.5vl:7b,demo_1,0.0,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,0.2,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,0.4,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,0.6,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,0.8,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,1.0,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,1.2,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,1.4,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,3.0,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,3.2,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,3.4,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,3.6,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,3.8,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,4.0,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,4.2,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,4.4,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,4.6,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,4.8,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,5.0,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,5.2,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,5.4,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,5.6,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,5.8,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,6.0,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,6.2,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,6.4,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,6.6,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,6.8,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,7.0,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,7.2,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,7.4,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,7.6,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,7.8,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,8.0,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,8.2,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,8.4,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,8.6,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,8.8,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,9.0,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,9.2,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,9.4,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,9.6,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,9.8,NO,not arrived,NO.
+qwen2.5vl:7b,demo_1,10.0,YES,not arrived,YES.
+qwen2.5vl:7b,demo_1,10.2,YES,last 2 s,YES.
+qwen2.5vl:7b,demo_1,10.4,YES,last 2 s,YES.
+qwen2.5vl:7b,demo_1,10.6,NO,last 2 s,NO.
+qwen2.5vl:7b,demo_1,10.8,YES,last 2 s,YES
+qwen2.5vl:7b,demo_1,11.0,YES,last 2 s,YES
+qwen2.5vl:7b,demo_1,11.2,YES,last 2 s,YES.
+qwen2.5vl:7b,demo_1,11.4,YES,last 2 s,YES.
+qwen2.5vl:7b,demo_1,11.6,YES,last 2 s,YES.
+qwen2.5vl:7b,demo_1,11.8,YES,last 2 s,YES.
+qwen2.5vl:7b,demo_1,12.0,NO,last 2 s,NO.
+qwen2.5vl:7b,demo_1,12.2,NO,arrived,NO.
+qwen2.5vl:7b,demo_1,12.4,NO,arrived,NO.
+qwen2.5vl:7b,demo_1,12.6,YES,arrived,YES.
+qwen2.5vl:7b,demo_1,12.8,YES,arrived,YES.
+qwen2.5vl:7b,demo_1,13.0,YES,arrived,YES.
+qwen2.5vl:7b,demo_1,13.2,YES,arrived,YES.
+qwen2.5vl:7b,demo_1,13.4,NO,arrived,NO.
+qwen2.5vl:7b,demo_1,13.6,YES,arrived,YES.
+qwen2.5vl:7b,demo_1,13.8,NO,arrived,NO.
+qwen2.5vl:7b,demo_1,14.0,YES,arrived,YES
+qwen2.5vl:7b,demo_1,14.2,NO,arrived,NO.
+qwen2.5vl:7b,demo_1,14.4,NO,arrived,NO.
+qwen2.5vl:7b,demo_1,14.6,NO,arrived,NO.
+qwen2.5vl:7b,demo_1,14.8,NO,arrived,NO.
+qwen2.5vl:7b,demo_1,15.0,NO,arrived,NO.
