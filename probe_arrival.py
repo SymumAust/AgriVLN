@@ -33,6 +33,8 @@ parser.add_argument("--mode", choices=["yesno", "choice"], default="yesno",
 parser.add_argument("--no_color", action="store_true",
                     help="colour test: remove colour words from the condition (same frames, same question otherwise)")
 parser.add_argument("--condition", default=None, help="diagnostic: use this arrival text instead of the one from info.json")
+parser.add_argument("--think", choices=["default", "off"], default="default",
+                    help="off: ask Ollama not to use the model's thinking mode (fix for blank answers from qwen3-vl)")
 parser.add_argument("--retry_empty", type=int, default=0, help="ask again (new seed) up to N times when the answer is empty/unclear")
 parser.add_argument("--out", default=None, help="default: probe_results_v2.csv (yesno) / probe_results_v3.csv (choice)")
 args = parser.parse_args()
@@ -80,11 +82,15 @@ def ask_once(model, image, condition, seed):
          f"Is the following true in this image right now: \"{condition}\"?\n"
          "Seeing the object from a distance is NOT enough; it must be true exactly as written.\n"
          "Answer with one word: YES or NO.")
+    extra = {"think": False} if args.think == "off" else {}
     r = ollama.chat(model=model, messages=[{"role": "user", "content": q, "images": [image]}],
-                    options={"temperature": 0, "seed": seed})
-    text = r["message"]["content"]
+                    options={"temperature": 0, "seed": seed}, **extra)
+    text = r["message"]["content"] or ""
     m = re.findall(r"\b(yes|no)\b", text.lower())
-    return (m[-1].upper() if m else "?"), text.strip().replace("\n", " ")[:200]
+    if not m:   # keep a trace of WHY it was empty, for the record
+        thinking = getattr(r["message"], "thinking", None) or ""
+        return "?", f"[empty; done_reason={getattr(r, 'done_reason', None)}; thinking {len(thinking)} chars] " + text.strip()[:150]
+    return m[-1].upper(), text.strip().replace("\n", " ")[:200]
 
 
 rows, summary = [], []

@@ -1,0 +1,16 @@
+PLAN: fix the blank answers of qwen3-vl:4b   (written 2 Nov 2026, before running the fix)
+
+Problem: qwen3-vl:4b sometimes returns an empty answer (19 frames in garden_1..12, 11 of them in garden_3;
+9 in farm_1, 8 in farm_5, 1 in farm_8). A blank counts as "not YES" and resets the 10/10 vote.
+Suspected cause: Ollama's thinking mode; the reasoning goes to a separate field and the answer field stays empty.
+
+Step 1  blank_check.py: re-ask the blank frames with thinking on (default) and off; record what Ollama returns.
+Step 2  development check, garden_1..8 only: probe_arrival.py --think off  ->  probe_results_thinkoff.csv
+ACCEPT the fix only if BOTH:
+  (a) blank answers on garden_1..8 drop from 14 to at most 2, and
+  (b) 10/10 vote successes on garden_1..8 are not lower than now (6/8).
+Step 3  if accepted: run the same setting once on garden_9..12 and farm_1..8. Report as "fixed version" NEXT TO the
+  pre-registered results (garden test 4/4, farm 0/5 and 2/3), which stay as they are.
+If not accepted: keep the current setting; blanks remain a known limitation.
+
+Nothing else changes: same question, same model, temperature 0, seed 42, same vote rule.
