@@ -1,0 +1,16 @@
+[
+  {
+    "time_range": [
+      0.0,
+      20.0
+    ],
+    "action": "[FORWARD]"
+  },
+  {
+    "time_range": [
+      20.0,
+      24.2
+    ],
+    "action": "[STOP]"
+  }
+]

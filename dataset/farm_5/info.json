@@ -1,0 +1,12 @@
+{
+  "instruction": "Drive forward and stop when the white concrete block is right beside you on the left.",
+  "length": 24.42,
+  "orientation": "landscape",
+  "frame_size": [
+    1280,
+    720
+  ],
+  "source": "CitrusFarm 06_14B_Jackal, frames 660-780, stop frame 760",
+  "split": "farm-test",
+  "length_note": "RTK GPS distance from the first frame to the stop frame"
+}

@@ -1,0 +1,21 @@
+PRE-REGISTERED PLAN: farm_1 .. farm_5   (written 1 Nov 2026, before any model was run on the CitrusFarm data)
+
+Source: CitrusFarm sample, drive 06_14B_Jackal (UC Riverside citrus orchard, Clearpath Jackal robot, ZED left camera).
+Episodes: 20 s before the stop frame + 4 s after it, 5 frames per second (farm_episodes.py).
+Stop frames chosen from the contact sheets by eye before any model was run:
+  farm_1  #339   end of row 1     "Drive along the tree row and stop when the trees on both sides are behind you."
+  farm_2  #708   end of row 2     (same instruction)
+  farm_3  #1082  end of row 3     (same instruction)
+  farm_4  #1468  end of row 4     (same instruction)
+  farm_5  #760   white block      "Drive forward and stop when the white concrete block is right beside you on the left."
+  skipped: wooden utility pole after row 1 (the robot turns away before reaching it)
+
+Scoring (farm_score.py): stop error = RTK GPS distance between our stop and the labelled stop frame,
+  signed (- early, + late). Success = |error| < 2 m. No stop = failure.
+
+MAIN METHOD (unchanged from the garden test): qwen3-vl:4b, plain YES/NO arrival question with "the camera" wording
+  (probe_arrival.py, yesno mode), STOP when 10 of the last 10 answers are YES.
+ALSO REPORTED: qwen2.5vl:7b with the same rule; both models with >=6/10; original AgriVLN (base).
+
+NOT ALLOWED after seeing results: changing instructions, stop frames, models, thresholds or the window.
+Allowed before running: correcting a stop frame after checking farm_preview.jpg (record the change here).
