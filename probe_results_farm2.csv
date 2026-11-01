@@ -1,0 +1,487 @@
+model,episode,time,answer,truth,raw
+qwen3-vl:4b,farm_6,0.0,NO,not arrived,NO
+qwen3-vl:4b,farm_6,0.2,NO,not arrived,NO
+qwen3-vl:4b,farm_6,0.4,NO,not arrived,NO
+qwen3-vl:4b,farm_6,0.6,NO,not arrived,NO
+qwen3-vl:4b,farm_6,0.8,NO,not arrived,NO
+qwen3-vl:4b,farm_6,1.0,NO,not arrived,NO
+qwen3-vl:4b,farm_6,1.2,NO,not arrived,NO
+qwen3-vl:4b,farm_6,1.4,NO,not arrived,NO
+qwen3-vl:4b,farm_6,1.6,NO,not arrived,NO
+qwen3-vl:4b,farm_6,1.8,NO,not arrived,NO
+qwen3-vl:4b,farm_6,2.0,NO,not arrived,NO
+qwen3-vl:4b,farm_6,2.2,NO,not arrived,NO
+qwen3-vl:4b,farm_6,2.4,NO,not arrived,NO
+qwen3-vl:4b,farm_6,2.6,NO,not arrived,NO
+qwen3-vl:4b,farm_6,2.8,NO,not arrived,NO
+qwen3-vl:4b,farm_6,3.0,NO,not arrived,NO
+qwen3-vl:4b,farm_6,3.2,NO,not arrived,NO
+qwen3-vl:4b,farm_6,3.4,NO,not arrived,NO
+qwen3-vl:4b,farm_6,3.6,NO,not arrived,NO
+qwen3-vl:4b,farm_6,3.8,NO,not arrived,NO
+qwen3-vl:4b,farm_6,4.0,NO,not arrived,NO
+qwen3-vl:4b,farm_6,4.2,NO,not arrived,NO
+qwen3-vl:4b,farm_6,4.4,NO,not arrived,NO
+qwen3-vl:4b,farm_6,4.6,NO,not arrived,NO
+qwen3-vl:4b,farm_6,4.8,NO,not arrived,NO
+qwen3-vl:4b,farm_6,5.0,NO,not arrived,NO
+qwen3-vl:4b,farm_6,5.2,NO,not arrived,NO
+qwen3-vl:4b,farm_6,5.4,NO,not arrived,NO
+qwen3-vl:4b,farm_6,5.6,NO,not arrived,NO
+qwen3-vl:4b,farm_6,5.8,NO,not arrived,NO
+qwen3-vl:4b,farm_6,6.0,NO,not arrived,NO
+qwen3-vl:4b,farm_6,6.2,NO,not arrived,NO
+qwen3-vl:4b,farm_6,6.4,NO,not arrived,NO
+qwen3-vl:4b,farm_6,6.6,NO,not arrived,NO
+qwen3-vl:4b,farm_6,6.8,NO,not arrived,NO
+qwen3-vl:4b,farm_6,7.0,NO,not arrived,NO
+qwen3-vl:4b,farm_6,7.2,NO,not arrived,NO
+qwen3-vl:4b,farm_6,7.4,NO,not arrived,NO
+qwen3-vl:4b,farm_6,7.6,NO,not arrived,NO
+qwen3-vl:4b,farm_6,7.8,NO,not arrived,NO
+qwen3-vl:4b,farm_6,8.0,NO,not arrived,NO
+qwen3-vl:4b,farm_6,8.2,NO,not arrived,NO
+qwen3-vl:4b,farm_6,8.4,NO,not arrived,NO
+qwen3-vl:4b,farm_6,8.6,NO,not arrived,NO
+qwen3-vl:4b,farm_6,8.8,NO,not arrived,NO
+qwen3-vl:4b,farm_6,9.0,NO,not arrived,NO
+qwen3-vl:4b,farm_6,9.2,NO,not arrived,NO
+qwen3-vl:4b,farm_6,9.4,NO,not arrived,NO
+qwen3-vl:4b,farm_6,9.6,NO,not arrived,NO
+qwen3-vl:4b,farm_6,9.8,NO,not arrived,NO
+qwen3-vl:4b,farm_6,10.0,NO,last 2 s,NO
+qwen3-vl:4b,farm_6,10.2,NO,last 2 s,NO
+qwen3-vl:4b,farm_6,10.4,NO,last 2 s,NO
+qwen3-vl:4b,farm_6,10.6,NO,last 2 s,NO
+qwen3-vl:4b,farm_6,10.8,NO,last 2 s,NO
+qwen3-vl:4b,farm_6,11.0,NO,last 2 s,NO
+qwen3-vl:4b,farm_6,11.2,NO,last 2 s,NO
+qwen3-vl:4b,farm_6,11.4,NO,last 2 s,NO
+qwen3-vl:4b,farm_6,11.6,YES,last 2 s,YES
+qwen3-vl:4b,farm_6,11.8,YES,last 2 s,YES
+qwen3-vl:4b,farm_6,12.0,YES,arrived,YES
+qwen3-vl:4b,farm_6,12.2,YES,arrived,YES
+qwen3-vl:4b,farm_6,12.4,YES,arrived,YES
+qwen3-vl:4b,farm_6,12.6,YES,arrived,YES
+qwen3-vl:4b,farm_6,12.8,YES,arrived,YES
+qwen3-vl:4b,farm_6,13.0,YES,arrived,YES
+qwen3-vl:4b,farm_6,13.2,YES,arrived,YES
+qwen3-vl:4b,farm_6,13.4,YES,arrived,YES
+qwen3-vl:4b,farm_6,13.6,YES,arrived,YES
+qwen3-vl:4b,farm_6,13.8,YES,arrived,YES
+qwen3-vl:4b,farm_6,14.0,YES,arrived,YES
+qwen3-vl:4b,farm_6,14.2,YES,arrived,YES
+qwen3-vl:4b,farm_6,14.4,YES,arrived,YES
+qwen3-vl:4b,farm_6,14.6,YES,arrived,YES
+qwen3-vl:4b,farm_6,14.8,YES,arrived,YES
+qwen3-vl:4b,farm_6,15.0,YES,arrived,YES
+qwen3-vl:4b,farm_6,15.2,YES,arrived,YES
+qwen3-vl:4b,farm_6,15.4,YES,arrived,YES
+qwen3-vl:4b,farm_6,15.6,YES,arrived,YES
+qwen3-vl:4b,farm_6,15.8,YES,arrived,YES
+qwen3-vl:4b,farm_6,16.0,YES,arrived,YES
+qwen3-vl:4b,farm_7,0.0,NO,not arrived,NO
+qwen3-vl:4b,farm_7,0.2,NO,not arrived,NO
+qwen3-vl:4b,farm_7,0.4,NO,not arrived,NO
+qwen3-vl:4b,farm_7,0.6,?,not arrived,
+qwen3-vl:4b,farm_7,0.8,NO,not arrived,NO
+qwen3-vl:4b,farm_7,1.0,?,not arrived,
+qwen3-vl:4b,farm_7,1.2,NO,not arrived,NO
+qwen3-vl:4b,farm_7,1.4,NO,not arrived,NO
+qwen3-vl:4b,farm_7,1.6,NO,not arrived,NO
+qwen3-vl:4b,farm_7,1.8,NO,not arrived,NO
+qwen3-vl:4b,farm_7,2.0,NO,not arrived,NO
+qwen3-vl:4b,farm_7,2.2,NO,not arrived,NO
+qwen3-vl:4b,farm_7,2.4,NO,not arrived,NO
+qwen3-vl:4b,farm_7,2.6,NO,not arrived,NO
+qwen3-vl:4b,farm_7,2.8,NO,not arrived,NO
+qwen3-vl:4b,farm_7,3.0,NO,not arrived,NO
+qwen3-vl:4b,farm_7,3.2,NO,not arrived,NO
+qwen3-vl:4b,farm_7,3.4,NO,not arrived,NO
+qwen3-vl:4b,farm_7,3.6,?,not arrived,
+qwen3-vl:4b,farm_7,3.8,NO,not arrived,NO
+qwen3-vl:4b,farm_7,4.0,NO,not arrived,NO
+qwen3-vl:4b,farm_7,4.2,NO,not arrived,NO
+qwen3-vl:4b,farm_7,4.4,NO,not arrived,NO
+qwen3-vl:4b,farm_7,4.6,NO,not arrived,NO
+qwen3-vl:4b,farm_7,4.8,NO,not arrived,NO
+qwen3-vl:4b,farm_7,5.0,NO,not arrived,NO
+qwen3-vl:4b,farm_7,5.2,NO,not arrived,NO
+qwen3-vl:4b,farm_7,5.4,NO,not arrived,NO
+qwen3-vl:4b,farm_7,5.6,NO,not arrived,NO
+qwen3-vl:4b,farm_7,5.8,NO,not arrived,NO
+qwen3-vl:4b,farm_7,6.0,NO,not arrived,NO
+qwen3-vl:4b,farm_7,6.2,?,not arrived,
+qwen3-vl:4b,farm_7,6.4,NO,not arrived,NO
+qwen3-vl:4b,farm_7,6.6,NO,not arrived,NO
+qwen3-vl:4b,farm_7,6.8,NO,not arrived,NO
+qwen3-vl:4b,farm_7,7.0,NO,not arrived,NO
+qwen3-vl:4b,farm_7,7.2,?,not arrived,
+qwen3-vl:4b,farm_7,7.4,NO,not arrived,NO
+qwen3-vl:4b,farm_7,7.6,NO,not arrived,NO
+qwen3-vl:4b,farm_7,7.8,NO,not arrived,NO
+qwen3-vl:4b,farm_7,8.0,NO,not arrived,NO
+qwen3-vl:4b,farm_7,8.2,NO,not arrived,NO
+qwen3-vl:4b,farm_7,8.4,NO,not arrived,NO
+qwen3-vl:4b,farm_7,8.6,NO,not arrived,NO
+qwen3-vl:4b,farm_7,8.8,NO,not arrived,NO
+qwen3-vl:4b,farm_7,9.0,NO,not arrived,NO
+qwen3-vl:4b,farm_7,9.2,NO,not arrived,NO
+qwen3-vl:4b,farm_7,9.4,NO,not arrived,NO
+qwen3-vl:4b,farm_7,9.6,NO,not arrived,NO
+qwen3-vl:4b,farm_7,9.8,NO,not arrived,NO
+qwen3-vl:4b,farm_7,10.0,YES,last 2 s,YES
+qwen3-vl:4b,farm_7,10.2,NO,last 2 s,NO
+qwen3-vl:4b,farm_7,10.4,NO,last 2 s,NO
+qwen3-vl:4b,farm_7,10.6,NO,last 2 s,NO
+qwen3-vl:4b,farm_7,10.8,NO,last 2 s,NO
+qwen3-vl:4b,farm_7,11.0,NO,last 2 s,NO
+qwen3-vl:4b,farm_7,11.2,NO,last 2 s,NO
+qwen3-vl:4b,farm_7,11.4,NO,last 2 s,NO
+qwen3-vl:4b,farm_7,11.6,YES,last 2 s,YES
+qwen3-vl:4b,farm_7,11.8,YES,last 2 s,YES
+qwen3-vl:4b,farm_7,12.0,YES,arrived,YES
+qwen3-vl:4b,farm_7,12.2,YES,arrived,YES
+qwen3-vl:4b,farm_7,12.4,YES,arrived,YES
+qwen3-vl:4b,farm_7,12.6,YES,arrived,YES
+qwen3-vl:4b,farm_7,12.8,YES,arrived,YES
+qwen3-vl:4b,farm_7,13.0,YES,arrived,YES
+qwen3-vl:4b,farm_7,13.2,YES,arrived,YES
+qwen3-vl:4b,farm_7,13.4,YES,arrived,YES
+qwen3-vl:4b,farm_7,13.6,YES,arrived,YES
+qwen3-vl:4b,farm_7,13.8,YES,arrived,YES
+qwen3-vl:4b,farm_7,14.0,YES,arrived,YES
+qwen3-vl:4b,farm_7,14.2,YES,arrived,YES
+qwen3-vl:4b,farm_7,14.4,YES,arrived,YES
+qwen3-vl:4b,farm_7,14.6,YES,arrived,YES
+qwen3-vl:4b,farm_7,14.8,YES,arrived,YES
+qwen3-vl:4b,farm_7,15.0,YES,arrived,YES
+qwen3-vl:4b,farm_7,15.2,YES,arrived,YES
+qwen3-vl:4b,farm_7,15.4,YES,arrived,YES
+qwen3-vl:4b,farm_7,15.6,YES,arrived,YES
+qwen3-vl:4b,farm_7,15.8,YES,arrived,YES
+qwen3-vl:4b,farm_7,16.0,YES,arrived,YES
+qwen3-vl:4b,farm_8,0.0,NO,not arrived,NO
+qwen3-vl:4b,farm_8,0.2,NO,not arrived,NO
+qwen3-vl:4b,farm_8,0.4,NO,not arrived,NO
+qwen3-vl:4b,farm_8,0.6,NO,not arrived,NO
+qwen3-vl:4b,farm_8,0.8,NO,not arrived,NO
+qwen3-vl:4b,farm_8,1.0,NO,not arrived,NO
+qwen3-vl:4b,farm_8,1.2,NO,not arrived,NO
+qwen3-vl:4b,farm_8,1.4,NO,not arrived,NO
+qwen3-vl:4b,farm_8,1.6,NO,not arrived,NO
+qwen3-vl:4b,farm_8,1.8,NO,not arrived,NO
+qwen3-vl:4b,farm_8,2.0,NO,not arrived,NO
+qwen3-vl:4b,farm_8,2.2,NO,not arrived,NO
+qwen3-vl:4b,farm_8,2.4,NO,not arrived,NO
+qwen3-vl:4b,farm_8,2.6,NO,not arrived,NO
+qwen3-vl:4b,farm_8,2.8,NO,not arrived,NO
+qwen3-vl:4b,farm_8,3.0,NO,not arrived,NO
+qwen3-vl:4b,farm_8,3.2,NO,not arrived,NO
+qwen3-vl:4b,farm_8,3.4,NO,not arrived,NO
+qwen3-vl:4b,farm_8,3.6,NO,not arrived,NO
+qwen3-vl:4b,farm_8,3.8,NO,not arrived,NO
+qwen3-vl:4b,farm_8,4.0,NO,not arrived,NO
+qwen3-vl:4b,farm_8,4.2,NO,not arrived,NO
+qwen3-vl:4b,farm_8,4.4,NO,not arrived,NO
+qwen3-vl:4b,farm_8,4.6,NO,not arrived,NO
+qwen3-vl:4b,farm_8,4.8,NO,not arrived,NO
+qwen3-vl:4b,farm_8,5.0,NO,not arrived,NO
+qwen3-vl:4b,farm_8,5.2,NO,not arrived,NO
+qwen3-vl:4b,farm_8,5.4,NO,not arrived,NO
+qwen3-vl:4b,farm_8,5.6,NO,not arrived,NO
+qwen3-vl:4b,farm_8,5.8,NO,not arrived,NO
+qwen3-vl:4b,farm_8,6.0,NO,not arrived,NO
+qwen3-vl:4b,farm_8,6.2,NO,not arrived,NO
+qwen3-vl:4b,farm_8,6.4,NO,not arrived,NO
+qwen3-vl:4b,farm_8,6.6,NO,not arrived,NO
+qwen3-vl:4b,farm_8,6.8,NO,not arrived,NO
+qwen3-vl:4b,farm_8,7.0,NO,not arrived,NO
+qwen3-vl:4b,farm_8,7.2,NO,not arrived,NO
+qwen3-vl:4b,farm_8,7.4,NO,not arrived,NO
+qwen3-vl:4b,farm_8,7.6,NO,not arrived,NO
+qwen3-vl:4b,farm_8,7.8,NO,not arrived,NO
+qwen3-vl:4b,farm_8,8.0,NO,not arrived,NO
+qwen3-vl:4b,farm_8,8.2,NO,not arrived,NO
+qwen3-vl:4b,farm_8,8.4,NO,not arrived,NO
+qwen3-vl:4b,farm_8,8.6,NO,not arrived,NO
+qwen3-vl:4b,farm_8,8.8,NO,not arrived,NO
+qwen3-vl:4b,farm_8,9.0,NO,not arrived,NO
+qwen3-vl:4b,farm_8,9.2,NO,not arrived,NO
+qwen3-vl:4b,farm_8,9.4,NO,not arrived,NO
+qwen3-vl:4b,farm_8,9.6,NO,not arrived,NO
+qwen3-vl:4b,farm_8,9.8,NO,not arrived,NO
+qwen3-vl:4b,farm_8,10.0,NO,last 2 s,NO
+qwen3-vl:4b,farm_8,10.2,NO,last 2 s,NO
+qwen3-vl:4b,farm_8,10.4,NO,last 2 s,NO
+qwen3-vl:4b,farm_8,10.6,NO,last 2 s,NO
+qwen3-vl:4b,farm_8,10.8,NO,last 2 s,NO
+qwen3-vl:4b,farm_8,11.0,NO,last 2 s,NO
+qwen3-vl:4b,farm_8,11.2,NO,last 2 s,NO
+qwen3-vl:4b,farm_8,11.4,NO,last 2 s,NO
+qwen3-vl:4b,farm_8,11.6,?,last 2 s,
+qwen3-vl:4b,farm_8,11.8,NO,last 2 s,NO
+qwen3-vl:4b,farm_8,12.0,YES,arrived,YES
+qwen3-vl:4b,farm_8,12.2,YES,arrived,YES
+qwen3-vl:4b,farm_8,12.4,YES,arrived,YES
+qwen3-vl:4b,farm_8,12.6,YES,arrived,YES
+qwen3-vl:4b,farm_8,12.8,YES,arrived,YES
+qwen3-vl:4b,farm_8,13.0,YES,arrived,YES
+qwen3-vl:4b,farm_8,13.2,YES,arrived,YES
+qwen3-vl:4b,farm_8,13.4,YES,arrived,YES
+qwen3-vl:4b,farm_8,13.6,YES,arrived,YES
+qwen3-vl:4b,farm_8,13.8,NO,arrived,NO
+qwen3-vl:4b,farm_8,14.0,YES,arrived,YES
+qwen3-vl:4b,farm_8,14.2,YES,arrived,YES
+qwen3-vl:4b,farm_8,14.4,NO,arrived,NO
+qwen3-vl:4b,farm_8,14.6,NO,arrived,NO
+qwen3-vl:4b,farm_8,14.8,NO,arrived,NO
+qwen3-vl:4b,farm_8,15.0,NO,arrived,NO
+qwen3-vl:4b,farm_8,15.2,NO,arrived,NO
+qwen3-vl:4b,farm_8,15.4,YES,arrived,YES
+qwen3-vl:4b,farm_8,15.6,YES,arrived,YES
+qwen3-vl:4b,farm_8,15.8,YES,arrived,YES
+qwen3-vl:4b,farm_8,16.0,YES,arrived,YES
+qwen2.5vl:7b,farm_6,0.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,0.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,0.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,0.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,0.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,1.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,1.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,1.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,3.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,3.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,3.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,3.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,3.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,4.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,4.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,4.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,4.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,4.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,5.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,5.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,5.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,5.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,5.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,6.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,6.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,6.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,6.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,6.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,7.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,7.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,7.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,7.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,7.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,8.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,8.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,8.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,8.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,8.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,9.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,9.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,9.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,9.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,9.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_6,10.0,NO,last 2 s,NO.
+qwen2.5vl:7b,farm_6,10.2,NO,last 2 s,NO.
+qwen2.5vl:7b,farm_6,10.4,NO,last 2 s,NO.
+qwen2.5vl:7b,farm_6,10.6,NO,last 2 s,NO.
+qwen2.5vl:7b,farm_6,10.8,NO,last 2 s,NO.
+qwen2.5vl:7b,farm_6,11.0,NO,last 2 s,NO.
+qwen2.5vl:7b,farm_6,11.2,YES,last 2 s,YES
+qwen2.5vl:7b,farm_6,11.4,YES,last 2 s,YES
+qwen2.5vl:7b,farm_6,11.6,YES,last 2 s,YES
+qwen2.5vl:7b,farm_6,11.8,YES,last 2 s,YES
+qwen2.5vl:7b,farm_6,12.0,YES,arrived,YES
+qwen2.5vl:7b,farm_6,12.2,YES,arrived,YES
+qwen2.5vl:7b,farm_6,12.4,YES,arrived,YES
+qwen2.5vl:7b,farm_6,12.6,YES,arrived,YES
+qwen2.5vl:7b,farm_6,12.8,YES,arrived,YES
+qwen2.5vl:7b,farm_6,13.0,YES,arrived,YES
+qwen2.5vl:7b,farm_6,13.2,YES,arrived,YES
+qwen2.5vl:7b,farm_6,13.4,YES,arrived,YES
+qwen2.5vl:7b,farm_6,13.6,YES,arrived,YES
+qwen2.5vl:7b,farm_6,13.8,YES,arrived,YES
+qwen2.5vl:7b,farm_6,14.0,YES,arrived,YES
+qwen2.5vl:7b,farm_6,14.2,YES,arrived,YES
+qwen2.5vl:7b,farm_6,14.4,YES,arrived,YES
+qwen2.5vl:7b,farm_6,14.6,YES,arrived,YES
+qwen2.5vl:7b,farm_6,14.8,YES,arrived,YES
+qwen2.5vl:7b,farm_6,15.0,YES,arrived,YES
+qwen2.5vl:7b,farm_6,15.2,YES,arrived,YES
+qwen2.5vl:7b,farm_6,15.4,YES,arrived,YES
+qwen2.5vl:7b,farm_6,15.6,YES,arrived,YES
+qwen2.5vl:7b,farm_6,15.8,YES,arrived,YES
+qwen2.5vl:7b,farm_6,16.0,YES,arrived,YES
+qwen2.5vl:7b,farm_7,0.0,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,0.2,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,0.4,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,0.6,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,0.8,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,1.0,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,1.2,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,1.4,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_7,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_7,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_7,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_7,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_7,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_7,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_7,3.0,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,3.2,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,3.4,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,3.6,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,3.8,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,4.0,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,4.2,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,4.4,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,4.6,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,4.8,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,5.0,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,5.2,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,5.4,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,5.6,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,5.8,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,6.0,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,6.2,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,6.4,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,6.6,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,6.8,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,7.0,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,7.2,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,7.4,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,7.6,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,7.8,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,8.0,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,8.2,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,8.4,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,8.6,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,8.8,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,9.0,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,9.2,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,9.4,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,9.6,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,9.8,YES,not arrived,YES
+qwen2.5vl:7b,farm_7,10.0,YES,last 2 s,YES
+qwen2.5vl:7b,farm_7,10.2,YES,last 2 s,YES
+qwen2.5vl:7b,farm_7,10.4,NO,last 2 s,NO.
+qwen2.5vl:7b,farm_7,10.6,NO,last 2 s,NO.
+qwen2.5vl:7b,farm_7,10.8,NO,last 2 s,NO.
+qwen2.5vl:7b,farm_7,11.0,YES,last 2 s,YES
+qwen2.5vl:7b,farm_7,11.2,YES,last 2 s,YES
+qwen2.5vl:7b,farm_7,11.4,YES,last 2 s,YES
+qwen2.5vl:7b,farm_7,11.6,YES,last 2 s,YES
+qwen2.5vl:7b,farm_7,11.8,YES,last 2 s,YES
+qwen2.5vl:7b,farm_7,12.0,YES,arrived,YES
+qwen2.5vl:7b,farm_7,12.2,YES,arrived,YES
+qwen2.5vl:7b,farm_7,12.4,YES,arrived,YES
+qwen2.5vl:7b,farm_7,12.6,YES,arrived,YES
+qwen2.5vl:7b,farm_7,12.8,YES,arrived,YES
+qwen2.5vl:7b,farm_7,13.0,YES,arrived,YES
+qwen2.5vl:7b,farm_7,13.2,YES,arrived,YES
+qwen2.5vl:7b,farm_7,13.4,YES,arrived,YES
+qwen2.5vl:7b,farm_7,13.6,YES,arrived,YES
+qwen2.5vl:7b,farm_7,13.8,YES,arrived,YES
+qwen2.5vl:7b,farm_7,14.0,YES,arrived,YES
+qwen2.5vl:7b,farm_7,14.2,YES,arrived,YES
+qwen2.5vl:7b,farm_7,14.4,YES,arrived,YES
+qwen2.5vl:7b,farm_7,14.6,YES,arrived,YES
+qwen2.5vl:7b,farm_7,14.8,YES,arrived,YES
+qwen2.5vl:7b,farm_7,15.0,YES,arrived,YES
+qwen2.5vl:7b,farm_7,15.2,YES,arrived,YES
+qwen2.5vl:7b,farm_7,15.4,YES,arrived,YES
+qwen2.5vl:7b,farm_7,15.6,YES,arrived,YES
+qwen2.5vl:7b,farm_7,15.8,YES,arrived,YES
+qwen2.5vl:7b,farm_7,16.0,YES,arrived,YES
+qwen2.5vl:7b,farm_8,0.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,0.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,0.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,0.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,0.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,1.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,1.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,1.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,1.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,1.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,2.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,2.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,2.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,2.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,2.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,3.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,3.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,3.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,3.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,3.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,4.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,4.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,4.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,4.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,4.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,5.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,5.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,5.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,5.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,5.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,6.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,6.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,6.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,6.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,6.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,7.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,7.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,7.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,7.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,7.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,8.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,8.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,8.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,8.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,8.8,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,9.0,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,9.2,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,9.4,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,9.6,NO,not arrived,NO.
+qwen2.5vl:7b,farm_8,9.8,YES,not arrived,YES
+qwen2.5vl:7b,farm_8,10.0,YES,last 2 s,YES
+qwen2.5vl:7b,farm_8,10.2,YES,last 2 s,YES
+qwen2.5vl:7b,farm_8,10.4,YES,last 2 s,YES
+qwen2.5vl:7b,farm_8,10.6,YES,last 2 s,YES
+qwen2.5vl:7b,farm_8,10.8,YES,last 2 s,YES
+qwen2.5vl:7b,farm_8,11.0,YES,last 2 s,YES
+qwen2.5vl:7b,farm_8,11.2,YES,last 2 s,YES
+qwen2.5vl:7b,farm_8,11.4,YES,last 2 s,YES
+qwen2.5vl:7b,farm_8,11.6,YES,last 2 s,YES
+qwen2.5vl:7b,farm_8,11.8,YES,last 2 s,YES
+qwen2.5vl:7b,farm_8,12.0,YES,arrived,YES
+qwen2.5vl:7b,farm_8,12.2,YES,arrived,YES
+qwen2.5vl:7b,farm_8,12.4,YES,arrived,YES
+qwen2.5vl:7b,farm_8,12.6,YES,arrived,YES
+qwen2.5vl:7b,farm_8,12.8,YES,arrived,YES
+qwen2.5vl:7b,farm_8,13.0,YES,arrived,YES
+qwen2.5vl:7b,farm_8,13.2,YES,arrived,YES
+qwen2.5vl:7b,farm_8,13.4,YES,arrived,YES
+qwen2.5vl:7b,farm_8,13.6,YES,arrived,YES
+qwen2.5vl:7b,farm_8,13.8,YES,arrived,YES
+qwen2.5vl:7b,farm_8,14.0,YES,arrived,YES
+qwen2.5vl:7b,farm_8,14.2,YES,arrived,YES
+qwen2.5vl:7b,farm_8,14.4,YES,arrived,YES
+qwen2.5vl:7b,farm_8,14.6,YES,arrived,YES
+qwen2.5vl:7b,farm_8,14.8,NO,arrived,NO.
+qwen2.5vl:7b,farm_8,15.0,YES,arrived,YES
+qwen2.5vl:7b,farm_8,15.2,YES,arrived,YES
+qwen2.5vl:7b,farm_8,15.4,YES,arrived,YES
+qwen2.5vl:7b,farm_8,15.6,YES,arrived,YES
+qwen2.5vl:7b,farm_8,15.8,YES,arrived,YES
+qwen2.5vl:7b,farm_8,16.0,YES,arrived,YES
