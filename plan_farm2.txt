@@ -1,0 +1,26 @@
+FARM PLAN 2   (written 2 Nov 2026, after the farm_1..5 result, before any model saw the frames used below)
+
+Why: farm_1..5 failed 0/5 because the arrival wording described something the camera cannot see
+("the trees on both sides are behind you"; "the block is right beside you" when it is leaving the view).
+
+WORDING RULE (fixed from now on, for every new episode):
+  1. The arrival condition describes what the camera SEES at the stop, never what is behind or out of view.
+  2. It names a positive visible state: an object and where it is in the image (centre, left edge, fills the lower half),
+     or the scene layout (trees close on both sides, open ground ahead).
+  3. Keep distinctive attributes (colour, material, "nearest").
+  4. Check it on the stop frame (true) and on a frame about 5 s earlier (false) before running anything.
+  5. Grammar "stop when <thing> is/are <state>" so probe_arrival.py can split it.
+
+A) DIAGNOSTIC on farm_1..5 (after seeing results, reported separately, never as the main result):
+  farm_1..4  "open ground is right in front of you with no trees on either side"
+  farm_5     "the white concrete block is very close at the left edge of your view"
+
+B) CLEAN TEST farm_6..8: entering a tree row after a U-turn (same drive, frames not used before).
+  Clips start 12 s before the stop, after the previous row has ended; 4 s after the stop.
+  farm_6  #411   "Drive into the next tree row and stop when trees are close on both the left and right sides of you."
+  farm_7  #779   (same instruction)
+  farm_8  #1168  (same instruction)
+  Main method unchanged: qwen3-vl:4b, plain YES/NO question, STOP at 10/10. Also reported: qwen2.5vl:7b, 6/10.
+  Scoring: farm_score.py (RTK GPS metres, signed). Success |error| < 2 m.
+
+NOT ALLOWED after seeing results: changing B's wording, stop frames, model, threshold or window.

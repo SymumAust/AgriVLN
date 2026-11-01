@@ -1,0 +1,12 @@
+{
+  "instruction": "Drive into the next tree row and stop when trees are close on both the left and right sides of you.",
+  "length": 14.48,
+  "orientation": "landscape",
+  "frame_size": [
+    1280,
+    720
+  ],
+  "source": "CitrusFarm 06_14B_Jackal, frames 1108-1188, stop frame 1168",
+  "split": "farm-test",
+  "length_note": "RTK GPS distance from the first frame to the stop frame"
+}

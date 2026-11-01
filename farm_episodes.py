@@ -1,6 +1,7 @@
 # Step 3 of the farm pipeline: cut episodes from the CitrusFarm drive, in the same format as dataset/garden_*.
 #
-#   python farm_episodes.py                 # builds dataset/farm_1 .. farm_5 and farm_preview.jpg
+#   python farm_episodes.py                 # builds all episodes and farm_preview.jpg
+#   python farm_episodes.py --ids 6 7 8     # only the second set (row entrances) -> farm_preview_6-8.jpg
 #
 # Targets were chosen from the contact sheets BEFORE any model was run on this data, and the instructions
 # below are fixed now (pre-registered, like garden_9..12). Stop frame = the frame where the condition
@@ -10,6 +11,7 @@
 # Extra file gps.json: distance driven (m, from RTK GPS) for every frame, so farm_score.py can measure the
 # stop error in real metres instead of from time.
 
+import argparse
 import csv
 import json
 import os
@@ -25,16 +27,28 @@ TARGETS = [  # (episode id, stop frame #, instruction)
     (3, 1082, "Drive along the tree row and stop when the trees on both sides are behind you."),
     (4, 1468, "Drive along the tree row and stop when the trees on both sides are behind you."),
     (5, 760, "Drive forward and stop when the white concrete block is right beside you on the left."),
+    # second set (plan_farm2.txt, written 2 Nov 2026 before any model saw these frames): entering a row, visible wording.
+    # Clips start after the previous row has ended (12 s before the stop), so "trees on both sides" is false at the start.
+    (6, 411, "Drive into the next tree row and stop when trees are close on both the left and right sides of you.", 60),
+    (7, 779, "Drive into the next tree row and stop when trees are close on both the left and right sides of you.", 60),
+    (8, 1168, "Drive into the next tree row and stop when trees are close on both the left and right sides of you.", 60),
 ]
 
+ap = argparse.ArgumentParser()
+ap.add_argument("--ids", type=int, nargs="+", default=None, help="only build these episodes (default: all)")
+ARGS = ap.parse_args()
 rows = list(csv.DictReader(open(f"{SRC}/frames.csv")))
 try:
     font = ImageFont.truetype("DejaVuSans-Bold.ttf", 26)
 except Exception:
     font = ImageFont.load_default()
 strips = []
-for eid, stop, instr in TARGETS:
-    a, b = max(0, stop - BEFORE), min(len(rows) - 1, stop + AFTER)
+for tgt in TARGETS:
+    eid, stop, instr = tgt[:3]
+    before = tgt[3] if len(tgt) > 3 else BEFORE
+    if ARGS.ids and eid not in ARGS.ids:
+        continue
+    a, b = max(0, stop - before), min(len(rows) - 1, stop + AFTER)
     out = f"dataset/farm_{eid}"
     if os.path.exists(out):
         shutil.rmtree(out)
@@ -79,5 +93,6 @@ y = 0
 for s in strips:
     prev.paste(s, (0, y)); y += s.height + 10
 prev = prev.resize((prev.width // 2, prev.height // 2))
-prev.save("farm_preview.jpg", quality=85)
-print("saved farm_preview.jpg (green = stop frame). Check it before running any model.")
+name = "farm_preview.jpg" if not ARGS.ids else f"farm_preview_{min(ARGS.ids)}-{max(ARGS.ids)}.jpg"
+prev.save(name, quality=85)
+print(f"saved {name} (green = stop frame). Check it before running any model.")
