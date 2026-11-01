@@ -14,3 +14,13 @@ Step 3  if accepted: run the same setting once on garden_9..12 and farm_1..8. Re
 If not accepted: keep the current setting; blanks remain a known limitation.
 
 Nothing else changes: same question, same model, temperature 0, seed 42, same vote rule.
+
+AMENDMENT (2 Nov 2026, after Step 1, before Step 2; nothing from Step 2 seen yet)
+Step 1 result (blank_check.py, 8 blank frames of garden_3):
+  default:     8/8 empty, done_reason=length, 2932 tokens each: the model was still THINKING when it ran out of room.
+               2932 is most likely what is left of Ollama's default context (4096) after the image and the question.
+  think=False: 7/8 answered (the model still thinks, but shorter); 1/8 still ran out of room.
+So the cause is not thinking itself but the answer being CUT OFF. The bug fix is to give the reasoning enough room.
+Step 2 therefore uses:  --num_ctx 8192  (thinking left as it is, i.e. the same model behaving normally).
+Accept rule unchanged: blanks on garden_1..8 from 14 to <= 2, and 10/10 successes not below 6/8.
+Not used: reading YES/NO out of the cut-off thinking text (the reasoning flips between YES and NO, see Step 1).

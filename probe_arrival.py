@@ -35,6 +35,8 @@ parser.add_argument("--no_color", action="store_true",
 parser.add_argument("--condition", default=None, help="diagnostic: use this arrival text instead of the one from info.json")
 parser.add_argument("--think", choices=["default", "off"], default="default",
                     help="off: ask Ollama not to use the model's thinking mode (fix for blank answers from qwen3-vl)")
+parser.add_argument("--num_ctx", type=int, default=None,
+                    help="Ollama context size; qwen3-vl thinks for ~3000 tokens and the default (4096) cuts the answer off. Try 8192")
 parser.add_argument("--retry_empty", type=int, default=0, help="ask again (new seed) up to N times when the answer is empty/unclear")
 parser.add_argument("--out", default=None, help="default: probe_results_v2.csv (yesno) / probe_results_v3.csv (choice)")
 args = parser.parse_args()
@@ -84,7 +86,7 @@ def ask_once(model, image, condition, seed):
          "Answer with one word: YES or NO.")
     extra = {"think": False} if args.think == "off" else {}
     r = ollama.chat(model=model, messages=[{"role": "user", "content": q, "images": [image]}],
-                    options={"temperature": 0, "seed": seed}, **extra)
+                    options={"temperature": 0, "seed": seed, **({"num_ctx": args.num_ctx} if args.num_ctx else {})}, **extra)
     text = r["message"]["content"] or ""
     m = re.findall(r"\b(yes|no)\b", text.lower())
     if not m:   # keep a trace of WHY it was empty, for the record
