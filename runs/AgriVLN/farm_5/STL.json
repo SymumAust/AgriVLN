@@ -1,0 +1,14 @@
+[
+   {
+      "step": 1,
+      "subtask": "Drive forward",
+      "start_condition": "always",
+      "end_condition": "white concrete block visible"
+   },
+   {
+      "step": 2,
+      "subtask": "Stop when white concrete block is right beside you on the left",
+      "start_condition": "white concrete block visible",
+      "end_condition": "white concrete block is right beside you on the left"
+   }
+]

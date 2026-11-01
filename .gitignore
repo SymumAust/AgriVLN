@@ -3,3 +3,6 @@ __pycache__/
 *.bakfarm/*/frames/
 farm/*/frames/
 farm/*/_all/
+farm/*/drive.mp4
+.vscode/
+farm/*/drive.mp4

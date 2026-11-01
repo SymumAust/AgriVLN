@@ -1,0 +1,14 @@
+[
+   {
+      "step": 1,
+      "subtask": "Drive along the tree row",
+      "start_condition": "always",
+      "end_condition": "trees visible on both sides"
+   },
+   {
+      "step": 2,
+      "subtask": "Stop when the trees are behind you",
+      "start_condition": "trees visible on both sides",
+      "end_condition": "trees behind you"
+   }
+]

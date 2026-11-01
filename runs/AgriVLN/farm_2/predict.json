@@ -1,0 +1,737 @@
+[
+   {
+      "time": "0'0",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a straight path with trees on both sides, indicating that the robot is currently driving along the tree row. The subtask \"Drive along the tree row\" is in the pending state, and the start condition is always true. Therefore, the robot should start this subtask. The next action should be to move forward to continue driving along the tree row.",
+      "state": "Subtask NO.1 changes from pending to doing",
+      "judge": "True"
+   },
+   {
+      "time": "0'2",
+      "action": "[FORWARD]",
+      "thought": "The robot is currently driving along the tree row as instructed by the subtask. The trees are visible on both sides of the path, which means the robot is following the correct path. The next step is to stop when the trees are behind the robot, which is the end condition for the current subtask. The camera image shows that the trees are still visible on both sides, so the robot should continue driving forward to reach the end condition.",
+      "state": "Subtask NO.1 changes from doing to done",
+      "judge": "True"
+   },
+   {
+      "time": "0'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving forward along the tree row. The trees are still visible on both sides, so the start condition for the next subtask is not yet satisfied. The robot needs to continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "0'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving forward along the tree row. The trees are not yet behind the robot, so the condition for stopping is not yet met. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "0'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving forward along the tree row. The trees are still visible on both sides, so the start condition for the next subtask is not yet satisfied. The robot needs to continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "1'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving forward along the tree row. The trees are not yet behind the robot, so the start condition for the next subtask is not met yet. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "1'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently driving along the tree row. The trees are still visible on both sides, so the start condition for the next subtask is not yet satisfied. The robot needs to continue driving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "1'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving forward along the tree row. The trees are still visible on both sides, so the start condition for the next subtask is not yet satisfied. The robot needs to continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "1'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the start condition for the next subtask is not yet satisfied, and the state should remain pending.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "1'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently driving along the tree row. The trees are still visible on both sides, so the start condition for the next subtask is not yet satisfied. The robot needs to continue driving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "2'0",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a straight path with trees on both sides, indicating that the robot is currently driving along the tree row. The subtask \"Drive along the tree row\" is already marked as done, as the trees are visible on both sides. The next subtask is to stop when the trees are behind the robot. Since the trees are still visible on both sides, the robot is not yet behind the trees, so the start condition for the next subtask is not yet satisfied. Therefore, the robot should continue driving forward.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "2'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving forward along the tree row. The trees are not yet behind the robot, so the condition for stopping is not yet met. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "2'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving forward along the tree row. The trees are not yet behind the robot, so the start condition for the next subtask is not met yet. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "2'6",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a straight path with trees on both sides, indicating that the robot is currently driving along the tree row. The subtask \"Drive along the tree row\" is already marked as done, as the trees are visible on both sides. The next subtask is to stop when the trees are behind the robot. Since the trees are still visible on both sides, the robot is not yet behind the trees, so the start condition for the next subtask is not yet satisfied. Therefore, the robot should continue driving forward.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "2'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, but the trees are not yet behind the robot. The robot needs to continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "3'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving along the tree row. The trees are still visible on both sides, so the start condition for the next subtask is not yet satisfied. The robot needs to continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "3'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving forward along the tree row. The trees are not yet behind the robot, so the condition for stopping is not yet met. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of pending",
+      "judge": "True"
+   },
+   {
+      "time": "3'4",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a straight path with trees on both sides, indicating that the robot is currently driving along the tree row. The subtask \"Drive along the tree row\" is already marked as done, as the trees are visible on both sides. The next step is to stop when the trees are behind the robot, which is the start condition for the next subtask. The robot should now focus on the subtask \"Stop when the trees are behind you,\" which is currently in the pending state.",
+      "state": "Subtask NO.2 changes from pending to doing",
+      "judge": "True"
+   },
+   {
+      "time": "3'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might be causing some glare. However, the trees are not directly behind the robot yet, as the path is clear ahead. The robot should continue moving forward to align with the end condition of the subtask, which is when the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "3'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might be causing some glare. However, the trees are not directly behind the robot yet, as the path is still visible. The robot should continue moving forward to align with the end condition of the subtask, which is when the trees are behind the robot.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "4'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "4'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "4'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "4'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "4'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might be causing some glare. However, the trees are not directly behind the robot yet, as the path is still clear ahead. The robot should continue moving forward to align with the end condition of the subtask, which is when the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "5'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might obscure the view. However, the trees are still visible on both sides, indicating that the robot is still in the middle of the path. The next action should be to continue moving forward to reach the point where the trees are behind the robot.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "5'2",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a straight path with trees on both sides, and the sun is bright, indicating that the trees are still visible on both sides. The subtask \"Drive along the tree row\" is already done, as the trees are visible on both sides. The next subtask is \"Stop when the trees are behind you,\" which requires the trees to be behind the robot. Since the trees are still visible on both sides, the robot needs to continue driving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "5'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is directly above, which might be causing some glare. However, the trees are not visible behind the robot yet, indicating that the robot is still in the process of moving forward. The subtask list indicates that the robot should stop when the trees are behind it, which is not yet the case. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "5'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is still in the middle of the path. The trees are not yet behind the robot, so the subtask is still in the \"doing\" state. The robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "5'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "6'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, indicating that the trees are still visible on both sides. However, the end condition for this subtask is \"trees behind you,\" which means the trees should be on the opposite side of the path. Since the trees are still visible on both sides, the end condition is not yet met. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "6'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind you. The camera image shows a straight path with trees on both sides, indicating that the trees are still visible on both sides. Therefore, the condition for starting the next subtask is not yet satisfied, and the current subtask is still in the \"doing\" state.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "6'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might obscure the view. However, the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "6'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might obscure the view. However, the trees are still visible on both sides, indicating that the robot is still in the middle of the tree row. The next action should be to continue moving forward to maintain the path and eventually stop when the trees are behind the robot.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "6'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "7'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving forward. The trees are not yet behind the robot, so the subtask is still in the doing state. The next action should be to continue moving forward until the trees are behind the robot.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "7'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "7'4",
+      "action": "[FORWARD]",
+      "thought": "The current camera image shows a straight path with trees on both sides, indicating that the robot is moving along the tree row as per the previous subtask. The next subtask is to stop when the trees are behind the robot. Since the trees are still visible on both sides, the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "7'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "7'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might obscure the view. However, the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "8'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might be causing some glare. However, the trees are not directly behind the robot yet, as the path is still clear ahead. The robot should continue moving forward to align with the end condition of the subtask, which is when the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "8'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "8'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might obscure the view. However, the trees are still visible on both sides, indicating that the robot is still in the middle of the path. The end condition for this subtask is \"trees behind you,\" which means the robot needs to stop when the trees are no longer visible on the right side. Since the trees are still visible on both sides, the robot should continue moving forward to reach the end condition.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "8'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind you. The camera image shows a straight path with trees on both sides, but the trees are not yet behind the robot. The robot needs to continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "8'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "9'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "9'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "9'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "9'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is still in the middle of the tree row. The trees are not yet behind the robot, so the subtask is still in the doing state. The robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "9'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind you. The camera image shows a straight path with trees on both sides, but the trees are not yet behind the robot. The robot needs to continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "10'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving forward along the tree row. The trees are not yet behind the robot, so the subtask is still in the doing state. The next action should be to continue moving forward until the trees are behind the robot.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "10'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might be causing some glare. However, the trees are not directly behind the robot yet, as the path is still clear ahead. The robot should continue moving forward to align with the end condition of the subtask, which is when the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "10'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is still in the middle of the tree row. The trees are not yet behind the robot, so the subtask is still in the doing state. The robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "10'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might be causing some glare. However, the trees are not directly behind the robot yet, as the path is still visible. The robot should continue moving forward to align with the end condition of the subtask, which is when the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "10'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the trees are still visible on both sides. Therefore, the condition for starting the next subtask is not yet satisfied, and the current subtask is still in the 'doing' state. The robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "11'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "11'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "11'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, but the trees are not yet behind the robot. The robot needs to continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "11'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "11'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, indicating that the robot is currently moving forward. The trees are not yet behind the robot, so the subtask is still in the doing state. The next action should be to continue moving forward until the trees are behind the robot.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "12'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might be causing some glare. However, the trees are not directly behind the robot yet, as the path is still visible. The robot should continue moving forward to align with the end condition of the subtask, which is when the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "12'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "12'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might be causing some glare. However, the trees are not directly behind the robot yet, as the path is still visible. The robot should continue moving forward to align with the end condition of the subtask, which is when the trees are behind the robot.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "12'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "12'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, indicating that the trees are still visible on both sides. However, the end condition for this subtask is \"trees behind you,\" which means the trees should be on the opposite side of the path. Since the trees are still visible on both sides, the end condition is not yet met. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "13'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "13'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might obscure the view. However, the trees are still visible on both sides, indicating that the robot is still in the middle of the tree row. The next action should be to continue moving forward to reach the point where the trees are behind the robot.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "13'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "13'6",
+      "action": "[LEFT ROTATE]",
+      "thought": "The current subtask is to stop when the trees are behind you. The camera image shows a clear view of the road with trees on both sides, indicating that the trees are still visible on both sides. However, the end condition for this subtask is \"trees behind you,\" which means the trees should be on the opposite side of the road. Since the trees are still visible on both sides, the end condition is not yet satisfied. Therefore, the state of this subtask should remain \"doing.\"",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "13'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "14'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might be causing some glare. However, the trees are not directly behind the robot yet, as the path is still clear ahead. The robot should continue moving forward to align with the end condition of the subtask, which is when the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "14'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, indicating that the trees are still visible on both sides. However, the subtask's end condition is \"trees behind you,\" which means the trees should be on the opposite side of the path. Since the trees are still visible on both sides, the end condition is not yet met. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "14'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a straight path with trees on both sides, and the sun is bright, which might obscure the view slightly. However, the trees are still visible on both sides, indicating that the robot is still in the middle of the tree row. The next logical step is to continue moving forward to reach the point where the trees are behind the robot.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "14'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "14'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "15'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "15'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "15'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "15'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "15'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "16'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "16'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind you. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "16'4",
+      "action": "[LEFT ROTATE]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a clear view of the road with trees on both sides, indicating that the trees are still visible on both sides. However, the end condition for this subtask is \"trees behind you,\" which means the trees should be on the opposite side of the road. Since the trees are still visible on both sides, the end condition is not yet met. Therefore, the state of this subtask should remain \"doing.\"",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "16'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "16'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "17'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "17'2",
+      "action": "[LEFT ROTATE]",
+      "thought": "The current subtask is to stop when the trees are behind you. The camera image shows a clear view of the road with trees on both sides, indicating that the trees are still visible on both sides. However, the end condition for this subtask is \"trees behind you,\" which means the trees should be on the opposite side of the road. Since the trees are still visible on both sides, the end condition is not yet met. Therefore, the state of this subtask should remain \"doing.\"",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "17'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "17'6",
+      "action": "[LEFT ROTATE]",
+      "thought": "The current subtask is to stop when the trees are behind you. The camera image shows a clear view of the road with trees on both sides, indicating that the trees are still visible on both sides. However, the end condition for this subtask is \"trees behind you,\" which means the trees should be on the opposite side of the road. Since the trees are still visible on both sides, the end condition is not yet satisfied. Therefore, the state of this subtask should remain \"doing.\"",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "17'8",
+      "action": "[LEFT ROTATE]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a clear view of the road with trees on both sides, indicating that the trees are still visible on both sides. However, the end condition for this subtask is \"trees behind you,\" which means the trees should be on the opposite side of the road. Since the trees are still visible on both sides, the end condition is not yet met. Therefore, the state of this subtask should remain \"doing.\"",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "18'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "18'2",
+      "action": "[LEFT ROTATE]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a clear view of the road with trees on both sides, indicating that the trees are still visible on both sides. However, the end condition for this subtask is \"trees behind you,\" which means the trees should be on the opposite side of the road. Since the trees are still visible on both sides, the end condition is not yet met. Therefore, the state of this subtask should remain \"doing.\"",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "18'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "18'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a clear view of the road with trees on both sides, indicating that the trees are still visible on both sides. However, the end condition for this subtask is \"trees behind you,\" which means the trees should be on the opposite side of the road. Since the trees are still visible on both sides, the end condition is not yet met. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "18'8",
+      "action": "[LEFT ROTATE]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a clear view of the road with trees on both sides, indicating that the trees are still visible on both sides. However, the end condition for this subtask is \"trees behind you,\" which means the trees should be on the opposite side of the road. Since the trees are still visible on both sides, the end condition is not yet met. Therefore, the state of this subtask should remain \"doing.\"",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "19'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a clear view of the path ahead with trees visible on both sides, indicating that the robot is still in the process of driving along the tree row. The trees are not yet behind the robot, so the subtask is still in the \"doing\" state.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "19'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a clear view of the path ahead with trees visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "19'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a clear view of the trees on both sides, but the trees are not directly behind the robot. The robot needs to move forward to align with the trees behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "19'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the condition where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "19'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows a clear view of the trees on both sides, indicating that the robot is currently driving along the tree row. The trees are not yet behind the robot, so the subtask is still in the 'doing' state. The next action should be to continue driving forward until the trees are behind the robot.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "True"
+   },
+   {
+      "time": "20'0",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "20'2",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "20'4",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "20'6",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the end condition of the subtask.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   },
+   {
+      "time": "20'8",
+      "action": "[FORWARD]",
+      "thought": "The current subtask is to stop when the trees are behind the robot. The camera image shows that the trees are still visible on both sides, indicating that the robot is not yet behind the trees. Therefore, the robot should continue moving forward to reach the point where the trees are behind it.",
+      "state": "Subtask NO.2 keeps state of doing",
+      "judge": "False"
+   }
+]
