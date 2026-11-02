@@ -1,0 +1,15 @@
+PLAN: candidate model qwen3-vl:4b-instruct   (written 2 Nov 2026, before running it on anything)
+
+Why: the main model qwen3-vl:4b (a thinking model) sometimes reasons in circles until Ollama's limit and returns
+no answer (garden_3, farm_1, farm_5, farm_8). The num_ctx 8192 fix did not remove this (garden_3 still 9 blanks).
+The instruct version answers directly, so it cannot loop or be cut off. It is a DIFFERENT MODEL, not a bug fix.
+
+Selection on development videos only (garden_1..8), same question, temperature 0, seed 42, same vote rule (10/10).
+qwen3-vl:4b-instruct becomes the main model for the NEXT test set only if ALL hold on garden_1..8:
+  (a) blank answers <= 2 in total,
+  (b) 10/10 successes >= 6/8 (the current main model's score),
+  (c) false YES rate not above the current main model's (16 %).
+Otherwise the current main model stays.
+
+Already-used videos (garden_9..12, farm_1..8) may be run for COMPARISON ONLY and are reported as such.
+The real test of the chosen model is the next pre-registered set (bigger CitrusFarm set, presence wording rule).
