@@ -13,3 +13,7 @@ Otherwise the current main model stays.
 
 Already-used videos (garden_9..12, farm_1..8) may be run for COMPARISON ONLY and are reported as such.
 The real test of the chosen model is the next pre-registered set (bigger CitrusFarm set, presence wording rule).
+
+RESULT (2 Nov 2026): NOT ADOPTED. garden_1..8: blanks 0 (ok), 10/10 successes 4/8 (rule >= 6/8),
+false YES 20.6 % (rule <= 16 %). qwen3-vl:4b (thinking) stays the main model.
+Extra check: re-scoring the main model with blanks skipped instead of counted as NO gives the same 6/8.
