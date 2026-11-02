@@ -24,3 +24,6 @@ So the cause is not thinking itself but the answer being CUT OFF. The bug fix is
 Step 2 therefore uses:  --num_ctx 8192  (thinking left as it is, i.e. the same model behaving normally).
 Accept rule unchanged: blanks on garden_1..8 from 14 to <= 2, and 10/10 successes not below 6/8.
 Not used: reading YES/NO out of the cut-off thinking text (the reasoning flips between YES and NO, see Step 1).
+
+RESULT (2 Nov 2026): REJECTED. garden_1..8 with num_ctx 8192: blanks 14 (unchanged, rule <= 2);
+10/10 successes 5/8 (rule >= 6/8; garden_6 flipped 1.4 m -> 7.4 m). Current setting kept.
