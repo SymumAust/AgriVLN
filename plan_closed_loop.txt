@@ -1,0 +1,27 @@
+PLAN: closed-loop stop rule, tested on NEW farm episodes   (written 8 Nov 2026, before any new data is downloaded)
+
+Why: timing-aware replay (closed_loop_sim.py) with the measured latency of qwen3-vl:4b on this PC
+(median 1.9 s, 90 % 5.5 s, max 8.3 s per answer; latency_check.py): every rule that keeps driving while the model
+thinks fails (vote10 0/15). Move-stop-ask makes the error independent of latency.
+
+FROZEN RULE ("step6"), chosen on garden_1..12 + farm_6..8 (development; 11/15 there, farm 3/3):
+  - drive 1.0 m, stand still, ask the plain arrival question on the current frame (qwen3-vl:4b, "camera" wording,
+    temperature 0, seed 42), wait for the answer;
+  - after the first YES, steps of 0.25 m;
+  - STOP at 6 YES answers in a row. A NO resets the count (step length stays 0.25 m).
+  - blank answer = NO.
+Baselines reported next to it: vote10 while driving at the measured latency (closed_loop_sim.py), step4, step10,
+  and the original AgriVLN.
+
+NEW TEST DATA: CitrusFarm sequences not used so far (04_13D_Jackal and/or 05_13D_Jackal: a different field block).
+  Episodes: row ENTRANCES after U-turns (presence wording). Candidate times found from the GPS track (end of each
+  U-turn), stop frame then set by eye on the contact sheet, BEFORE any model sees the frames (as farm_6..8).
+  Instruction for every episode: "Drive into the next tree row and stop when trees are close on both the left
+  and right sides of you."  Clip: 12 s before the stop frame, 4 s after.
+  Objects with presence wording may be added if clearly visible, written into this file before running.
+Scoring: closed_loop_sim.py with the measured latencies (1.9 s and 5.5 s) and RTK GPS distance (signed);
+  success |error| < 2 m; also time per approach.
+
+Answers are collected offline first (probe_arrival.py on every frame), then replayed by closed_loop_sim.py.
+NOT ALLOWED after seeing results: changing the rule (step lengths, 6 YES), wording, stop frames, model or latency values.
+Limit stated in advance: still a replay; a standing robot would see a slightly different frame each time in reality.
