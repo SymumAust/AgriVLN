@@ -25,3 +25,9 @@ Scoring: closed_loop_sim.py with the measured latencies (1.9 s and 5.5 s) and RT
 Answers are collected offline first (probe_arrival.py on every frame), then replayed by closed_loop_sim.py.
 NOT ALLOWED after seeing results: changing the rule (step lengths, 6 YES), wording, stop frames, model or latency values.
 Limit stated in advance: still a replay; a standing robot would see a slightly different frame each time in reality.
+
+EPISODE SELECTION (8 Nov 2026, from GPS only, before downloading any images):
+  Row entrances = crossing x=-4 m heading west or x=-51 m heading east after a headland: 12 found (gt_04_13D_Jackal.csv).
+  Edge rows (y~0, y~39) excluded (trees possibly on one side only). 6 of the 9 inner entrances chosen by download cost
+  and variety: t = 159.4, 227.1, 290.5, 453.6, 510.7, 570.4 s (rows y = 6.9, 31.9, 12.2, 12.4, 25.5, 6.7).
+  Camera files: zed_..._5, 7, 8, 9, 10, 15, 17, 19, 20.
