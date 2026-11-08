@@ -31,3 +31,11 @@ EPISODE SELECTION (8 Nov 2026, from GPS only, before downloading any images):
   Edge rows (y~0, y~39) excluded (trees possibly on one side only). 6 of the 9 inner entrances chosen by download cost
   and variety: t = 159.4, 227.1, 290.5, 453.6, 510.7, 570.4 s (rows y = 6.9, 31.9, 12.2, 12.4, 25.5, 6.7).
   Camera files: zed_..._5, 7, 8, 9, 10, 15, 17, 19, 20.
+
+LABEL RULE (8 Nov 2026, after viewing only the strip of entrance 159.4 s, before any model):
+  Stop label = GPS entrance time rounded to 0.2 s (objective). Checked on the strip: trees on both sides at 159.4 s,
+  one side only before ~155 s. Expected risk: in this open orchard "close on both sides" may look true ~1-1.5 s early.
+
+LABEL RULE (8 Nov 2026, after viewing only the strip of entrance 159.4 s, before any model):
+  Stop label = GPS entrance time rounded to 0.2 s (objective). Checked on the strip: trees on both sides at 159.4 s,
+  one side only before ~155 s. Expected risk: in this open orchard "close on both sides" may look true ~1-1.5 s early.
