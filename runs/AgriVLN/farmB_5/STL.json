@@ -1,0 +1,20 @@
+[
+   {
+      "step": 1,
+      "subtask": "Drive into the next tree row",
+      "start_condition": "always",
+      "end_condition": "trees are visible"
+   },
+   {
+      "step": 2,
+      "subtask": "Continue driving until trees are close on both sides",
+      "start_condition": "trees are visible",
+      "end_condition": "trees are close on both sides"
+   },
+   {
+      "step": 3,
+      "subtask": "Stop when trees are close on both sides",
+      "start_condition": "trees are close on both sides",
+      "end_condition": "stop"
+   }
+]

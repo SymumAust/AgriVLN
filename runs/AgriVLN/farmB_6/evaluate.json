@@ -1,0 +1,14 @@
+{
+   "exp": "AgriVLN",
+   "episode_id": "farmB_6",
+   "SR": 0,
+   "NE": 11.32,
+   "ISR": [
+      3,
+      3
+   ],
+   "stop_t": 2.4,
+   "type": "valid_stop",
+   "path_length": 14.15,
+   "label_stop_time": 12.0
+}
