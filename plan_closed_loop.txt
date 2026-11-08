@@ -39,3 +39,8 @@ LABEL RULE (8 Nov 2026, after viewing only the strip of entrance 159.4 s, before
 LABEL RULE (8 Nov 2026, after viewing only the strip of entrance 159.4 s, before any model):
   Stop label = GPS entrance time rounded to 0.2 s (objective). Checked on the strip: trees on both sides at 159.4 s,
   one side only before ~155 s. Expected risk: in this open orchard "close on both sides" may look true ~1-1.5 s early.
+
+RESULT (8 Nov 2026), farmB_1..6, qwen3-vl:4b, GPS metres:
+  step6 (main) 3/6 at both 1.9 s and 5.5 s per answer (+0.1, -1.7, +0.6 m; fails -9.1, +3.2, no stop); ~70 s / ~3 min per approach.
+  vote10 while driving 0/6; step4 2/6; step10 0/6; open-loop instant 10/10 2/6; qwen2.5 0/6; original AgriVLN 0/6 (all early).
+  Failure cause: the turning lane between two tree blocks also has "trees close on both sides" (B1, B3); blanks (B2, B3).
