@@ -1,0 +1,17 @@
+PLAN: depth check on top of the VLM stop decision   (written 9 Nov 2026, before any depth value was looked at)
+
+Why: in block 13D the turning lane also has "trees close on both sides" for the VLM (farmB_1, 3, 8 stopped 8-9 m early);
+three new wordings did not fix it (plan_wording.txt). A stereo camera can measure "close", a language model cannot.
+
+Signal: ZED stereo depth (/zed2i/zed_node/depth/depth_registered, same bags), per 5 Hz frame (farm2_depth.py):
+  left_m / right_m = median valid depth in the outer 15 % of the image width, rows 25-75 %.
+Gate: true if left_m < D and right_m < D (missing depth = false).
+Rules compared (all with the frozen move-stop-ask step6 rule, closed_loop_sim.py, 1.9 s per answer):
+  VLM only (current), VLM + gate (a YES counts only if the gate is true), depth only (gate alone, no VLM).
+DEVELOPMENT: farmB_1..9 (all seen). D chosen from {2, 2.5, 3, 3.5, 4, 5, 6} m by: most step6 successes for VLM + gate;
+  ties -> fewest early YES -> smaller D. The gate is adopted only if VLM + gate beats VLM only (4/9) on development.
+TEST: new row entrances from 05_13D_Jackal (same block, other day), found by the same GPS crossing rule, inner rows only,
+  labels = GPS time, strips checked by eye; selection and file list added here BEFORE any model or depth value is looked at.
+Report: VLM only, VLM + gate, depth only, AgriVLN; step6 at 1.9 s and 5.5 s.
+Limit stated in advance: the ZED confidence map is recorded (left_conf, right_conf) but not used in this plan.
+NOT ALLOWED after test results: changing D, the band, the rule, labels or the model.
