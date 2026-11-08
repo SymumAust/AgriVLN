@@ -21,3 +21,6 @@ TEST SET (new, never seen): the 3 unused inner row entrances of 04_13D_Jackal, f
   and added here BEFORE they are run.
 Scoring on the test set: step6 at 1.9 s and 5.5 s (main), plus vote10-while-driving and the original AgriVLN.
 NOT ALLOWED after test results: changing the chosen wording, rule, labels, model or latency values.
+
+DEV RESULT (8 Nov 2026): step6 @1.9 s on the 9 dev clips: A 6/9, D 3/9, C 1/9, B 0/9 -> A stays (current wording).
+  B and C too strict (YES after the stop 3 % and 17 %); D too loose (41 % early YES).
