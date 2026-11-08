@@ -3,8 +3,10 @@
 # as written in plan_closed_loop.txt; each one was checked by eye on its strip before any model ran.
 # Clip: 12 s before the stop + 4 s after. gps.json holds the distance driven at every frame (for closed_loop_sim / farm_score).
 #
-#   python farm2_episodes.py
+#   python farm2_episodes.py                 # all episodes whose frames exist
+#   python farm2_episodes.py --ids 7 8 9     # only the wording test set
 
+import argparse
 import csv
 import json
 import os
@@ -12,10 +14,15 @@ import shutil
 
 SRC = "farm2/04_13D_Jackal"
 INSTR = "Drive into the next tree row and stop when trees are close on both the left and right sides of you."
-ENTRANCES = [159.4, 227.1, 290.5, 453.6, 510.7, 570.4]
+ENTRANCES = [159.4, 227.1, 290.5, 453.6, 510.7, 570.4, 346.2, 400.2, 639.2]   # farmB_1..6 (closed-loop test), farmB_7..9 (wording test)
+ap = argparse.ArgumentParser()
+ap.add_argument("--ids", type=int, nargs="+", default=None, help="only these farmB ids (default: all whose frames exist)")
+ARGS = ap.parse_args()
 
 rows = {int(r["k"]): r for r in csv.DictReader(open(f"{SRC}/frames.csv"))}
 for n, te in enumerate(ENTRANCES, 1):
+    if ARGS.ids and n not in ARGS.ids:
+        continue
     ks = round(te * 5)
     k0, k1 = ks - 60, ks + 20
     missing = [k for k in range(k0, k1 + 1) if k not in rows]

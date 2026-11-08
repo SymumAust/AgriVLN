@@ -1,0 +1,23 @@
+PLAN: arrival wording that separates "inside a tree row" from "the turning lane"   (written 8 Nov 2026, before any run)
+
+Problem (closed-loop test farmB_1..6): "trees are close on both the left and right sides of you" is also true in the
+turning lane of block 13D (a corridor between two tree blocks), so qwen3 said YES there (farmB_1 -9.1 m, farmB_3).
+
+DEVELOPMENT SET (all already seen; used only to choose the wording): farm_6, farm_7, farm_8, farmB_1 .. farmB_6 (9 clips).
+CANDIDATES (arrival conditions; "you" is turned into "the camera" by probe_arrival.py as always):
+  A  trees are close on both the left and right sides of you                                   (current; answers exist)
+  B  you are inside a narrow straight lane between two rows of trees, with tree trunks close on both the left and right
+  C  tree branches fill both the left edge and the right edge of your view, and a long narrow path between tree rows goes straight ahead
+  D  you are between two tree rows that are close on both sides, not in a wide open area at the end of the rows
+Model qwen3-vl:4b, temperature 0, seed 42, every frame.
+SELECTION RULE: the frozen closed-loop rule (step6, closed_loop_sim.py) at 1.9 s per answer on the 9 clips;
+  most successes (|GPS error| < 2 m); ties -> fewest early YES (frames > 2 s before the stop); then the shortest wording.
+  If no candidate beats A, A stays.
+
+TEST SET (new, never seen): the 3 unused inner row entrances of 04_13D_Jackal, from the same GPS rule:
+  t = 346.2 s (row y 25.4, east), 400.2 s (y 18.6, west), 639.2 s (y 32.4, west)   -> farmB_7, farmB_8, farmB_9
+  camera files zed_..._11, 12, 13, 14, 21, 22. Label = GPS entrance time; strips checked by eye before any model run.
+  If possible also entrances of 05_13D_Jackal (second drive, same block, other day), selected by the same GPS rule
+  and added here BEFORE they are run.
+Scoring on the test set: step6 at 1.9 s and 5.5 s (main), plus vote10-while-driving and the original AgriVLN.
+NOT ALLOWED after test results: changing the chosen wording, rule, labels, model or latency values.
