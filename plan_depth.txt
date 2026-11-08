@@ -15,3 +15,7 @@ TEST: new row entrances from 05_13D_Jackal (same block, other day), found by the
 Report: VLM only, VLM + gate, depth only, AgriVLN; step6 at 1.9 s and 5.5 s.
 Limit stated in advance: the ZED confidence map is recorded (left_conf, right_conf) but not used in this plan.
 NOT ALLOWED after test results: changing D, the band, the rule, labels or the model.
+
+DEV RESULT (9 Nov 2026), farmB_1..9, step6 @1.9 s: VLM only 4/9; VLM + gate best at D = 5.0 m: 5/9 -> gate ADOPTED, D = 5.0.
+  Depth only (no VLM): 8/9 at D = 3.5, 4.0 and 5.0 m (fewest early YES at 3.5).
+FROZEN FOR THE TEST: main = VLM + depth gate, D = 5.0 m. Also pre-registered: depth only, D = 3.5 m; VLM only.
