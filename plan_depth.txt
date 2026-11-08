@@ -19,3 +19,8 @@ NOT ALLOWED after test results: changing D, the band, the rule, labels or the mo
 DEV RESULT (9 Nov 2026), farmB_1..9, step6 @1.9 s: VLM only 4/9; VLM + gate best at D = 5.0 m: 5/9 -> gate ADOPTED, D = 5.0.
   Depth only (no VLM): 8/9 at D = 3.5, 4.0 and 5.0 m (fewest early YES at 3.5).
 FROZEN FOR THE TEST: main = VLM + depth gate, D = 5.0 m. Also pre-registered: depth only, D = 3.5 m; VLM only.
+
+TEST SELECTION (9 Nov 2026, from GPS only, before downloading any images of 05_13D_Jackal):
+  Same crossing rule (x=-4 m westward / x=-51 m eastward after a headland): 14 entrances; edge rows (y~1, y~-37) excluded;
+  ALL 10 inner entrances used: t = 61.3, 113.9, 164.5, 217.5, 266.9, 435.6, 486.2, 541.8, 590.7, 645.6 s -> farmC_1..10.
+  Labels = GPS time; strips checked by eye before any model or depth value is looked at.
