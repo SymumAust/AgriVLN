@@ -12,12 +12,17 @@ import json
 import os
 import shutil
 
-SRC = "farm2/04_13D_Jackal"
 INSTR = "Drive into the next tree row and stop when trees are close on both the left and right sides of you."
 ENTRANCES = [159.4, 227.1, 290.5, 453.6, 510.7, 570.4, 346.2, 400.2, 639.2]   # farmB_1..6 (closed-loop test), farmB_7..9 (wording test)
 ap = argparse.ArgumentParser()
-ap.add_argument("--ids", type=int, nargs="+", default=None, help="only these farmB ids (default: all whose frames exist)")
+ap.add_argument("--ids", type=int, nargs="+", default=None, help="only these ids (default: all whose frames exist)")
+ap.add_argument("--src", default="farm2/04_13D_Jackal", help="folder made by farm2_extract.py")
+ap.add_argument("--prefix", default="farmB", help="episode names <prefix>_<n>")
+ap.add_argument("--entrances", type=float, nargs="+", default=None, help="entrance times (s); default: the 04_13D list")
 ARGS = ap.parse_args()
+SRC = ARGS.src
+if ARGS.entrances:
+    ENTRANCES = ARGS.entrances
 
 rows = {int(r["k"]): r for r in csv.DictReader(open(f"{SRC}/frames.csv"))}
 for n, te in enumerate(ENTRANCES, 1):
@@ -27,9 +32,9 @@ for n, te in enumerate(ENTRANCES, 1):
     k0, k1 = ks - 60, ks + 20
     missing = [k for k in range(k0, k1 + 1) if k not in rows]
     if missing:
-        print(f"farmB_{n} (entrance {te} s): {len(missing)} frames missing (first {missing[0] / 5:.1f} s): download its camera files first")
+        print(f"{ARGS.prefix}_{n} (entrance {te} s): {len(missing)} frames missing (first {missing[0] / 5:.1f} s): download its camera files first")
         continue
-    out = f"dataset/farmB_{n}"
+    out = f"dataset/{ARGS.prefix}_{n}"
     shutil.rmtree(out, ignore_errors=True)
     os.makedirs(f"{out}/frames")
     d0 = float(rows[k0]["dist_m"])
@@ -41,7 +46,7 @@ for n, te in enumerate(ENTRANCES, 1):
                     "x_m": float(rows[k]["x_m"]), "y_m": float(rows[k]["y_m"])})
     stop_t, end_t = 12.0, round((k1 - k0) * 0.2 + 0.2, 1)
     json.dump({"instruction": INSTR, "length": round(float(rows[ks]["dist_m"]) - d0, 2), "orientation": "landscape",
-               "frame_size": [1280, 720], "source": f"CitrusFarm 04_13D_Jackal, {k0 / 5:.1f}-{k1 / 5:.1f} s, entrance {te} s",
+               "frame_size": [1280, 720], "source": f"CitrusFarm {os.path.basename(SRC)}, {k0 / 5:.1f}-{k1 / 5:.1f} s, entrance {te} s",
                "split": "farm-closed-loop-test"}, open(f"{out}/info.json", "w"), indent=2)
     json.dump([{"time_range": [0.0, stop_t], "action": "[FORWARD]"}, {"time_range": [stop_t, end_t], "action": "[STOP]"}],
               open(f"{out}/label.json", "w"), indent=2)
