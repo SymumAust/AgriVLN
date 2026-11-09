@@ -44,3 +44,14 @@ CALIBRATION RESULT (10 Nov 2026, strips entrance_81.jpg / entrance_110.jpg; no d
   = the first 0.2 s frame that meets the same criterion, read by eye from that entrance's strip (labels written below
   with their GPS x before farmD is built). Check stated in advance: all east-heading labels should lie at a similar x,
   and all west-heading labels too (spread > 3 m is reported).
+
+TEST LABELS (10 Nov 2026, read by eye from entrance_<t>.jpg strips, 0.4 s steps; no depth value, no model answer looked at):
+  farmD_1  509.6 s E  x=14.0      farmD_6  689.2 s W  x=40.5
+  farmD_2  545.4 s W  x=40.4      farmD_7  725.6 s E  x=13.7
+  farmD_3  582.2 s E  x=13.5      farmD_8  760.8 s W  x=40.2
+  farmD_4  617.6 s W  x=40.4      farmD_9  798.0 s E  x=13.4
+  farmD_5  653.6 s E  x=13.1      farmD_10 833.2 s W  x=40.9
+  Pre-stated check: east labels x = 13.1-14.0 (spread 0.9 m), west labels x = 40.2-40.9 (spread 0.7 m) -> passed.
+  Correction to the calibration note: the test rows end at about the same x as the calibration rows (east ~40.5 vs 39.5,
+  west ~13.5 vs 15.5); the later U-turns at x ~ 46 were just wider turns. A fixed line would have been within ~1-2 m.
+  The per-episode labels above are used as planned. No episode dropped (all 10 are clear row entrances).
