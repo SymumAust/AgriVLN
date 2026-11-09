@@ -23,3 +23,14 @@ DATA: CitrusFarm 01_13B_Jackal (block 13B, never used before).
 Decision stated in advance: the depth rule "carries over" if it gets at least as many successes as VLM only AND
 at least 7 out of 10 (or the same share for another n). Otherwise it is reported as not carried over.
 NOT ALLOWED after test results: changing D, the band, step6, labels, the episode list or the success distance.
+
+STEP 1 DONE (10 Nov 2026, from gt.csv only; no image, depth or model answer of 01_13B looked at):
+  Track: serpentine through ~33 rows along x (x ~ 9..45 m); U-turns at x ~ 7 (west) and x ~ 47 (east).
+  Straight-driving starts after a turn = heading within 15 deg of the row axis for > 10 s (track_01_13B.png).
+  TEST entrances farmD_1..10 = 10 consecutive regular inner-row entrances, 500-840 s (rows y = -90 .. -148):
+    506.5 E, 543.0 W, 579.0 E, 614.5 W, 650.5 E, 686.5 W, 722.5 E, 757.5 W, 794.9 E, 830.0 W   (E = entering heading east)
+    (times = start of straight driving; the label is set by the line below, not by these times)
+  CALIBRATION (never tested): 81.0 E and 110.5 W. Only their camera strips are used, to place the row-entrance line:
+    label = GPS time the robot crosses x = Xw heading east, or x = Xe heading west, where Xw / Xe = the x at which
+    the first tree pair is beside the camera in the calibration strips. Xw / Xe are written here before farmD is built.
+  Skipped (irregular straight start, edge rows): 291, 369.5, 478, 872.9, 1051.9, 1119.9, 1162.4 s, first and last rows.
