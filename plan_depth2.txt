@@ -1,0 +1,25 @@
+PLAN: depth-only stop rule on a NEW block   (written 10 Nov 2026, before any file of the new sequence was looked at)
+
+Why: on 05_13D (farmC_1..10) the pre-registered depth-only rule (D = 3.5 m) stopped well 9/10 times, VLM only 7/10,
+AgriVLN 0/10. One test block is not enough; this checks whether the depth rule carries over to a different block.
+
+FROZEN RULE (nothing below may change after this file is pushed):
+  Signal : ZED stereo depth, farm2_depth.py unchanged: left_m / right_m = median valid depth of the outer 15 % of the
+           image width, rows 25-75 %, depth > 20 m or missing = invalid.
+  Answer : YES at a frame if left_m < 3.5 and right_m < 3.5 (missing = NO).
+  Driving: move-stop-ask step6 (closed_loop_sim.py unchanged): 1 m steps, 0.25 m after the first YES, stop at 6 YES in a row.
+  Success: stop within 2 m (GPS distance driven) of the labelled row entrance.
+Also reported (same episodes, same scoring): VLM only (qwen3-vl:4b, wording A, step6), AgriVLN baseline.
+Latency: 1.9 s and 5.5 s per answer.
+
+DATA: CitrusFarm 01_13B_Jackal (block 13B, never used before).
+  Step 1: only gt.csv is downloaded; from the GPS track alone the row-end lines and the entrance times (robot entering an
+          inner row from the turning lane) are fixed and added to this file.
+  Step 2: only then the zed bags that cover those times are downloaded; strips are checked by eye for the label only
+          (is the robot really entering a row at the label time); an episode is dropped only if the strip shows it is not
+          a row entrance, and the reason is written here BEFORE any depth value or model answer is looked at.
+  Clip : 12 s before + 4 s after the entrance (farm2_episodes.py unchanged), names farmD_1..n, target 8-10 entrances.
+
+Decision stated in advance: the depth rule "carries over" if it gets at least as many successes as VLM only AND
+at least 7 out of 10 (or the same share for another n). Otherwise it is reported as not carried over.
+NOT ALLOWED after test results: changing D, the band, step6, labels, the episode list or the success distance.
