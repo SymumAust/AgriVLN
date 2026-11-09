@@ -27,6 +27,9 @@ p.add_argument("--gt", default=None)
 p.add_argument("--out", default=None)
 p.add_argument("--entrances", type=float, nargs="*", default=[159.4, 227.1, 290.5, 453.6, 510.7, 570.4],
                help="seconds from the start of the drive (from the GPS analysis) to make strips around")
+p.add_argument("--before", type=float, default=8.0, help="strip starts this many s before each entrance")
+p.add_argument("--after", type=float, default=6.0, help="strip ends this many s after each entrance")
+p.add_argument("--strips_only", action="store_true", help="frames already extracted: only remake the strips")
 a = p.parse_args()
 
 ts = get_typestore(Stores.ROS1_NOETIC)
@@ -64,6 +67,9 @@ def to_rgb(msg):
 
 
 kept = {}
+if a.strips_only:
+    kept = {int(r["k"]): float(r["t"]) for r in csv.DictReader(open(f"{a.out}/frames.csv"))}
+    bags = []
 for bag in bags:
     with Reader(bag) as r:
         topic = a.topic
@@ -84,13 +90,14 @@ for bag in bags:
             n += 1
         print(f"{os.path.basename(bag)}: topic {topic}, kept {n} frames")
 
-with open(f"{a.out}/frames.csv", "w", newline="") as fh:
-    w = csv.writer(fh)
-    w.writerow(["k", "t", "file", "x_m", "y_m", "dist_m"])
-    for k in sorted(kept):
-        t = k / 5
-        w.writerow([k, round(t, 1), f"f_{k:06d}.jpg", round(float(np.interp(t, gt_t, gx)), 3),
-                    round(float(np.interp(t, gt_t, gy)), 3), round(float(np.interp(t, gt_t, gd)), 3)])
+if not a.strips_only:
+    with open(f"{a.out}/frames.csv", "w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["k", "t", "file", "x_m", "y_m", "dist_m"])
+        for k in sorted(kept):
+            t = k / 5
+            w.writerow([k, round(t, 1), f"f_{k:06d}.jpg", round(float(np.interp(t, gt_t, gx)), 3),
+                        round(float(np.interp(t, gt_t, gy)), 3), round(float(np.interp(t, gt_t, gd)), 3)])
 print(f"{len(kept)} frames in {a.out}/frames, positions in {a.out}/frames.csv")
 
 try:
@@ -98,7 +105,7 @@ try:
 except Exception:
     font = ImageFont.load_default()
 for te in a.entrances:
-    ks = [k for k in range(round((te - 8) * 5), round((te + 6) * 5) + 1, 2) if k in kept]
+    ks = [k for k in range(round((te - a.before) * 5), round((te + a.after) * 5) + 1, 2) if k in kept]
     if not ks:
         continue
     TW, TH = 320, 180
@@ -108,7 +115,7 @@ for te in a.entrances:
         im = Image.open(f"{a.out}/frames/f_{k:06d}.jpg").resize((TW - 4, TH - 4))
         x0, y0 = (j % 7) * TW, (j // 7) * TH
         strip.paste(im, (x0 + 2, y0 + 2))
-        d.rectangle([x0 + 2, y0 + 2, x0 + 150, y0 + 30], fill="black")
-        d.text((x0 + 6, y0 + 4), f"{k / 5:.1f}s", fill="yellow", font=font)
+        d.rectangle([x0 + 2, y0 + 2, x0 + 250, y0 + 30], fill="black")
+        d.text((x0 + 6, y0 + 4), f"{k / 5:.1f}s x={float(np.interp(k / 5, gt_t, gx)):.1f}", fill="yellow", font=font)
     strip.save(f"{a.out}/entrance_{te:.0f}.jpg", quality=85)
     print(f"strip {a.out}/entrance_{te:.0f}.jpg ({ks[0] / 5:.1f}-{ks[-1] / 5:.1f} s, every 0.4 s)")
