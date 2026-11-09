@@ -34,3 +34,13 @@ STEP 1 DONE (10 Nov 2026, from gt.csv only; no image, depth or model answer of 0
     label = GPS time the robot crosses x = Xw heading east, or x = Xe heading west, where Xw / Xe = the x at which
     the first tree pair is beside the camera in the calibration strips. Xw / Xe are written here before farmD is built.
   Skipped (irregular straight start, edge rows): 291, 369.5, 478, 872.9, 1051.9, 1119.9, 1162.4 s, first and last rows.
+
+CALIBRATION RESULT (10 Nov 2026, strips entrance_81.jpg / entrance_110.jpg; no depth, no model answer looked at):
+  Criterion "first tree pair beside the camera" = a tree crown reaching BOTH the left and the right image edge.
+  81.0 E : first at x ~ 15.5 m (85.4-85.8 s).   110.5 W : first at x ~ 39.5 m (110.0 s), right after the U-turn.
+  Problem found: the east row ends are not at one x for the whole block. In the calibration rows the east U-turn is at
+  x ~ 40, in the test rows (y = -90..-148) at x ~ 46 (GPS track), so a single Xe line would put the test labels ~6 m wrong.
+  CHANGE (made now, before any test strip, depth value or model answer exists): no fixed Xw / Xe line. Each farmD label
+  = the first 0.2 s frame that meets the same criterion, read by eye from that entrance's strip (labels written below
+  with their GPS x before farmD is built). Check stated in advance: all east-heading labels should lie at a similar x,
+  and all west-heading labels too (spread > 3 m is reported).
