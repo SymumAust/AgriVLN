@@ -24,3 +24,8 @@ TEST SELECTION (9 Nov 2026, from GPS only, before downloading any images of 05_1
   Same crossing rule (x=-4 m westward / x=-51 m eastward after a headland): 14 entrances; edge rows (y~1, y~-37) excluded;
   ALL 10 inner entrances used: t = 61.3, 113.9, 164.5, 217.5, 266.9, 435.6, 486.2, 541.8, 590.7, 645.6 s -> farmC_1..10.
   Labels = GPS time; strips checked by eye before any model or depth value is looked at.
+
+TEST RESULT (farmC_1..10, 05_13D, step6, same at 1.9 s and 5.5 s per answer; success = stop within 2 m):
+  AgriVLN 0/10 [-7.7 m, all early]; VLM only 7/10 [+0.2]; VLM + gate D=5.0 (frozen main) 6/10 [+0.2] -> gate NOT confirmed;
+  VLM + gate D=3.5 6/10; depth only D=3.5 (pre-registered) 9/10 [-0.7]; depth only D=5.0 6/10; vote10 while driving 0/10.
+  Why: on farmC the VLM misses were late / no stop (C1, C3, C8), not early; the gate can only remove YES, so it made C5 and C8 worse.
