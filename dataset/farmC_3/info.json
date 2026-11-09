@@ -1,0 +1,14 @@
+{
+  "instruction": "Drive into the next tree row and stop when trees are close on both the left and right sides of you.",
+  "length": 13.56,
+  "orientation": "landscape",
+  "frame_size": [
+    1280,
+    720
+  ],
+  "source": "CitrusFarm 05_13D_Jackal, 152.4-168.4 s, entrance 164.5 s",
+  "split": "farm-closed-loop-test",
+  "filled_frames": [
+    162.0
+  ]
+}
