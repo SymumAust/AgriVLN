@@ -55,3 +55,9 @@ TEST LABELS (10 Nov 2026, read by eye from entrance_<t>.jpg strips, 0.4 s steps;
   Correction to the calibration note: the test rows end at about the same x as the calibration rows (east ~40.5 vs 39.5,
   west ~13.5 vs 15.5); the later U-turns at x ~ 46 were just wider turns. A fixed line would have been within ~1-2 m.
   The per-episode labels above are used as planned. No episode dropped (all 10 are clear row entrances).
+
+TEST RESULT (10 Nov 2026, farmD_1..10, step6, same at 1.9 s and 5.5 s; success = stop within 2 m):
+  depth only D=3.5 (frozen rule) 9/10 [+0.4 m] (miss: farmD_5, -3.2 m);  VLM only 7/10 [+0.3] (D2, D9 no stop; D6 -3.9 m);
+  VLM + gate D=3.5 3/10, D=5.0 6/10;  vote10 while driving 0/10;  AgriVLN 0/10 [-11.0 m, all at 2-3 s].
+  VLM blanks 61/810 (counted as NO).  Decision (stated in advance): >= 7/10 and >= VLM only -> depth rule CARRIES OVER.
+  Unseen tests together (farmC + farmD): depth only 18/20, VLM only 14/20, AgriVLN 0/20.
