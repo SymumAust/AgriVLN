@@ -1,0 +1,22 @@
+PLAN: larger models qwen3-vl:8b (thinking) and qwen3-vl:8b-instruct   (written 13 Nov 2026, before running either on any clip)
+
+Why: the main VLM qwen3-vl:4b (thinking) stops well 18/29 on the farm approaches (farmB 4/9, farmC 7/10, farmD 7/10),
+with move-stop-ask (step6). Question: does a bigger model judge "trees close on both sides" better?
+Measured time per answer on this PC (latency_check.py, 13 Nov, all 100 % GPU):
+  4b 2.07 s (90 % 6.46), 4b-instruct 0.61 s, 8b 3.30 s (90 % 8.89), 8b-instruct 1.18 s.
+
+Episodes: farmB_1..9, farmC_1..10, farmD_1..10 (29 approaches, 2349 frames). ALL ALREADY USED, so this is a
+COMPARISON on seen data, not a test. Same question, wording A, temperature 0, seed 42, blank = NO, probe_arrival.py unchanged.
+Score: closed_loop_sim.py step6 (unchanged), success = stop within 2 m; reported at each model's own median and 90 % latency.
+Also reported: blanks, early YES rate (YES on frames before the label), vote10 while driving.
+
+Decision rule (fixed now):
+  An 8B model is a CANDIDATE to replace qwen3-vl:4b only if, on the 29 approaches,
+    (a) step6 successes >= 21/29 (at least 3 more than 4b's 18/29), and
+    (b) early YES rate not higher than 4b's on the same frames, and
+    (c) blanks <= 2 % of frames.
+  If both 8B models pass, the one with more successes is the candidate (tie -> the faster one).
+  A candidate is only adopted after a NEW pre-registered test set (unused CitrusFarm entrances).
+  Otherwise qwen3-vl:4b stays.
+Context stated in advance: depth only already gets 18/20 on the unseen tests; a better VLM matters mainly for the
+next step (instruction -> which check), not for the row-entrance stop itself.
