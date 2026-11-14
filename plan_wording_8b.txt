@@ -18,3 +18,13 @@ STEP 2 - COMPARISON on farmC_1..10 + farmD_1..10 (20 approaches; seen before, th
 Decision stated in advance: an 8B model "beats 4b when both have their own best wording" only if it gets more than
 14/20. 4b is not re-tuned (its wording selection was already done the same way).
 NOT ALLOWED after results: changing candidates, the rule, clips, labels or the latency values.
+
+RESULT (14 Nov 2026):
+STEP 1 (9 dev clips, step6): qwen3-vl:8b  A 4/9, B 3/9, C 2/9, D 2/9 -> A stays.
+                             qwen3-vl:8b-instruct  C 4/9, B 3/9, A 2/9, D 2/9 -> C chosen.
+STEP 2 (farmC + farmD, 20 approaches, step6):
+  qwen3-vl:8b (A) 10/20;  qwen3-vl:8b-instruct (C) 14/20 [-2.1 m] (farmC 6/10, farmD 8/10), early YES 25.6 %, blanks 0 %,
+  all 6 misses early (-3.7 .. -8.6 m), ~44 s per approach (vs ~83 s for 4b);  vote10 0/20.
+  Reference: qwen3-vl:4b (A) 14/20, depth only 18/20.
+Decision (rule fixed in advance: > 14/20 needed): no 8B model beats 4b. 8b-instruct with its own wording TIES 4b,
+  at about half the time per answer and without blanks.
