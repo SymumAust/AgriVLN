@@ -1,0 +1,20 @@
+PLAN: give each 8B model its own best wording, then compare fairly   (written 14 Nov 2026, before any run)
+
+Why: the arrival wording (A) was chosen with qwen3-vl:4b on 8 Nov (plan_wording.txt). With wording A the 8B models got
+15/29 (8b) and 0/29 (8b-instruct) vs 18/29 for 4b (plan_8b.txt). A reviewer could say 4b only won because the wording
+was tuned on it. So each 8B model now gets the same wording selection that 4b had.
+
+STEP 1 - SELECTION (same development set, candidates and rule as plan_wording.txt, nothing else changed):
+  Development clips: farm_6, farm_7, farm_8, farmB_1 .. farmB_6 (9 clips, 729 frames).
+  Candidates A, B, C, D exactly as in plan_wording.txt (A answers on farmB_1..6 already exist in probe_results_8b*.csv).
+  Models: qwen3-vl:8b and qwen3-vl:8b-instruct, temperature 0, seed 42, every frame, probe_arrival.py unchanged.
+  Rule per model: step6 (closed_loop_sim.py) on the 9 clips; most successes (|error| < 2 m); ties -> fewest early YES;
+  then the shortest wording. A candidate must beat A on successes, otherwise A stays.
+STEP 2 - COMPARISON on farmC_1..10 + farmD_1..10 (20 approaches; seen before, the same set for every model):
+  each 8B model with its chosen wording (A answers exist; a new wording is run on the 20 clips).
+  Reference: qwen3-vl:4b with wording A 14/20, depth only 18/20.
+  Report successes, early YES, YES after the entrance, blanks; step6 at each model's median latency
+  (8b 3.30 s, 8b-instruct 1.18 s) - the result does not depend on latency for step6.
+Decision stated in advance: an 8B model "beats 4b when both have their own best wording" only if it gets more than
+14/20. 4b is not re-tuned (its wording selection was already done the same way).
+NOT ALLOWED after results: changing candidates, the rule, clips, labels or the latency values.
