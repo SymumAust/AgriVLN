@@ -20,3 +20,9 @@ Decision rule (fixed now):
   Otherwise qwen3-vl:4b stays.
 Context stated in advance: depth only already gets 18/20 on the unseen tests; a better VLM matters mainly for the
 next step (instruction -> which check), not for the row-entrance stop itself.
+
+RESULT (14 Nov 2026, 29 farm approaches, step6, success = stop within 2 m; same at median and 90 % latency):
+  qwen3-vl:4b 18/29 [-0.4 m], early YES 20.5 %, blanks 4.7 %
+  qwen3-vl:8b 15/29 [-3.2 m], early YES 36.3 %, blanks 1.5 %   (farmB 5/9, farmC 5/10, farmD 5/10)
+  qwen3-vl:8b-instruct 0/29 [-10.6 m], early YES 82.2 %, YES after label 100 %, blanks 0 %
+  Decision (rule fixed in advance): neither 8B model reaches 21/29 -> no candidate; qwen3-vl:4b stays.
