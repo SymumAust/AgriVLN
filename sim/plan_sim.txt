@@ -1,0 +1,34 @@
+PLAN: full closed-loop test of the stop decision in the simulated orchard   (written 16 Nov 2026, before any run with seed 2026)
+
+Why: closed_loop_sim.py replays recorded drives (camera view, path and speed are fixed). Here (row_stop_sim.py, PyChrono 10)
+the robot really drives on soft soil, slips, brakes, and every check is made from where the robot actually is.
+The VLM sees the simulated camera image live and its real answer time is part of the loop.
+
+WORLD (frozen = row_stop_sim.py as committed with this plan; tuned on seed 0 during setup, see "known limits"):
+  8 parallel hedge rows of sphere canopies (radius 1.5-1.9 m, overlapping), clear lane 3.2-4.0 m, robot = Jackal-size
+  skid-steer, camera like the CitrusFarm ZED2i (0.28 m above ground, 102 deg), soils firm / soft / mud in turn.
+  Scenario row: open headland, then the row.  Scenario lookalike: first a wide corridor between two short hedges
+  (canopy faces 3.5-5 m from the robot, x = -14..-8 m), then the open headland, then the row.
+  Entrance label = farm labelling rule (canopy of the two lane rows reaches both image edges), from the geometry.
+  Success = robot at rest within 2 m of the entrance. Early = stopped >= 2 m before it.
+DECIDERS AND POLICIES (unchanged from the farm work):
+  depth = frozen farm rule (edge bands, both < 3.5 m).  vlm = probe_arrival.py question, temperature 0, seed 42, blank = NO.
+  drive = decide while driving, stop after 3 YES in a row (VLM: the robot keeps driving during each answer).
+  step6 = move-stop-ask: 1 m steps, 0.25 m after the first YES, stop at 6 YES in a row (robot stands while asking).
+RUNS (all with --seed 2026, never used before):
+  E1 depth, ray casting (CPU): {row, lookalike} x {drive, step6}, 30 trials each.
+  E2 depth, depth camera (GPU): {row, lookalike} x {drive, step6}, 10 trials each (checks E1 with real rendering).
+  E3 VLM live: qwen3-vl:4b with wording A (main) and qwen3-vl:8b-instruct with wording C (second),
+     {row, lookalike} x {step6, drive}, 10 trials each.
+  Allowed before E3: one technical check that the query images are upright and show the scene (looked at, not scored).
+REPORT: successes, early / late / no stop, mean error, mission time (incl. thinking time), per scenario, policy, decider.
+QUESTIONS STATED IN ADVANCE:
+  Q1 Does depth + drive stop well in both scenarios (>= 24/30 each)?
+  Q2 Does the lookalike corridor cause more early stops for the VLM than the plain row (step6)?
+  Q3 Is VLM + drive worse than VLM + step6 (thinking time costs metres when driving)?
+  Q4 Is depth + drive better than the best VLM setting in the lookalike scenario?
+KNOWN LIMITS (stated now): the world (canopy shape, rows, camera) was adjusted while debugging with seed 0;
+  in the simulator the edge depth falls below 3.5 m ~2 m later relative to the label than on the farm
+  (farm_vs_sim_depth.png), so step6 tends to stop late here; canopies are smooth spheres (rendered images look simpler
+  than the farm, a domain gap for the VLM); one robot speed (1.2 m/s); straight approach, no turn into the row.
+NOT ALLOWED after results: changing the world, the rule, K, D, the label, the seed, the number of trials or the models.
