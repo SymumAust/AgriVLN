@@ -1,0 +1,4 @@
+trial,stopped,error_m,sim_time_s,entrance_z,lookalike
+0,1,-0.33,5.1,-2.46,False
+1,1,-0.37,5.1,-2.46,False
+2,1,-0.4,4.9,-2.46,False
