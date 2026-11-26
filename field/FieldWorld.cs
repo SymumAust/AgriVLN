@@ -13,6 +13,8 @@
 // path and the crops is the "side space" for a detour (driving into the crops = crop damage, not allowed).
 //
 // Scenarios (one obstacle at z = obs_z, x = obs_x):
+// Camera height and tilt can also be set by Python on every reset (cam_h > 0), for the camera-mounting experiment.
+//
 //   none            nothing on the path                                    -> correct: go all the way
 //   person_stand    capsule 1.7 m tall, 0.5 m wide                          -> stop (people: always stop)
 //   person_lie      capsule lying across the path, 1.7 m long, 0.4 m high   -> stop
@@ -79,7 +81,7 @@ public class FieldWorld : MonoBehaviour
     readonly List<Obj> objs = new List<Obj>();
     Obj mover; bool moverWalking; float moverTargetX;
 
-    class Req { public string cmd; public float v, w, dt, x0, z0, yaw, obs_z, obs_x; public bool image, depth; public string scenario; }
+    class Req { public string cmd; public float v, w, dt, x0, z0, yaw, obs_z, obs_x, cam_h, tilt; public bool image, depth; public string scenario; }
     class Job { public Req req; public byte[] reply; public ManualResetEventSlim done = new ManualResetEventSlim(false); }
     readonly ConcurrentQueue<Job> jobs = new ConcurrentQueue<Job>();
     bool busy;
@@ -342,6 +344,12 @@ public class FieldWorld : MonoBehaviour
         {
             string sc = string.IsNullOrEmpty(q.scenario) ? curScenario : q.scenario;
             BuildScene(sc, q.obs_z, q.obs_x);
+            if (q.cam_h > 0)                                   // Python may move the camera: height (m) and tilt (deg, + = down)
+            {
+                camHeight = q.cam_h; camTiltDeg = q.tilt;
+                robotCam.transform.localPosition = new Vector3(0, camHeight, 0.2f);
+                robotCam.transform.localRotation = Quaternion.Euler(camTiltDeg, 0, 0);
+            }
             SetPose(q.x0, q.z0, q.yaw); simTime = 0; lastV = 0;
         }
         else if (q.cmd == "step" && q.dt > 0) Integrate(q.v, q.w, q.dt);

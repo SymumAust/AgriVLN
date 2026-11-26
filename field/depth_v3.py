@@ -20,21 +20,30 @@ class DepthV3:
         th = np.tan(np.radians(hfov_deg / 2)); tv = th * img_h / img_w
         self.ndx = ((2 * (np.arange(grid_w) + .5) / grid_w - 1) * th)[None, :]
         self.ndy = ((1 - 2 * (np.arange(grid_h) + .5) / grid_h) * tv)[:, None]
-        if abs(tilt_deg) > 1e-6:
-            raise NotImplementedError("tilt: rotate the points first (camera tilt is 0 in FieldWorld for now)")
+        self.ct, self.st = np.cos(np.radians(tilt_deg)), np.sin(np.radians(tilt_deg))     # tilt > 0 = camera looks down
+        # per unit of camera z-depth: forward and up components of each ray in the robot frame
+        self.f_per_z = self.ct + self.ndy * self.st
+        self.u_per_z = -self.st + self.ndy * self.ct
+        # forward distance at which each ray would meet flat ground (inf if it never does)
+        down = -self.u_per_z
+        self.f_ground = np.where(down > 1e-9, cam_height / np.maximum(down, 1e-9) * self.f_per_z, np.inf)
         self.h, self.th, self.cam_front = cam_height, th, cam_ahead_of_front
         self.corr, self.need = half_w + margin, 2 * (half_w + margin)
         self.h_obs, self.h_hole, self.min_cells, self.max_range = h_obs, h_hole, min_cells, max_range
 
     def points(self, depth):
+        """forward distance from the camera F (robot frame, along the ground), lateral X, height above ground H.
+        Cells without depth get F = 0."""
         z = depth.astype(float)
+        F = z * self.f_per_z
         X = z * self.ndx
-        H = self.h + z * self.ndy
-        return z, X, H
+        H = self.h + z * self.u_per_z
+        F[z <= 0] = 0.0
+        return F, X, H
 
     def nearest(self, depth):
         """(distance from the front bumper, 'obstacle'|'hole'|None, z, X, H)"""
-        z, X, H = self.points(depth)
+        z, X, H = self.points(depth)                      # z = forward distance along the ground from here on
         ok = (z > 0) & (z < self.max_range)
         corr = ok & (np.abs(X) < self.corr)
         obs = corr & (H > self.h_obs)
@@ -43,7 +52,7 @@ class DepthV3:
         if obs.sum() >= self.min_cells:
             best = (np.sort(z[obs])[self.min_cells - 1] + self.cam_front, "obstacle")
         if hole.sum() >= self.min_cells:
-            z_ground = (self.h / np.maximum(-self.ndy, 1e-9)) * np.ones_like(z)        # where flat ground would have been
+            z_ground = self.f_ground * np.ones_like(z)                                   # where flat ground would have been
             dh = np.sort(z_ground[hole])[self.min_cells - 1] + self.cam_front
             if dh < best[0]: best = (dh, "hole")
         return best[0], best[1], z, X, H

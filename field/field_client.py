@@ -58,6 +58,8 @@ p.add_argument("--margin", type=float, default=0.15, help="side margin each side
 p.add_argument("--zone_speed", default="current", choices=["current", "nominal"],
                help="current = zones from the speed at this moment (as in the plan); nominal = always from --v")
 p.add_argument("--seed", type=int, default=2026)
+p.add_argument("--cam_h", type=float, default=0.0, help="camera height (m); 0 = keep what Unity has (Inspector)")
+p.add_argument("--tilt", type=float, default=0.0, help="camera tilt (deg, + = down); used only with --cam_h")
 p.add_argument("--save_images", action="store_true")
 p.add_argument("--no_depth", action="store_true", help="do not ask for / save the depth grid")
 p.add_argument("--out", default="run_field")
@@ -91,8 +93,9 @@ class Unity:
         dep = np.frombuffer(self._read(n), "<f4").reshape(head["depth_h"], head["depth_w"]) if n else None
         return head, jpg, dep
 
-    def reset(self, z0, scenario, obs_z, obs_x, image=False, depth=True):
-        return self._call(dict(cmd="reset", x0=0.0, z0=z0, yaw=0.0, scenario=scenario, obs_z=obs_z, obs_x=obs_x, image=image, depth=depth))
+    def reset(self, z0, scenario, obs_z, obs_x, image=False, depth=True, cam_h=0.0, tilt=0.0):
+        return self._call(dict(cmd="reset", x0=0.0, z0=z0, yaw=0.0, scenario=scenario, obs_z=obs_z, obs_x=obs_x, image=image, depth=depth,
+                               cam_h=cam_h, tilt=tilt))
 
     def step(self, v, dt, image=False, depth=True):
         return self._call(dict(cmd="step", v=v, w=0.0, dt=dt, image=image, depth=depth))
@@ -172,7 +175,11 @@ rows = []
 for sc in scen:
     for k in range(a.trials):
         start = rng.uniform(a.start_min, a.start_max)
-        st, jpg, dep = u.reset(a.obs_z - start - 0.215, sc, a.obs_z, a.obs_x, image=a.save_images, depth=not a.no_depth)
+        st, jpg, dep = u.reset(a.obs_z - start - 0.215, sc, a.obs_z, a.obs_x, image=a.save_images, depth=not a.no_depth,
+                               cam_h=a.cam_h, tilt=a.tilt)
+        if a.policy in ("depth_v3", "fusion"):          # the decider uses the camera Unity really has
+            V3 = DepthV3(cam_height=st["cam_height"], tilt_deg=st["tilt_deg"], hfov_deg=st["hfov_deg"], img_w=st["img_w"], img_h=st["img_h"],
+                         grid_w=st["depth_w"], grid_h=st["depth_h"], half_w=a.half_w, margin=a.margin)
         v, t, vt = 0.0, 0.0, a.v                       # current speed, time, target speed
         delay = max(0, int(round(a.t_r / a.dt)))
         queue, frames, depths, labs, gaps = [], 0, [], [], []
@@ -228,7 +235,7 @@ for sc in scen:
         else:
             outcome = "drove through (no reaction)"
         cnt = {L: labs.count(L) for L in ("go", "slow", "stop", "detour")}
-        rows.append(dict(scenario=sc, trial=k, start_m=round(start, 2), decision=decision or "",
+        rows.append(dict(scenario=sc, trial=k, cam_h=st["cam_height"], tilt=st["tilt_deg"], start_m=round(start, 2), decision=decision or "",
                          decision_gap_m="" if np.isnan(dec_gap) else round(dec_gap, 3), vlm_asks=n_ask, final_gap_m="" if np.isnan(final_gap) else round(final_gap, 3),
                          min_gap_m="" if min_gap == float("inf") else round(min_gap, 3), collided=int(collided), label_switches=switches,
                          frames=frames, **{f"n_{L}": n for L, n in cnt.items()}, time_s=round(t, 2)))

@@ -1,0 +1,28 @@
+PLAN: Field step 4 - where should the camera be mounted? (depth v3 only)   (written 26 Nov 2026, before any run)
+
+Why: in steps 2-3 the 0.28 m camera saw the ditch so late that the robot stopped 0.00-0.01 m from the edge and once touched
+it. Before the site visit (30 Nov) we want to tell the professor which camera height and tilt the stereo camera needs.
+
+SETUP: FieldWorld.cs (camera height/tilt now set by Python on every reset), depth_v3.py (now tilt-aware: points are rotated
+into the robot frame; with tilt 0 the result is unchanged - offline check on run_field_drive still gives 92.9 %),
+field_client.py --policy depth_v3. Everything else as in step 2: thresholds 0.15 / 0.05 m, zones from the current speed,
+obstacle at z 30 m, x 0, start 18-22 m before, seed 2026, depth grid 64 x 36.
+CONFIGS (cam_sweep.sh): height 0.28 / 0.6 / 1.0 m with tilt 0, and 0.6 / 1.0 m with tilt 15 deg down.
+  8 scenarios x 3 trials each. Summary: cam_summary.py.
+
+GEOMETRY BEFORE RUNNING (computed, not measured): with tilt 0 the camera first sees the ground 0.41 m (h 0.28), 0.89 m (h 0.6)
+and 1.48 m (h 1.0) ahead; with tilt 15: 0.52 m (h 0.6), 0.87 m (h 1.0). A 1 m ditch can only be found when ground rays are
+less than ~1 m apart there: with this grid up to about sqrt(h / 0.034) m ahead = 2.9 m (h 0.28), 4.2 m (h 0.6), 5.4 m (h 1.0).
+depth v3 has NO memory: what leaves the view is forgotten.
+
+PREDICTIONS:
+  P1  h 0.28 t 0 repeats step 2: ditch stop 0.00-0.02 m from the edge (a touch possible); first slow for the ditch about 2.8 m.
+  P2  h 0.6 (t 0 and t 15): ditch first slow at 3.8 m or more, final gap 0.3 m or more, no collision in any scenario.
+  P3  h 1.0 t 0: COLLISIONS are likely with the low obstacles (rock 0.42 m, lying person 0.4 m) and the ditch: after slowing,
+      the hazard zone (0.78 m) lies in the camera's near blind zone, the object disappears from view, v3 forgets it and
+      says go. At least 1 collision among rock, person_lie and ditch (9 trials).
+  P4  h 1.0 t 15: no collision; ditch final gap 0.3 m or more.
+  P5  every config: none 0 false stops; grass 3/3 false stops (height does not make grass passable);
+      first slow for the standing person about 4.2 m (the same in every config).
+NOT ALLOWED after results: changing configs, thresholds, zones, scenarios or seed for these runs.
+RESULT: (to be filled in)
