@@ -39,4 +39,17 @@ RESULT OFFLINE (26 Nov 2026, eval_v3.py on run_field_drive, 1928 frames): frame 
   P5 held: grass gives 57 false-alarm frames: slow from t = 13.7 s, stop at t = 16.7 s.
   Confusion (rows gt, cols v3; go/slow/stop/detour): go 1596/30/27/0, slow 17/144/0/0, stop 20/4/41/11, detour 12/0/16/10.
   (Most stop->go and detour->go frames are inside/past the obstacle, where the drive run passes through it.)
-RESULT CLOSED LOOP: (to be filled in after the Unity runs)
+RESULT CLOSED LOOP (26 Nov 2026, Unity, depth_v3, 8 scenarios x 3, zones from the current speed):
+  Offline check reproduced on the user's PC (92.9 %, same table).
+  none 3/3 driven through. grass 3/3 FALSE STOP (P5/P6 held). No collision anywhere (gap never below 0).
+  ditch 3/3 stop, but at 0.011 / 0.005 / 0.003 m from the edge: no margin left (the hole is seen too late, P4 risk confirmed).
+  person_stand 3/3 STOP at 0.45-0.47 m, person_lie 3/3 STOP at 0.45-0.50 m, person_moving 2 STOP + 1 DETOUR at 0.47-0.49 m.
+  rock 3/3 STOP, drum 3/3 STOP at 0.45-0.50 m (ground truth: detour).
+  Summary printed by the client: 21/24 safe and without false stop; right decision 11/18 obstacle trials.
+  P6 held for: no collision, every obstacle stopped for, grass false stop 3/3, none 3/3.
+  P6 FAILED for "person scenarios end in DETOUR": 8 of 9 ended in STOP. Not because v3 recognised people: in closed loop the
+  robot slows to 0.5 m/s first, so the hazard zone is smaller (0.775 m) and the obstacle is reached closer; at that distance
+  the camera sees only about 0.97 m to each side, so the free strip beside a 0.5 m object (0.72 m) is just under the 0.73 m
+  needed -> STOP. The same effect turns every rock/drum DETOUR into STOP. The "right" decisions for people are geometric luck.
+  Lessons: (1) a detour must be decided early (in the warning zone, where the side is still in view), not at d_hazard;
+  (2) a 0.28 m camera sees a ditch too late for the zone margin; (3) depth alone cannot pass grass or know a person.
