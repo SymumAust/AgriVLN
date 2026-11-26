@@ -1,0 +1,33 @@
+PLAN: Unity lookalike test   (written 26 Nov 2026, before any lookalike run)
+
+Why: on the farm, the VLM said YES in the turning lane of block 13D, a corridor with trees on both sides but
+wider than a tree row (farmB_1 stopped 9.1 m early). The Unity "lookalike" switch adds such a corridor before the rows:
+short hedges on both sides from world z = -14 to -8 m, canopy faces 4.25 m from the lane centre
+(the real lane has canopy faces about 1.7 m from the centre). Relative to the entrance (camera z = -2.46 m) the
+corridor centres cover about -11.5 to -5.5 m (hedge edges about -13 to -4 m).
+Question: does the lookalike corridor fool each decider, and how does the stop position change?
+
+Nothing else changes: OrchardWorld.cs as in commit 4dd65ba (only the Lookalike box ticked in the Inspector),
+loop_client.py and sweep.py as in 4dd65ba, qwen3-vl:4b, wording A, temperature 0, seed 42, D = 3.5 m, K = 3,
+step6 as before, success = stop within 2 m of the entrance. The entrance label ignores lookalike hedges (only "lane" trees).
+
+RUNS (in this order, all with Lookalike ON):
+  1. sweep.py, VLM + depth v1 + depth v2, every 1 m from -20 to +4 m           -> sweep_look_4b_A
+  2. depth_drive, band hi (v2), start -22 .. -18, 3 trials                       -> run_look_depth_hi_far
+  3. depth_drive, band full (v1), start -22 .. -18, 3 trials                     -> run_look_depth_v1_far
+  4. vlm_step6, start -22 .. -18, 3 trials                                       -> run_look_vlm_step6_far
+  5. vlm_drive, start -22 .. -18, 3 trials                                       -> run_look_vlm_drive_far
+Reference (no lookalike, already done): sweep_4b_A, sweep_depth_v2, run_depth_hi_far, run_depth_far, run_vlm_drive_far.
+
+PREDICTIONS (written before running):
+  P1  depth v2: NO at every position in the corridor (canopy 4.25 m away > 3.5 m), YES from the entrance;
+      3/3 within 2 m. If v2 says YES inside the corridor, v2 is fooled by a wide corridor too.
+  P2  depth v1: still fooled by the empty ground before the corridor (as without lookalike); 0/3.
+  P3  VLM: more YES between -13 and -4 m than without lookalike (reference sweep: 4 YES of 10 positions there).
+  P4  vlm_step6: stops inside the corridor (before -4 m) in at least 2 of 3 trials.
+  P5  vlm_drive: no prediction on the stop position (it depends on answer time); report it.
+
+NOT ALLOWED after results: changing the corridor, thresholds, wording, model, K, start range or the success rule.
+Report every run, including failed predictions.
+
+RESULT: (to be filled in after the runs)
