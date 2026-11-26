@@ -18,16 +18,28 @@
 #           Checks that the zone rule itself is sound: it should stop about d_m before every obstacle and never on grass.
 #   depth_v3 decides from the depth grid alone (depth_v3.py), with the same reaction delay and braking as the oracle;
 #           the ground-truth label is still logged next to it.
+#   fusion  depth v3 says WHERE (distance, hole/obstacle, side space), the VLM says WHAT (vlm_class.py), asked again and
+#           again while driving. Lock-step: the answer is used only after its real answer time has passed in simulation.
+#           Uncertainty -> SLOW: no answer yet, no YES-able word, VLM and depth disagree, or "grass" that depth sees as tall.
+#           PERSON/ANIMAL/HOLE -> stop (never detour); OBJECT/VEHICLE -> detour decided EARLY (in the warning zone) if the
+#           side is free; GRASS (and depth: lower than --h_grass) -> drive through.
 # detour is recorded as the decision and the robot stops there (driving the detour comes later).
 
 import argparse, csv, json, os, socket, struct, time
 import numpy as np
+try:
+    from vlm_class import ask as ask_vlm
+except ImportError:
+    ask_vlm = None
 
 SCENARIOS = ["none", "person_stand", "person_lie", "person_moving", "rock", "drum", "ditch", "grass"]
 ALWAYS_STOP = ("person", "person_lying", "person_moving", "ditch")
 
 p = argparse.ArgumentParser()
-p.add_argument("--policy", default="oracle", choices=["oracle", "drive", "depth_v3"])
+p.add_argument("--policy", default="oracle", choices=["oracle", "drive", "depth_v3", "fusion"])
+p.add_argument("--model", default="qwen3-vl:4b", help="fusion: VLM model")
+p.add_argument("--wording", default="", help="fusion: W1 or W2 (chosen by vlm_select.py)")
+p.add_argument("--h_grass", type=float, default=0.6, help="fusion: grass is only passable if depth says it is lower than this (m)")
 p.add_argument("--scenarios", default="all", help="comma list or 'all': " + ",".join(SCENARIOS))
 p.add_argument("--trials", type=int, default=3)
 p.add_argument("--obs_z", type=float, default=30.0)
@@ -51,7 +63,9 @@ p.add_argument("--no_depth", action="store_true", help="do not ask for / save th
 p.add_argument("--out", default="run_field")
 p.add_argument("--port", type=int, default=5555)
 a = p.parse_args()
-if a.policy == "depth_v3":
+if a.policy == "fusion" and not a.wording:
+    p.error("--policy fusion needs --wording (W1 or W2, from vlm_select.py)")
+if a.policy in ("depth_v3", "fusion"):
     from depth_v3 import DepthV3
     V3 = DepthV3(half_w=a.half_w, margin=a.margin)
 scen = SCENARIOS if a.scenarios == "all" else a.scenarios.split(",")
@@ -128,10 +142,32 @@ def ground_truth(st, v):
     return lab, d, o["kind"], dh, dw
 
 
+def fuse(dep, v, cls, waiting):
+    """fusion decision: (label, reason)"""
+    from vlm_class import STOP_CLASSES, DETOUR_CLASSES, PASS_CLASSES
+    d, kind, z, X, H = V3.nearest(dep)
+    dh, dw = zones(v)
+    if kind is None or d > dw:
+        if cls in STOP_CLASSES + DETOUR_CLASSES: return "slow", "vlm_sees_more"     # disagreement -> slow
+        return "go", "clear"
+    if kind == "hole": return ("stop" if d <= dh else "slow"), "depth_hole"
+    win = (z > 0) & (np.abs(X) < V3.corr) & (H > V3.h_obs) & (z + V3.cam_front <= d + 1.0)
+    hmax = float(H[win].max()) if win.any() else 0.0
+    if cls in PASS_CLASSES and hmax <= a.h_grass: return "go", "grass_pass"
+    if cls in ("PERSON", "ANIMAL", "HOLE"): return ("stop" if d <= dh else "slow"), cls.lower()
+    if cls in DETOUR_CLASSES:
+        if V3.side_space(d, z, X, H) >= V3.need: return "detour", "early_detour"
+        return ("stop" if d <= dh else "slow"), "no_side_space"
+    return ("stop" if d <= dh else "slow"), ("waiting" if waiting and cls is None else "uncertain")
+
+
 u = Unity(a.port)
 fr_f = open(os.path.join(a.out, "frames.csv"), "w", newline="")
 fr = csv.writer(fr_f)
-fr.writerow(["scenario", "trial", "t", "z_front", "v", "gap_m", "kind", "d_hazard", "d_warn", "gt_label", "acted_label"])
+fr.writerow(["scenario", "trial", "t", "z_front", "v", "gap_m", "kind", "d_hazard", "d_warn", "gt_label", "acted_label", "vlm_class", "waiting", "reason"])
+vl_f = open(os.path.join(a.out, "vlm_asks.csv"), "w", newline="") if a.policy == "fusion" else None
+vl = csv.writer(vl_f) if vl_f else None
+if vl: vl.writerow(["scenario", "trial", "t_sent", "gap_m", "answer", "latency_s"])
 rows = []
 for sc in scen:
     for k in range(a.trials):
@@ -141,6 +177,7 @@ for sc in scen:
         delay = max(0, int(round(a.t_r / a.dt)))
         queue, frames, depths, labs, gaps = [], 0, [], [], []
         decision, collided, min_gap, switches, prev = None, False, float("inf"), 0, None
+        cls, pending, reason, n_ask, dec_gap = None, None, "", 0, float("nan")
         idir = os.path.join(a.out, f"{sc}_{k:02d}")
         if a.save_images: os.makedirs(idir, exist_ok=True)
         v = a.v                                          # the robot is already moving at working speed
@@ -151,17 +188,31 @@ for sc in scen:
                 if gap < 0: collided = True
             if prev is not None and lab != prev: switches += 1
             prev = lab
-            mine = V3.decide(dep, dh, dw)[0] if a.policy == "depth_v3" else lab
+            if a.policy == "fusion":
+                if pending is not None and t >= pending[1] - 1e-9:
+                    cls, pending = pending[0], None
+                if pending is None and decision is None:
+                    _, img, _ = u.step(0.0, 0.0, image=True, depth=False)          # picture of this moment (no time passes)
+                    ans, L = ask_vlm(a.model, a.wording, img)
+                    pending = (ans, t + L); n_ask += 1
+                    vl.writerow([sc, k, f"{t:.2f}", "" if np.isnan(gap) else f"{gap:.3f}", ans, f"{L:.2f}"]); vl_f.flush()
+                    if a.save_images: open(os.path.join(idir, f"ask_t{t:06.2f}_{ans}.jpg"), "wb").write(img)
+                mine, reason = fuse(dep, v, cls, pending is not None)
+            elif a.policy == "depth_v3":
+                mine = V3.decide(dep, dh, dw)[0]
+            else:
+                mine = lab
             queue.append(mine)
             acted = queue[-1 - delay] if len(queue) > delay else "go"
             fr.writerow([sc, k, f"{t:.2f}", f"{st['z'] + st['front_offset']:.3f}", f"{v:.3f}", "" if np.isnan(gap) else f"{gap:.3f}",
-                         kind or "", f"{dh:.3f}", f"{dw:.3f}", lab, acted if a.policy != "drive" else "go"])
+                         kind or "", f"{dh:.3f}", f"{dw:.3f}", lab, acted if a.policy != "drive" else "go",
+                         cls or "", int(pending is not None), reason])
             labs.append(lab); gaps.append(gap)
             if dep is not None: depths.append(dep.astype(np.float16))
             if jpg is not None: open(os.path.join(idir, f"t{t:06.2f}_{lab}.jpg"), "wb").write(jpg)
             frames += 1
             if a.policy != "drive":
-                if acted in ("stop", "detour") and decision is None: decision = acted
+                if acted in ("stop", "detour") and decision is None: decision, dec_gap = acted, gap
                 vt = 0.0 if decision else (a.v_slow if acted == "slow" else a.v)
             if decision and v <= 1e-6: break
             if collided and a.policy != "drive": break
@@ -173,17 +224,20 @@ for sc in scen:
         final_gap = gaps[-1]
         if a.policy != "drive":
             outcome = "collision" if collided else (f"{decision} at {final_gap:.2f} m" if decision else "drove through")
+            if a.policy == "fusion": outcome += f" ({n_ask} asks)"
         else:
             outcome = "drove through (no reaction)"
         cnt = {L: labs.count(L) for L in ("go", "slow", "stop", "detour")}
-        rows.append(dict(scenario=sc, trial=k, start_m=round(start, 2), decision=decision or "", final_gap_m="" if np.isnan(final_gap) else round(final_gap, 3),
+        rows.append(dict(scenario=sc, trial=k, start_m=round(start, 2), decision=decision or "",
+                         decision_gap_m="" if np.isnan(dec_gap) else round(dec_gap, 3), vlm_asks=n_ask, final_gap_m="" if np.isnan(final_gap) else round(final_gap, 3),
                          min_gap_m="" if min_gap == float("inf") else round(min_gap, 3), collided=int(collided), label_switches=switches,
                          frames=frames, **{f"n_{L}": n for L, n in cnt.items()}, time_s=round(t, 2)))
         if depths:
             np.savez_compressed(os.path.join(a.out, f"{sc}_{k:02d}_depth.npz"), depth=np.stack(depths), label=np.array(labs), gap=np.array(gaps, dtype=np.float32))
-        print(f"{sc:14s} trial {k}: {outcome:24s}  min gap {rows[-1]['min_gap_m']!s:>6} m  frames {frames:4d}  "
+        print(f"{sc:14s} trial {k}: {outcome:34s}  min gap {rows[-1]['min_gap_m']!s:>6} m  frames {frames:4d}  "
               f"go {cnt['go']:3d} slow {cnt['slow']:3d} stop {cnt['stop']:3d} detour {cnt['detour']:3d}  label switches {switches}", flush=True)
 fr_f.close()
+if vl_f: vl_f.close()
 with open(os.path.join(a.out, "trials.csv"), "w", newline="") as fh:
     w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 

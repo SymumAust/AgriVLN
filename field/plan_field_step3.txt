@@ -1,0 +1,42 @@
+PLAN: Field step 3 - depth (WHERE) + VLM (WHAT) + uncertainty -> SLOW   (written 26 Nov 2026, before any VLM run on the field)
+
+Why: step 2 showed what depth alone cannot do: pass grass, know a person, decide a detour in time; and a 0.28 m camera
+sees a ditch late. The professor asked for uncertainty and a SLOW label. Here the VLM adds the class, and every kind of
+uncertainty makes the robot slow down instead of stop.
+
+FUSION RULE (field_client.py --policy fusion, vlm_class.py):
+  The VLM (qwen3-vl:4b, temperature 0, seed 42) is asked again and again while driving: "what is on the path ahead?"
+  one word of PERSON, ANIMAL, VEHICLE, OBJECT, GRASS, HOLE, NOTHING. Lock-step: an answer is used only after its real
+  answer time has passed in simulation (the robot keeps driving meanwhile). Depth v3 as in step 2 (unchanged).
+  depth sees nothing within d_warn:    VLM says PERSON/ANIMAL/HOLE/OBJECT/VEHICLE -> SLOW (disagreement), else GO
+  depth: hole within d_warn:           SLOW, STOP at d_hazard
+  depth: obstacle within d_warn and the latest VLM class is
+     GRASS and depth height <= 0.6 m -> GO (drive through)
+     PERSON / ANIMAL / HOLE          -> SLOW, STOP at d_hazard (never detour)
+     OBJECT / VEHICLE                -> DETOUR at once if a free strip >= 0.73 m is seen beside it (early detour), else SLOW/STOP
+     no answer yet / NOTHING / ? / tall "grass" -> SLOW, STOP at d_hazard (uncertain)
+  Zones, reaction delay 0.3 s and braking as in steps 1-2 (zones from the current speed).
+
+STEP A - WORDING SELECTION (practice set = the step-1 drive images, obstacle at z 30 m, x 0):
+  vlm_select.py: every 6th frame with the obstacle 0.5-8 m ahead, all 8 scenarios, wordings W1 and W2 (vlm_class.py).
+  Rule: most correct frames; tie -> more correct PERSON frames; then the shorter wording. The winner is frozen.
+STEP B - CLOSED-LOOP TEST (new positions: obstacle at z 35 m, x +0.2 m; start seed 77; 8 scenarios x 3 trials):
+  B1  fusion with the chosen wording                                   -> run_field_fusion
+  B2  depth_v3 on exactly the same scenes, as the reference             -> run_field_v3_test
+  Limitation stated now: the objects are the same models as in the practice images, only placed elsewhere. This tests the
+  rule, not how well the VLM generalises to new objects; real images are needed for that.
+
+PREDICTIONS:
+  A1  PERSON (standing) is recognised on most practice frames (>= 70 %) with both wordings; HOLE is recognised on fewer
+      than half of the ditch frames (it is hard to see from 0.28 m).
+  B-safety  B1: no collision in any trial.
+  B-grass   B1: grass driven through in at least 2 of 3 trials (B2: 0 of 3).
+  B-people  B1: person_stand, person_lie, person_moving end in STOP in at least 8 of 9 trials, with the stop chosen because of
+            the PERSON class (reason column), not geometry.
+  B-detour  B1: rock and drum end in DETOUR in at least 4 of 6 trials, decided at 2 m or more before the obstacle
+            (B2: STOP, as in step 2).
+  B-ditch   B1: stop with more margin than B2 (B2 about 0 m) because the robot is already slow when the hole is seen.
+  B-none    B1: none driven through 3/3; slow frames allowed (false VLM alarms count as slow, not stop).
+  B-cost    B1 takes longer than B2 (slow phases); report the mean time per trial for both.
+NOT ALLOWED after results: changing the fusion rule, wordings, h_grass, thresholds, zones or the test positions/seed.
+RESULT: (to be filled in)
