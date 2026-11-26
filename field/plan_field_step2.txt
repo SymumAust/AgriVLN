@@ -1,0 +1,42 @@
+PLAN: Field step 2 - depth decider v3 (depth grid only)   (written 26 Nov 2026, before running v3 on any recording)
+
+What v3 is (depth_v3.py): flat-ground traversability. Each depth cell -> forward z, lateral X, height H above ground.
+  Corridor |X| < 0.365 m (robot half width 0.215 + margin 0.15). Obstacle cell: H > 0.15 m. Hole cell: H < -0.05 m
+  (distance = where the ray would have met flat ground). At least 2 cells. Nearest d from the front bumper.
+  Same zones as step 1 (t_r 0.3, a 1.0, d_m 0.5, t_w 3, v = 1 m/s in the drive recordings: d_hazard 1.3 m, d_warn 4.3 m).
+  d <= d_hazard: hole -> stop; obstacle -> detour if a free strip >= 0.73 m is SEEN beside it (out of view = not free), else stop.
+  d <= d_warn: slow. Otherwise go.
+  Disclosure: before writing this plan I looked at 4 frames (about 4 m before the person, the ditch, and frames of grass
+  and none) to check the geometry. The ditch was invisible with a 0.15 m hole threshold at 4 m (a ray at a low angle only
+  drops ~0.07 m inside a 1 m gap), so the hole threshold was set to 0.05 m. Unity ground is perfectly flat; on a real farm
+  both thresholds must be larger. No other frame was looked at.
+
+DATA: the step-1 drive recordings (run_field_drive/*_depth.npz, 1 approach per scenario, constant 1 m/s, 0.1 s frames).
+  Ground truth per frame = step-1 label (go/slow/stop/detour).
+
+OFFLINE TEST (eval_v3.py): per frame v3 label vs ground truth, per scenario and in total.
+  Main numbers: frame agreement; first non-go frame (distance to the obstacle) for v3 and for the ground truth;
+  first stop/detour frame and which of the two; false alarms (non-go) on none and grass.
+PREDICTIONS:
+  P1  none: 0 false alarms.
+  P2  rock, drum: v3 = ground truth on at least 90 % of frames; first slow and first detour within 0.3 m of the ground truth.
+  P3  person_stand, person_moving: slow onset within 0.3 m (moving: when it enters the corridor), but at d_hazard v3 says
+      DETOUR where the ground truth says STOP (depth cannot know it is a person). person_lie: same (low, but 0.4 m > 0.15 m).
+  P4  ditch: v3 sees the hole later than the ground truth (low camera) - first slow 0.5-1.5 m closer than ground truth;
+      stop onset within 0.3 m.
+  P5  grass: false alarm - slow from about 4.3 m and detour/stop at about 1.3 m (grass sticks up 0.25-0.4 m).
+Then CLOSED LOOP in Unity (field_client.py --policy depth_v3, all scenarios x 3, zones from the current speed):
+  P6  no collision in any scenario except possibly the ditch if it is seen too late; stops/detours on all obstacles;
+      false stop on grass in 3/3; none 3/3 driven through; person scenarios end in DETOUR (wrong decision, safe distance).
+NOT ALLOWED after results: changing thresholds, corridor, zone values or the side-space rule for these runs.
+RESULT OFFLINE (26 Nov 2026, eval_v3.py on run_field_drive, 1928 frames): frame agreement 92.9 %.
+  P1 held: none 0 false alarms (100 % agreement).
+  P2 held: rock 94 %, drum 94 %; first slow and first detour at exactly the ground-truth frame (4.22/4.26 m, 1.22/1.26 m).
+  P3 held: person_stand, person_moving, person_lie: slow onset at the ground-truth frame; at d_hazard v3 says DETOUR,
+     ground truth STOP (depth cannot tell a person from a drum).
+  P4 held in part: ditch slow onset 1.40 m later than ground truth (2.82 vs 4.22 m, inside 0.5-1.5); stop onset 0.40 m later
+     (0.82 vs 1.22 m) - NOT within the predicted 0.3 m. In closed loop this may leave almost no margin before the ditch.
+  P5 held: grass gives 57 false-alarm frames: slow from t = 13.7 s, stop at t = 16.7 s.
+  Confusion (rows gt, cols v3; go/slow/stop/detour): go 1596/30/27/0, slow 17/144/0/0, stop 20/4/41/11, detour 12/0/16/10.
+  (Most stop->go and detour->go frames are inside/past the obstacle, where the drive run passes through it.)
+RESULT CLOSED LOOP: (to be filled in after the Unity runs)

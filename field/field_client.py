@@ -16,7 +16,8 @@
 #   drive   constant speed, never reacts. Only records what the correct label would be at every frame (frame ratio).
 #   oracle  acts on the ground-truth label, but with a reaction delay t_r and braking at a (like a perfect sensor).
 #           Checks that the zone rule itself is sound: it should stop about d_m before every obstacle and never on grass.
-#   (step 2 will add "depth_v3", which must decide from the depth grid alone.)
+#   depth_v3 decides from the depth grid alone (depth_v3.py), with the same reaction delay and braking as the oracle;
+#           the ground-truth label is still logged next to it.
 # detour is recorded as the decision and the robot stops there (driving the detour comes later).
 
 import argparse, csv, json, os, socket, struct, time
@@ -26,7 +27,7 @@ SCENARIOS = ["none", "person_stand", "person_lie", "person_moving", "rock", "dru
 ALWAYS_STOP = ("person", "person_lying", "person_moving", "ditch")
 
 p = argparse.ArgumentParser()
-p.add_argument("--policy", default="oracle", choices=["oracle", "drive"])
+p.add_argument("--policy", default="oracle", choices=["oracle", "drive", "depth_v3"])
 p.add_argument("--scenarios", default="all", help="comma list or 'all': " + ",".join(SCENARIOS))
 p.add_argument("--trials", type=int, default=3)
 p.add_argument("--obs_z", type=float, default=30.0)
@@ -50,6 +51,9 @@ p.add_argument("--no_depth", action="store_true", help="do not ask for / save th
 p.add_argument("--out", default="run_field")
 p.add_argument("--port", type=int, default=5555)
 a = p.parse_args()
+if a.policy == "depth_v3":
+    from depth_v3 import DepthV3
+    V3 = DepthV3(half_w=a.half_w, margin=a.margin)
 scen = SCENARIOS if a.scenarios == "all" else a.scenarios.split(",")
 os.makedirs(a.out, exist_ok=True)
 rng = np.random.default_rng(a.seed)
@@ -147,26 +151,27 @@ for sc in scen:
                 if gap < 0: collided = True
             if prev is not None and lab != prev: switches += 1
             prev = lab
-            queue.append(lab)
+            mine = V3.decide(dep, dh, dw)[0] if a.policy == "depth_v3" else lab
+            queue.append(mine)
             acted = queue[-1 - delay] if len(queue) > delay else "go"
             fr.writerow([sc, k, f"{t:.2f}", f"{st['z'] + st['front_offset']:.3f}", f"{v:.3f}", "" if np.isnan(gap) else f"{gap:.3f}",
-                         kind or "", f"{dh:.3f}", f"{dw:.3f}", lab, acted if a.policy == "oracle" else "go"])
+                         kind or "", f"{dh:.3f}", f"{dw:.3f}", lab, acted if a.policy != "drive" else "go"])
             labs.append(lab); gaps.append(gap)
             if dep is not None: depths.append(dep.astype(np.float16))
             if jpg is not None: open(os.path.join(idir, f"t{t:06.2f}_{lab}.jpg"), "wb").write(jpg)
             frames += 1
-            if a.policy == "oracle":
+            if a.policy != "drive":
                 if acted in ("stop", "detour") and decision is None: decision = acted
                 vt = 0.0 if decision else (a.v_slow if acted == "slow" else a.v)
             if decision and v <= 1e-6: break
-            if collided and a.policy == "oracle": break
+            if collided and a.policy != "drive": break
             if st["z"] + st["front_offset"] > a.obs_z + 4.0: break          # passed the obstacle area
             dv = np.clip(vt - v, -a.a * a.dt, a.a * a.dt)
             v_next = max(0.0, v + dv)
             st, jpg, dep = u.step(0.5 * (v + v_next), a.dt, image=a.save_images, depth=not a.no_depth)
             v = v_next; t += a.dt
         final_gap = gaps[-1]
-        if a.policy == "oracle":
+        if a.policy != "drive":
             outcome = "collision" if collided else (f"{decision} at {final_gap:.2f} m" if decision else "drove through")
         else:
             outcome = "drove through (no reaction)"
@@ -186,6 +191,10 @@ tot = {L: sum(r[f"n_{L}"] for r in rows) for L in ("go", "slow", "stop", "detour
 n = sum(tot.values())
 print(f"\nframe ratio over all {n} frames: " + "  ".join(f"{L} {100 * c / n:.0f} %" for L, c in tot.items()) +
       f"   -> normal (go) {100 * tot['go'] / n:.0f} % / intervention {100 * (n - tot['go']) / n:.0f} %")
-if a.policy == "oracle":
+if a.policy != "drive":
     bad = [r for r in rows if r["collided"] or (r["scenario"] in ("none", "grass") and r["decision"])]
-    print(f"oracle: {len(rows) - len(bad)}/{len(rows)} trials correct (no collision, no stop on none/grass)  -> {a.out}/trials.csv")
+    print(f"{a.policy}: {len(rows) - len(bad)}/{len(rows)} trials safe and without false stop (no collision, no stop on none/grass)  -> {a.out}/trials.csv")
+    want = {"person_stand": "stop", "person_lie": "stop", "person_moving": "stop", "ditch": "stop", "rock": "detour", "drum": "detour"}
+    ok = [r for r in rows if r["scenario"] in want and r["decision"] == want[r["scenario"]] and not r["collided"]]
+    n_obs = sum(r["scenario"] in want for r in rows)
+    if n_obs: print(f"{a.policy}: right decision (stop for people/ditch, detour for rock/drum) in {len(ok)}/{n_obs} obstacle trials")
