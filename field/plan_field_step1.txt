@@ -1,0 +1,36 @@
+PLAN: Field step 1 - open-field Unity scene, ground-truth labels go / slow / stop / detour   (written 26 Nov 2026, before any Unity run)
+
+Why: the task is now go / slow / stop / detour in an open field (professor, 26 Nov: stereo depth counts as vision,
+slow can be a label, 70/30 counted in frames, uncertainty and traversability matter). Before real data arrives we build
+the label rule and the test scenes in Unity, so step 2 (depth decider v3) and step 3 (uncertainty -> slow) can be tested.
+
+SETUP: FieldWorld.cs (new scene Field.unity) + field_client.py + check_depth.py, as delivered on 26 Nov.
+  Field: path along +Z, crop beds 0.5 m high from |x| = 2.0 m. One obstacle at z = 30 m, x = 0.
+  Robot: camera 0.28 m high, tilt 0, 102 deg; speed 1.0 m/s, slow 0.5 m/s, control every 0.1 s.
+  Zone rule (plan slide 12, our formula): d_hazard = t_r v + v^2/(2a) + d_m, d_warn = d_hazard + t_w v,
+  t_r 0.3 s, a 1.0 m/s^2, d_m 0.5 m, t_w 3 s. Corridor = robot half width 0.215 m + margin 0.15 m each side.
+  Labels: STOP for people (standing, lying, moving) and the ditch; DETOUR for rock/drum when the free strip to the crops
+  is >= 0.73 m; SLOW inside d_warn; GO otherwise. Grass is passable (go). These values are assumptions until the
+  site visit (robot speed, braking, camera height) - the code takes them as arguments.
+  Scenarios: none, person_stand, person_lie, person_moving, rock, drum, ditch, grass. Start 18-22 m before (seed 2026).
+
+RUNS:
+  R0  check_depth.py on the first frame of the "none" drive run: Unity depth grid = flat-ground geometry (+-0.01 m).
+  R1  oracle, all 8 scenarios x 3 trials, zones from the current speed            -> run_field_oracle
+  R2  oracle, all 8 scenarios x 3 trials, zones from the nominal speed (1 m/s)    -> run_field_oracle_nominal
+  R3  drive (no reaction), all 8 scenarios x 1 trial, images + depth saved         -> run_field_drive
+      (R3 is the data for step 2; it is also the frame-ratio example.)
+
+PREDICTIONS (the same code gave these against a mock without obstacles in depth; Unity must agree):
+  P1  R1: 24/24 correct: stop or detour at 0.40-0.50 m from the obstacle (about d_m), never on none/grass, no collision;
+      decision = stop for the 3 person scenarios and the ditch, detour for rock and drum.
+  P2  R1: 6 label switches per approach (go -> slow -> go -> slow ... -> stop): with zones from the current speed, slowing
+      down shrinks the warning zone, so the label flips back to go. R2 (nominal speed): at most 2 switches.
+  P3  Frame ratio in R1 is about 83 % go / 17 % intervention with 18-22 m clips. The 70/30 ratio is not a property of the
+      driving; it depends on where each clip starts. R3 per scenario: intervention frames are about 45-55 per approach (0 for none and grass).
+  P4  R0 holds (geometry check).
+
+NOT ALLOWED after results: changing the zone values, scenarios, start range or seed for these runs.
+Changes (e.g. other speeds after the site visit) are new runs with a new plan.
+
+RESULT: (to be filled in after the runs)
