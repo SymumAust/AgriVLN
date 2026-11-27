@@ -52,4 +52,19 @@ CORRECTION (written 28 Nov 2026 after the first run, before the second): field_c
   are NOT changed. Second run: depth_v4 only, same 5 mountings -> run_cam5_* (cam_sweep_v4b.sh).
   Predictions for the second run (P1, P3 as above): no contact in any mounting; rock and drum detoured past in >= 5/6 per
   mounting; side gap reported; people still detoured (P4).
-RESULT, SECOND RUN: (to be filled in)
+RESULT, SECOND RUN (28 Nov 2026, run_cam5_*, depth_v4 only):
+  mounting     ditch final gap (m)    contacts  rock+drum detoured past  min side gap  right   false stop none|grass
+  h0.28 t0     0.412, 0.405, 0.403    3         6/6                      -0.10         9/18    0 | 3
+  h0.6  t0     0.442, 0.435, 0.403    3         6/6                      -0.16         9/18    0 | 3
+  h1.0  t0     0.422, 0.415, 0.443    3         6/6                      -0.16         9/18    0 | 3
+  h0.6  t15    0.412, 0.405, 0.403    3         6/6                      -0.18         9/18    0 | 3
+  h1.0  t15    0.501, 0.545, 0.543    3         6/6                      -0.18         9/18    0 | 3
+  (ditch, first-slow and false-stop numbers are identical to the first run, as expected: only the contact check changed.)
+  P3 held: rock and drum detoured past 6/6 in every mounting. P2, P4, P5 held as in the first run.
+  P1 FAILED: 3 contacts in every mounting, ALL in person_moving (15/15): detour decided 1.92-2.04 m before the person,
+  side gap -0.08 to -0.18 m. The detour path was planned from where the person was at the decision moment; the person
+  kept walking into the path the robot was taking.
+  CONCLUSION: memory removes the blind-zone problem - ditch and low obstacles are safe in every mounting and the results no
+  longer depend on camera height or tilt. Detours around static objects work when decided about 3 m early. Two cases remain
+  for step C: (1) any person (static or moving) must be STOP, never DETOUR; (2) a MOVING obstacle must never be detoured
+  around - motion can be seen in the map itself (cells that clear and re-appear), without the VLM.
