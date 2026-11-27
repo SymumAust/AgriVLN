@@ -1,0 +1,4 @@
+scenario,trial,cam_h,tilt,start_m,decision,decision_gap_m,vlm_asks,finished,detour_side_clearance_m,final_gap_m,min_gap_m,collided,label_switches,frames,n_go,n_slow,n_stop,n_detour,time_s
+person_moving,0,1.0,15.0,18.72,stop,0.59,0,,,0.466,0.466,0,2,197,161,27,9,0,19.6
+person_stand,0,1.0,15.0,20.56,stop,0.625,0,,,0.5,0.5,0,6,224,171,44,9,0,22.3
+rock,0,1.0,15.0,19.87,detour,3.019,0,detoured past,0.102,,3.019,0,6,331,300,14,0,17,33.0

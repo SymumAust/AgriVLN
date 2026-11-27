@@ -24,4 +24,17 @@ PREDICTIONS (per mounting):
   P4  rock and drum: still detoured past 6/6; ditch, grass and empty path as in step 5.
   P5  0 contacts in total and right decision 15/18 (ditch 3 + rock/drum 6 + standing 3 + walking 3; lying 0).
 NOT ALLOWED after results: changing v5 thresholds, v4, zones, mountings, scenes or seed for these runs.
-RESULT: (to be filled in)
+RESULT (28 Nov 2026, run_cam6_*):
+  mounting   ditch final gap (m)   contacts  rock+drum detoured past  min side gap  right   false stop none|grass
+  h0.28 t0   0.412, 0.405, 0.403   0         6/6                      0.06 m        15/18   0 | 3
+  h0.6  t0   0.442, 0.435, 0.403   0         6/6                      0.09 m        15/18   0 | 3
+  h1.0  t0   0.422, 0.415, 0.443   0         6/6                      0.09 m        15/18   0 | 3
+  h0.6  t15  0.412, 0.405, 0.403   0         6/6                      0.01 m        15/18   0 | 3
+  h1.0  t15  0.501, 0.545, 0.543   0         6/6                      0.06 m        15/18   0 | 3
+  P1-P5 held in every mounting: 0 contacts (step 5: 3 per mounting, all the walking person); right decision 15/18
+  (step 5: 9/18): walking and standing person now STOP, lying person still DETOUR (known gap), rock/drum detoured past 6/6,
+  ditch, grass and empty path unchanged. Live view (one trial each): walking person stop at 0.47 m, standing person stop
+  at 0.50 m, rock detoured past.
+  Note: the smallest side gap while passing rock/drum is 0.01-0.09 m - no contact, but closer than the 0.15 m margin.
+  This comes from the path follower (planned from the true obstacle position), not from the decider; it should be
+  fixed before detours are judged on margin.
