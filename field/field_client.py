@@ -19,6 +19,7 @@
 #   depth_v3 decides from the depth grid alone (depth_v3.py), with the same reaction delay and braking as the oracle;
 #           the ground-truth label is still logged next to it.
 #   depth_v4 like depth_v3 but with a local memory map (depth_v4.py): early detour, obstacles in the blind zone remembered.
+#   depth_v5 depth_v4 + motion (never detour a moving object) + shape (never detour a 1.2-2.2 m tall, <= 0.9 m wide object).
 #   fusion  depth v3 says WHERE (distance, hole/obstacle, side space), the VLM says WHAT (vlm_class.py), asked again and
 #           again while driving. Lock-step: the answer is used only after its real answer time has passed in simulation.
 #           Uncertainty -> SLOW: no answer yet, no YES-able word, VLM and depth disagree, or "grass" that depth sees as tall.
@@ -37,7 +38,7 @@ SCENARIOS = ["none", "person_stand", "person_lie", "person_moving", "rock", "dru
 ALWAYS_STOP = ("person", "person_lying", "person_moving", "ditch")
 
 p = argparse.ArgumentParser()
-p.add_argument("--policy", default="oracle", choices=["oracle", "drive", "depth_v3", "depth_v4", "fusion"])
+p.add_argument("--policy", default="oracle", choices=["oracle", "drive", "depth_v3", "depth_v4", "depth_v5", "fusion"])
 p.add_argument("--model", default="qwen3-vl:4b", help="fusion: VLM model")
 p.add_argument("--wording", default="", help="fusion: W1 or W2 (chosen by vlm_select.py)")
 p.add_argument("--h_grass", type=float, default=0.6, help="fusion: grass is only passable if depth says it is lower than this (m)")
@@ -71,9 +72,10 @@ p.add_argument("--port", type=int, default=5555)
 a = p.parse_args()
 if a.policy == "fusion" and not a.wording:
     p.error("--policy fusion needs --wording (W1 or W2, from vlm_select.py)")
-if a.policy in ("depth_v3", "depth_v4", "fusion"):
+if a.policy in ("depth_v3", "depth_v4", "depth_v5", "fusion"):
     from depth_v3 import DepthV3
     from depth_v4 import DepthV4
+    from depth_v5 import DepthV5
     V3 = DepthV3(half_w=a.half_w, margin=a.margin)
 scen = SCENARIOS if a.scenarios == "all" else a.scenarios.split(",")
 os.makedirs(a.out, exist_ok=True)
@@ -238,8 +240,8 @@ for sc in scen:
         start = rng.uniform(a.start_min, a.start_max)
         st, jpg, dep = u.reset(a.obs_z - start - 0.215, sc, a.obs_z, a.obs_x, image=a.save_images, depth=not a.no_depth,
                                cam_h=a.cam_h, tilt=a.tilt)
-        if a.policy in ("depth_v3", "depth_v4", "fusion"):          # the decider uses the camera Unity really has
-            V3 = (DepthV4 if a.policy == "depth_v4" else DepthV3)(cam_height=st["cam_height"], tilt_deg=st["tilt_deg"], hfov_deg=st["hfov_deg"], img_w=st["img_w"], img_h=st["img_h"],
+        if a.policy in ("depth_v3", "depth_v4", "depth_v5", "fusion"):          # the decider uses the camera Unity really has
+            V3 = {"depth_v4": DepthV4, "depth_v5": DepthV5}.get(a.policy, DepthV3)(cam_height=st["cam_height"], tilt_deg=st["tilt_deg"], hfov_deg=st["hfov_deg"], img_w=st["img_w"], img_h=st["img_h"],
                          grid_w=st["depth_w"], grid_h=st["depth_h"], half_w=a.half_w, margin=a.margin)
         v, t, vt = 0.0, 0.0, a.v                       # current speed, time, target speed
         delay = max(0, int(round(a.t_r / a.dt)))
@@ -271,6 +273,11 @@ for sc in scen:
                 mine, reason = fuse(dep, v, cls, pending is not None)
             elif a.policy == "depth_v3":
                 mine = V3.decide(dep, dh, dw)[0]
+            elif a.policy == "depth_v5":
+                pose = (st["x"], st["z"], st["yaw"])
+                V3.observe(dep, pose, t, dw)
+                mine = V3.decide_v5(pose, dh, dw)[0]
+                reason = V3.last.get("why", "")
             elif a.policy == "depth_v4":
                 pose = (st["x"], st["z"], st["yaw"])         # Unity pose = perfect odometry
                 V3.update(dep, pose)
@@ -315,7 +322,11 @@ for sc in scen:
                 g = "none ahead" if np.isnan(gap) else f"{gap:.1f} m"
                 lines = [f"{a.policy}   scene {sc}   trial {k}", f"speed {v:.1f} m/s    obstacle {g}"]
                 if a.policy == "fusion": lines.append(f"VLM says: {cls or '-'}   ({reason})")
-                if a.policy in ("depth_v3", "depth_v4"): lines.append(f"depth decider: {mine}")
+                if a.policy in ("depth_v3", "depth_v4", "depth_v5"): lines.append(f"depth decider: {mine}")
+                if a.policy == "depth_v5":
+                    L = V3.last
+                    lines.append(f"sideways speed {L.get('speed', 0):.2f} m/s{'  MOVING' if L.get('moving') else ''}   "
+                                 f"height {L.get('height', 0):.2f} m{'  PERSON-SHAPED' if L.get('person_like') else ''}")
                 lines.append(f"correct label now: {lab}")
                 hud = "\n".join(lines)
             st, jpg, dep = u.step(0.5 * (v + v_next), a.dt, image=a.save_images, depth=not a.no_depth, w=w_cmd if detour_plan is not None else 0.0,

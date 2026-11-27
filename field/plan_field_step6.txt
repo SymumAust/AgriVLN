@@ -1,0 +1,27 @@
+PLAN: Field step 6 (= step C, layers 1 and 2) - depth v5: never detour a moving or person-shaped object
+(written 28 Nov 2026, before any Unity run of v5)
+
+Why: step 5 (v4 with memory) detoured around every person; all 15 contacts were with the walking person, who kept walking
+into the detour path. The rule "people: always stop" and "never detour a moving object" must hold even when nobody tells
+the robot what the object is.
+
+v5 (depth_v5.py) = v4 unchanged + two layers that only turn DETOUR into STOP/SLOW:
+  Layer 1, motion: sideways speed of the nearest object near the path (world x of its points, line fit over 1 s, >= 6
+    frames); > 0.6 m/s -> moving, remembered 3 s.
+  Layer 2, person shape: highest point remembered per map cell; nearest object 1.2-2.2 m tall and <= 0.9 m wide.
+  Disclosure: both thresholds were set on the step-1 drive recordings (practice data), where static objects showed
+  0.00 m/s, tall grass up to 0.42 m/s and the walking person 0.98 m/s; offline on those recordings v5 stopped for the
+  walking person ("moving") and the standing person ("person-shaped") and still detoured rock and drum.
+  Known gap: a lying person (0.4 m high, 1.7 m wide) fits neither layer.
+
+RUNS (cam_sweep_v5.sh): depth_v5 --drive_detour, all 8 scenes x 3 trials, the same 5 mountings as step 5, obstacle z 30 m,
+  x 0, start 18-22 m, seed 2026 -> run_cam6_*. Reference: step 5 second run (run_cam5_*).
+
+PREDICTIONS (per mounting):
+  P1  person_moving: 3/3 STOP, 0 contacts (step 5: 3 contacts).
+  P2  person_stand: 3/3 STOP (step 5: detour).
+  P3  person_lie: 3/3 DETOUR (not covered), no contact.
+  P4  rock and drum: still detoured past 6/6; ditch, grass and empty path as in step 5.
+  P5  0 contacts in total and right decision 15/18 (ditch 3 + rock/drum 6 + standing 3 + walking 3; lying 0).
+NOT ALLOWED after results: changing v5 thresholds, v4, zones, mountings, scenes or seed for these runs.
+RESULT: (to be filled in)
