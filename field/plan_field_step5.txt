@@ -1,0 +1,29 @@
+PLAN: Field step 5 (= step A) - depth decider v4 with memory   (written 28 Nov 2026, before any Unity run of v4)
+
+Why: step 4 showed that the depth decider forgets an obstacle or ditch once it slips into the camera's near blind zone,
+that a detour decided at d_hazard is too late (side out of view, no room to swerve), and that the hole distance is
+over-estimated. v4 (depth_v4.py) adds:
+  1. memory: a 0.1 m local grid in world coordinates from the robot pose (Unity pose = perfect odometry - a limitation);
+     ground seen later clears old marks; what is out of view keeps its last mark; cells > 15 m away are forgotten;
+  2. early detour: as soon as an obstacle is in the warning zone, the free strip beside it is measured in the map;
+     >= 0.73 m -> DETOUR at once;
+  3. careful hole distance: a hole is marked at the ground point of the next closer ray (the near edge is between them).
+  Thresholds, corridor and zones unchanged (0.15 / 0.05 m, 0.365 m half corridor, t_r 0.3, a 1.0, d_m 0.5, t_w 3).
+  Offline check before writing this plan (step-1 drive recording, constant 1 m/s; done to catch bugs): v4 slowed for the ditch
+  at a true 4.8 m and stopped at a true 1.4 m; rock/drum/people: detour at a true 3.1 m; empty path: never left go.
+
+RUNS (cam_sweep_v4.sh; Unity Field scene in Play; all with --drive_detour so detours are really driven, path from the
+obstacle's true position; obstacle z 30 m, x 0; start 18-22 m; seed 2026; 8 scenes x 3 trials):
+  depth_v3 and depth_v4, each at camera 0.28 m / 0.6 m / 1.0 m tilt 0 and 0.6 m / 1.0 m tilt 15 deg   -> run_cam4_*
+  (v3 is rerun with --drive_detour so both are compared the same way.)
+
+PREDICTIONS:
+  P1  v4: no collision in any of the 5 camera mountings (v3: collisions at 0.6 t0, 1.0 t0, 1.0 t15 as in step 4).
+  P2  v4: ditch stop with at least 0.2 m left in every mounting (v3 at 0.28 m: 0.00-0.01 m).
+  P3  v4: rock and drum detoured past (driven around, no collision, no crop damage) in at least 5 of 6 trials per mounting,
+      decided 2.5 m or more before the obstacle. v3: no detour driven at 0.28 m (it stops).
+  P4  v4: people are also detoured around in most trials (depth cannot know a person) - a WRONG decision that step C must fix;
+      so "right decision" stays at or below 9/18 per mounting.
+  P5  v4: grass 3/3 false stop and empty path 0 false stops in every mounting.
+NOT ALLOWED after results: changing v4 (cell size, memory rules, thresholds), zones, mountings, scenes or seed for these runs.
+RESULT: (to be filled in)
