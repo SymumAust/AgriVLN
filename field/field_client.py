@@ -58,6 +58,9 @@ p.add_argument("--margin", type=float, default=0.15, help="side margin each side
 p.add_argument("--zone_speed", default="current", choices=["current", "nominal"],
                help="current = zones from the speed at this moment (as in the plan); nominal = always from --v")
 p.add_argument("--seed", type=int, default=2026)
+p.add_argument("--watch", action="store_true", help="live view: real-time pacing + decision panel and status light in Unity")
+p.add_argument("--drive_detour", action="store_true", help="when the decision is DETOUR, really drive around the obstacle "
+               "(path planned from the obstacle's true position) instead of stopping")
 p.add_argument("--cam_h", type=float, default=0.0, help="camera height (m); 0 = keep what Unity has (Inspector)")
 p.add_argument("--tilt", type=float, default=0.0, help="camera tilt (deg, + = down); used only with --cam_h")
 p.add_argument("--save_images", action="store_true")
@@ -97,8 +100,54 @@ class Unity:
         return self._call(dict(cmd="reset", x0=0.0, z0=z0, yaw=0.0, scenario=scenario, obs_z=obs_z, obs_x=obs_x, image=image, depth=depth,
                                cam_h=cam_h, tilt=tilt))
 
-    def step(self, v, dt, image=False, depth=True):
-        return self._call(dict(cmd="step", v=v, w=0.0, dt=dt, image=image, depth=depth))
+    def step(self, v, dt, image=False, depth=True, w=0.0, hud=None, label=None):
+        d = dict(cmd="step", v=v, w=w, dt=dt, image=image, depth=depth)
+        if hud is not None: d["hud"] = hud
+        if label is not None: d["label"] = label
+        return self._call(d)
+
+
+def nearest_blocking(st):
+    """the nearest non-passable object ahead (dict) and its lateral offset, or (None, 0)"""
+    best = (None, 0.0, np.inf)
+    for o in st["objects"]:
+        if o["pass"] or o["kind"] == "ditch": continue
+        dz = o["z"] - st["z"]
+        if dz + o["hl"] < 0: continue
+        if dz < best[2]: best = (o, o["x"] - st["x"], dz)
+    return best[0], best[1]
+
+
+def plan_detour(st):
+    """detour path around the nearest obstacle: (x_ref function, end z) or None if there is no room before the crops"""
+    o, lat = nearest_blocking(st)
+    if o is None: return None
+    hw = a.half_w + a.margin
+    sides = []
+    for sgn in (-1, 1):
+        x_t = o["x"] + sgn * (o["hw"] + hw)
+        if abs(x_t) + hw <= st["crop_offset"]: sides.append((abs(x_t), x_t))
+    if not sides: return None
+    x_t = min(sides)[1]                                   # the side that needs the smaller swerve
+    z0, x0 = st["z"], st["x"]
+    z_in = max(o["z"] - o["hl"] - 0.215 - 0.3, z0 + 0.8)
+    z_hold = o["z"] + o["hl"] + 0.215 + 0.5
+    z_back = z_hold + 2.5
+    def x_ref(z):
+        if z < z_in: return x0 + (x_t - x0) * np.clip((z - z0) / (z_in - z0), 0, 1)
+        if z < z_hold: return x_t
+        if z < z_back: return x_t * (1 - (z - z_hold) / (z_back - z_hold))
+        return 0.0
+    return x_ref, z_back + 1.0
+
+
+def touching(st):
+    """true footprint check (robot box vs object boxes) and crop check, used while driving a detour"""
+    for o in st["objects"]:
+        if o["pass"] or o["kind"] == "ditch": continue
+        if abs(o["x"] - st["x"]) < o["hw"] + a.half_w and abs(o["z"] - st["z"]) < o["hl"] + 0.215: return "collision"
+    if abs(st["x"]) + a.half_w > st["crop_offset"]: return "crop damage"
+    return None
 
 
 def zones(v):
@@ -188,6 +237,7 @@ for sc in scen:
         idir = os.path.join(a.out, f"{sc}_{k:02d}")
         if a.save_images: os.makedirs(idir, exist_ok=True)
         v = a.v                                          # the robot is already moving at working speed
+        detour_plan, w_cmd, finished, t_wall = None, 0.0, None, time.time()
         while t < 120.0:
             lab, gap, kind, dh, dw = ground_truth(st, v)
             if not np.isnan(gap):
@@ -199,7 +249,9 @@ for sc in scen:
                 if pending is not None and t >= pending[1] - 1e-9:
                     cls, pending = pending[0], None
                 if pending is None and decision is None:
-                    _, img, _ = u.step(0.0, 0.0, image=True, depth=False)          # picture of this moment (no time passes)
+                    _, img, _ = u.step(0.0, 0.0, image=True, depth=False,           # picture of this moment (no time passes)
+                                       hud=(f"{a.policy}   scene {sc}   trial {k}\nVLM thinking ... (simulated time paused)\n"
+                                            f"last answer: {cls or '-'}") if a.watch else None)
                     ans, L = ask_vlm(a.model, a.wording, img)
                     pending = (ans, t + L); n_ask += 1
                     vl.writerow([sc, k, f"{t:.2f}", "" if np.isnan(gap) else f"{gap:.3f}", ans, f"{L:.2f}"]); vl_f.flush()
@@ -219,18 +271,46 @@ for sc in scen:
             if jpg is not None: open(os.path.join(idir, f"t{t:06.2f}_{lab}.jpg"), "wb").write(jpg)
             frames += 1
             if a.policy != "drive":
-                if acted in ("stop", "detour") and decision is None: decision, dec_gap = acted, gap
-                vt = 0.0 if decision else (a.v_slow if acted == "slow" else a.v)
-            if decision and v <= 1e-6: break
+                if acted in ("stop", "detour") and decision is None:
+                    decision, dec_gap = acted, gap
+                    if decision == "detour" and a.drive_detour:
+                        detour_plan = plan_detour(st)
+                        if detour_plan is None: decision = "stop"          # no room before the crops: stop instead
+                if detour_plan is not None:
+                    vt = a.v_slow
+                    look = 1.0
+                    psi_des = np.arctan2(detour_plan[0](st["z"] + look) - st["x"], look)
+                    w_cmd = float(np.clip(-2.5 * (psi_des - st["yaw"]), -1.2, 1.2))   # Unity: w > 0 turns left, yaw > 0 = right
+                    hit = touching(st)
+                    if hit: finished = hit; collided = collided or hit == "collision"
+                    elif st["z"] > detour_plan[1]: finished = "detoured past"
+                else:
+                    vt = 0.0 if decision else (a.v_slow if acted == "slow" else a.v)
+            if finished: break
+            if decision and detour_plan is None and v <= 1e-6: break
             if collided and a.policy != "drive": break
-            if st["z"] + st["front_offset"] > a.obs_z + 4.0: break          # passed the obstacle area
+            if detour_plan is None and st["z"] + st["front_offset"] > a.obs_z + 4.0: break          # passed the obstacle area
             dv = np.clip(vt - v, -a.a * a.dt, a.a * a.dt)
             v_next = max(0.0, v + dv)
-            st, jpg, dep = u.step(0.5 * (v + v_next), a.dt, image=a.save_images, depth=not a.no_depth)
+            hud = label = None
+            if a.watch:
+                label = "detour" if detour_plan is not None else (acted if a.policy != "drive" else lab)
+                g = "none ahead" if np.isnan(gap) else f"{gap:.1f} m"
+                lines = [f"{a.policy}   scene {sc}   trial {k}", f"speed {v:.1f} m/s    obstacle {g}"]
+                if a.policy == "fusion": lines.append(f"VLM says: {cls or '-'}   ({reason})")
+                if a.policy == "depth_v3": lines.append(f"depth decider: {mine}")
+                lines.append(f"correct label now: {lab}")
+                hud = "\n".join(lines)
+            st, jpg, dep = u.step(0.5 * (v + v_next), a.dt, image=a.save_images, depth=not a.no_depth, w=w_cmd if detour_plan is not None else 0.0,
+                                  hud=hud, label=label)
             v = v_next; t += a.dt
+            if a.watch:
+                time.sleep(max(0.0, a.dt - (time.time() - t_wall))); t_wall = time.time()
         final_gap = gaps[-1]
         if a.policy != "drive":
             outcome = "collision" if collided else (f"{decision} at {final_gap:.2f} m" if decision else "drove through")
+            if finished in ("detoured past", "crop damage"): outcome = finished
+            if a.watch: time.sleep(1.5)
             if a.policy == "fusion": outcome += f" ({n_ask} asks)"
         else:
             outcome = "drove through (no reaction)"
