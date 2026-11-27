@@ -152,6 +152,16 @@ def touching(st):
     return None
 
 
+def clearance(st):
+    """sideways gap between the robot body and an object it is passing (inf if it is not beside one)"""
+    best = float("inf")
+    for o in st["objects"]:
+        if o["pass"] or o["kind"] == "ditch": continue
+        if abs(o["z"] - st["z"]) < o["hl"] + 0.215:
+            best = min(best, abs(o["x"] - st["x"]) - (o["hw"] + a.half_w))
+    return best
+
+
 def zones(v):
     v = a.v if a.zone_speed == "nominal" else v
     dh = a.t_r * v + v * v / (2 * a.a) + a.d_m
@@ -239,10 +249,10 @@ for sc in scen:
         idir = os.path.join(a.out, f"{sc}_{k:02d}")
         if a.save_images: os.makedirs(idir, exist_ok=True)
         v = a.v                                          # the robot is already moving at working speed
-        detour_plan, w_cmd, finished, t_wall = None, 0.0, None, time.time()
+        detour_plan, w_cmd, finished, t_wall, side_clear = None, 0.0, None, time.time(), float("inf")
         while t < 120.0:
             lab, gap, kind, dh, dw = ground_truth(st, v)
-            if not np.isnan(gap):
+            if not np.isnan(gap) and detour_plan is None:     # while driving a detour, only real contact counts (see touching)
                 min_gap = min(min_gap, gap)
                 if gap < 0: collided = True
             if prev is not None and lab != prev: switches += 1
@@ -288,6 +298,7 @@ for sc in scen:
                     psi_des = np.arctan2(detour_plan[0](st["z"] + look) - st["x"], look)
                     w_cmd = float(np.clip(-2.5 * (psi_des - st["yaw"]), -1.2, 1.2))   # Unity: w > 0 turns left, yaw > 0 = right
                     hit = touching(st)
+                    side_clear = min(side_clear, clearance(st))
                     if hit: finished = hit; collided = collided or hit == "collision"
                     elif st["z"] > detour_plan[1]: finished = "detoured past"
                 else:
@@ -322,7 +333,7 @@ for sc in scen:
             outcome = "drove through (no reaction)"
         cnt = {L: labs.count(L) for L in ("go", "slow", "stop", "detour")}
         rows.append(dict(scenario=sc, trial=k, cam_h=st["cam_height"], tilt=st["tilt_deg"], start_m=round(start, 2), decision=decision or "",
-                         decision_gap_m="" if np.isnan(dec_gap) else round(dec_gap, 3), vlm_asks=n_ask, finished=finished or "", final_gap_m="" if np.isnan(final_gap) else round(final_gap, 3),
+                         decision_gap_m="" if np.isnan(dec_gap) else round(dec_gap, 3), vlm_asks=n_ask, finished=finished or "", detour_side_clearance_m="" if side_clear == float("inf") else round(side_clear, 3), final_gap_m="" if np.isnan(final_gap) else round(final_gap, 3),
                          min_gap_m="" if min_gap == float("inf") else round(min_gap, 3), collided=int(collided), label_switches=switches,
                          frames=frames, **{f"n_{L}": n for L, n in cnt.items()}, time_s=round(t, 2)))
         if depths:
