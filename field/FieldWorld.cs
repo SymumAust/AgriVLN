@@ -80,8 +80,10 @@ public class FieldWorld : MonoBehaviour
     class Obj { public string kind; public float x, z, hw, hl, h; public bool pass; public Transform tr; }
     readonly List<Obj> objs = new List<Obj>();
     Obj mover; bool moverWalking; float moverTargetX;
+    string hudText = "", hudLabel = "";     // live view: what Python decided (drawn on the Game view only, never in the robot camera)
+    Material lightMat;
 
-    class Req { public string cmd; public float v, w, dt, x0, z0, yaw, obs_z, obs_x, cam_h, tilt; public bool image, depth; public string scenario; }
+    class Req { public string cmd; public float v, w, dt, x0, z0, yaw, obs_z, obs_x, cam_h, tilt; public bool image, depth; public string scenario, hud, label; }
     class Job { public Req req; public byte[] reply; public ManualResetEventSlim done = new ManualResetEventSlim(false); }
     readonly ConcurrentQueue<Job> jobs = new ConcurrentQueue<Job>();
     bool busy;
@@ -233,6 +235,10 @@ public class FieldWorld : MonoBehaviour
             w.transform.localRotation = Quaternion.Euler(0, 0, 90); w.transform.localScale = new Vector3(0.196f, 0.02f, 0.196f);
             w.GetComponent<Renderer>().sharedMaterial = black;
         }
+        var lamp = GameObject.CreatePrimitive(PrimitiveType.Cube);          // status light: green go, yellow slow, red stop, blue detour
+        lamp.transform.SetParent(robot); lamp.transform.localPosition = new Vector3(0, 0.3f, -0.13f); lamp.transform.localScale = new Vector3(0.12f, 0.08f, 0.08f);
+        lightMat = new Material(Shader.Find("Universal Render Pipeline/Lit")); lightMat.SetColor("_BaseColor", Color.gray);
+        lightMat.EnableKeyword("_EMISSION"); lamp.GetComponent<Renderer>().sharedMaterial = lightMat;
         foreach (var c in robot.GetComponentsInChildren<Collider>()) Destroy(c);
         foreach (var t in robot.GetComponentsInChildren<Transform>()) t.gameObject.layer = 2;   // Ignore Raycast
 
@@ -354,6 +360,8 @@ public class FieldWorld : MonoBehaviour
         }
         else if (q.cmd == "step" && q.dt > 0) Integrate(q.v, q.w, q.dt);
 
+        if (q.hud != null) hudText = q.hud;
+        if (q.label != null) { hudLabel = q.label; var lc = LabelColor(hudLabel); lightMat.SetColor("_BaseColor", lc); lightMat.SetColor("_EmissionColor", lc * 1.5f); }
         byte[] depth = q.depth ? DepthGrid() : null;
         byte[] jpg = null;
         if (q.image)
@@ -391,6 +399,32 @@ public class FieldWorld : MonoBehaviour
         job.reply = ms.ToArray();
         job.done.Set();
         busy = false;
+    }
+
+    static Color LabelColor(string l)
+    {
+        switch (l)
+        {
+            case "go": return new Color(0.2f, 0.8f, 0.3f);
+            case "slow": return new Color(1.0f, 0.75f, 0.1f);
+            case "stop": return new Color(0.9f, 0.15f, 0.1f);
+            case "detour": return new Color(0.2f, 0.5f, 1.0f);
+            default: return Color.gray;
+        }
+    }
+
+    void OnGUI()
+    {
+        if (string.IsNullOrEmpty(hudLabel) && string.IsNullOrEmpty(hudText)) return;
+        var big = new GUIStyle(GUI.skin.label) { fontSize = 40, fontStyle = FontStyle.Bold };
+        big.normal.textColor = LabelColor(hudLabel);
+        var small = new GUIStyle(GUI.skin.label) { fontSize = 20 };
+        small.normal.textColor = Color.white;
+        GUI.color = new Color(0, 0, 0, 0.6f);
+        GUI.DrawTexture(new Rect(10, 10, 520, 190), Texture2D.whiteTexture);
+        GUI.color = Color.white;
+        GUI.Label(new Rect(24, 12, 500, 56), (hudLabel ?? "").ToUpper(), big);
+        GUI.Label(new Rect(24, 70, 500, 130), hudText ?? "", small);
     }
 
     static void WriteInt(Stream s, int n)
