@@ -1,0 +1,27 @@
+PLAN: Field step 7 - depth v6: crawl through grass instead of a false stop   (written 28 Nov 2026, before any Unity run of v6)
+
+Why: every depth decider so far stopped in front of the passable tall grass (3/3 in every mounting). Stopping is safe but
+useless in a field. The professor's plan lists tall grass as "hard-but-go". But a person can lie inside tall grass.
+
+v6 (depth_v6.py) = v5 unchanged + one rule: the nearest corridor obstacle is "grass-like" if, over the last 10 frames
+  with it 1.0 m to d_warn ahead, the median depth spread of its points (90th - 10th percentile) is >= 0.26 m, it is at
+  most 0.5 m high, not moving and not person-shaped. Then the robot does not stop or detour: it crawls through at 0.3 m/s.
+  Disclosure: the cue and the 0.26 m threshold were chosen on the step-1 drive recordings (practice data): 10-frame
+  median spread of grass 0.35-0.46 m, rock 0.15-0.18, drum 0.09-0.14, people 0.04-0.12 m. Offline on those recordings
+  only the grass was classed grass-like.
+NEW SCENE grass_person (FieldWorld.cs): the same grass patch with a person lying inside it (0.4 m high, like the blades).
+  Correct decision: STOP.
+
+RUNS (cam_sweep_v6.sh): depth_v6 --drive_detour, 9 scenes x 3 trials, the 5 mountings, obstacle z 30 m, x 0, start
+  18-22 m, seed 2026 -> run_cam7_depth_v6_*; reference: depth_v5 on grass and grass_person at 0.28 m -> run_cam7_depth_v5_*.
+
+PREDICTIONS (per mounting):
+  P1  grass: driven through (crawl) 3/3, 0 false stops (v5: 3/3 false stops).
+  P2  grass_person: v6 runs into the lying person in at least 2 of 3 trials (depth cannot see the difference);
+      v5 stops 3/3 without contact (safe only because it stops for all grass).
+  P3  all other scenes as in step 6: rock/drum detoured past 6/6, standing and walking person STOP, ditch stop >= 0.4 m,
+      empty path 0 false stops, no contact.
+  P4  so v6 trades 3 false stops for up to 3 contacts with a hidden person per mounting: depth alone cannot make grass
+      both passable and safe; the class (VLM, realistic grass and people) is needed - layer 3.
+NOT ALLOWED after results: changing v6 thresholds, v5, zones, crawl speed, mountings, scenes or seed for these runs.
+RESULT: (to be filled in)

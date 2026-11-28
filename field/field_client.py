@@ -20,6 +20,7 @@
 #           the ground-truth label is still logged next to it.
 #   depth_v4 like depth_v3 but with a local memory map (depth_v4.py): early detour, obstacles in the blind zone remembered.
 #   depth_v5 depth_v4 + motion (never detour a moving object) + shape (never detour a 1.2-2.2 m tall, <= 0.9 m wide object).
+#   depth_v6 depth_v5 + grass-like (spread-out, low, still) -> crawl through at --v_crawl instead of stopping.
 #   fusion  depth v3 says WHERE (distance, hole/obstacle, side space), the VLM says WHAT (vlm_class.py), asked again and
 #           again while driving. Lock-step: the answer is used only after its real answer time has passed in simulation.
 #           Uncertainty -> SLOW: no answer yet, no YES-able word, VLM and depth disagree, or "grass" that depth sees as tall.
@@ -34,11 +35,12 @@ try:
 except ImportError:
     ask_vlm = None
 
-SCENARIOS = ["none", "person_stand", "person_lie", "person_moving", "rock", "drum", "ditch", "grass"]
+SCENARIOS = ["none", "person_stand", "person_lie", "person_moving", "rock", "drum", "ditch", "grass", "grass_person"]
 ALWAYS_STOP = ("person", "person_lying", "person_moving", "ditch")
 
 p = argparse.ArgumentParser()
-p.add_argument("--policy", default="oracle", choices=["oracle", "drive", "depth_v3", "depth_v4", "depth_v5", "fusion"])
+p.add_argument("--policy", default="oracle", choices=["oracle", "drive", "depth_v3", "depth_v4", "depth_v5", "depth_v6", "fusion"])
+p.add_argument("--v_crawl", type=float, default=0.3, help="depth_v6: speed when crawling through grass-like vegetation (m/s)")
 p.add_argument("--model", default="qwen3-vl:4b", help="fusion: VLM model")
 p.add_argument("--wording", default="", help="fusion: W1 or W2 (chosen by vlm_select.py)")
 p.add_argument("--h_grass", type=float, default=0.6, help="fusion: grass is only passable if depth says it is lower than this (m)")
@@ -72,10 +74,11 @@ p.add_argument("--port", type=int, default=5555)
 a = p.parse_args()
 if a.policy == "fusion" and not a.wording:
     p.error("--policy fusion needs --wording (W1 or W2, from vlm_select.py)")
-if a.policy in ("depth_v3", "depth_v4", "depth_v5", "fusion"):
+if a.policy in ("depth_v3", "depth_v4", "depth_v5", "depth_v6", "fusion"):
     from depth_v3 import DepthV3
     from depth_v4 import DepthV4
     from depth_v5 import DepthV5
+    from depth_v6 import DepthV6
     V3 = DepthV3(half_w=a.half_w, margin=a.margin)
 scen = SCENARIOS if a.scenarios == "all" else a.scenarios.split(",")
 os.makedirs(a.out, exist_ok=True)
@@ -240,8 +243,8 @@ for sc in scen:
         start = rng.uniform(a.start_min, a.start_max)
         st, jpg, dep = u.reset(a.obs_z - start - 0.215, sc, a.obs_z, a.obs_x, image=a.save_images, depth=not a.no_depth,
                                cam_h=a.cam_h, tilt=a.tilt)
-        if a.policy in ("depth_v3", "depth_v4", "depth_v5", "fusion"):          # the decider uses the camera Unity really has
-            V3 = {"depth_v4": DepthV4, "depth_v5": DepthV5}.get(a.policy, DepthV3)(cam_height=st["cam_height"], tilt_deg=st["tilt_deg"], hfov_deg=st["hfov_deg"], img_w=st["img_w"], img_h=st["img_h"],
+        if a.policy in ("depth_v3", "depth_v4", "depth_v5", "depth_v6", "fusion"):          # the decider uses the camera Unity really has
+            V3 = {"depth_v4": DepthV4, "depth_v5": DepthV5, "depth_v6": DepthV6}.get(a.policy, DepthV3)(cam_height=st["cam_height"], tilt_deg=st["tilt_deg"], hfov_deg=st["hfov_deg"], img_w=st["img_w"], img_h=st["img_h"],
                          grid_w=st["depth_w"], grid_h=st["depth_h"], half_w=a.half_w, margin=a.margin)
         v, t, vt = 0.0, 0.0, a.v                       # current speed, time, target speed
         delay = max(0, int(round(a.t_r / a.dt)))
@@ -273,6 +276,11 @@ for sc in scen:
                 mine, reason = fuse(dep, v, cls, pending is not None)
             elif a.policy == "depth_v3":
                 mine = V3.decide(dep, dh, dw)[0]
+            elif a.policy == "depth_v6":
+                pose = (st["x"], st["z"], st["yaw"])
+                V3.observe(dep, pose, t, dw)
+                mine = V3.decide_v6(pose, dh, dw)[0]
+                reason = V3.last.get("why", "")
             elif a.policy == "depth_v5":
                 pose = (st["x"], st["z"], st["yaw"])
                 V3.observe(dep, pose, t, dw)
@@ -310,6 +318,7 @@ for sc in scen:
                     elif st["z"] > detour_plan[1]: finished = "detoured past"
                 else:
                     vt = 0.0 if decision else (a.v_slow if acted == "slow" else a.v)
+                    if a.policy == "depth_v6" and acted == "slow" and V3.last.get("crawl"): vt = a.v_crawl
             if finished: break
             if decision and detour_plan is None and v <= 1e-6: break
             if collided and a.policy != "drive": break
@@ -322,8 +331,8 @@ for sc in scen:
                 g = "none ahead" if np.isnan(gap) else f"{gap:.1f} m"
                 lines = [f"{a.policy}   scene {sc}   trial {k}", f"speed {v:.1f} m/s    obstacle {g}"]
                 if a.policy == "fusion": lines.append(f"VLM says: {cls or '-'}   ({reason})")
-                if a.policy in ("depth_v3", "depth_v4", "depth_v5"): lines.append(f"depth decider: {mine}")
-                if a.policy == "depth_v5":
+                if a.policy in ("depth_v3", "depth_v4", "depth_v5", "depth_v6"): lines.append(f"depth decider: {mine}  {reason}")
+                if a.policy in ("depth_v5", "depth_v6"):
                     L = V3.last
                     lines.append(f"sideways speed {L.get('speed', 0):.2f} m/s{'  MOVING' if L.get('moving') else ''}   "
                                  f"height {L.get('height', 0):.2f} m{'  PERSON-SHAPED' if L.get('person_like') else ''}")
@@ -363,7 +372,8 @@ print(f"\nframe ratio over all {n} frames: " + "  ".join(f"{L} {100 * c / n:.0f}
 if a.policy != "drive":
     bad = [r for r in rows if r["collided"] or (r["scenario"] in ("none", "grass") and r["decision"])]
     print(f"{a.policy}: {len(rows) - len(bad)}/{len(rows)} trials safe and without false stop (no collision, no stop on none/grass)  -> {a.out}/trials.csv")
-    want = {"person_stand": "stop", "person_lie": "stop", "person_moving": "stop", "ditch": "stop", "rock": "detour", "drum": "detour"}
+    want = {"person_stand": "stop", "person_lie": "stop", "person_moving": "stop", "ditch": "stop", "rock": "detour", "drum": "detour",
+            "grass_person": "stop"}
     ok = [r for r in rows if r["scenario"] in want and r["decision"] == want[r["scenario"]] and not r["collided"]]
     n_obs = sum(r["scenario"] in want for r in rows)
     if n_obs: print(f"{a.policy}: right decision (stop for people/ditch, detour for rock/drum) in {len(ok)}/{n_obs} obstacle trials")

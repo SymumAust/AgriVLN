@@ -23,6 +23,7 @@
 //   drum            0.6 m wide, 0.9 m high                                  -> detour if side space, else stop
 //   ditch           1 m long gap across the whole field, 1 m deep           -> stop (terrain hazard)
 //   grass           2.4 x 1.5 m patch of 0.35 m blades, PASSABLE            -> go (hard-but-go: sensors see it, robot can cross)
+//   grass_person    the same grass with a person lying inside it            -> stop
 //
 // Every reply: JSON header (pose, camera, ground-truth objects) + JPEG (if asked) + depth grid (if asked):
 //   depth grid = depthW x depthH rays through the image (row 0 = top), z-depth along the camera axis like a stereo camera,
@@ -186,21 +187,31 @@ public class FieldWorld : MonoBehaviour
                 break;
             }
             case "grass":
+                MakeGrass(ox, oz);
+                break;
+            case "grass_person":                                  // a person lying inside the tall grass (hard case)
             {
-                var patch = new GameObject("grass_patch").transform; patch.SetParent(sceneRoot);
-                for (int i = 0; i < 500; i++)
-                {
-                    float bx = ox + UnityEngine.Random.Range(-1.2f, 1.2f), bz = oz + UnityEngine.Random.Range(-0.75f, 0.75f);
-                    float bh = UnityEngine.Random.Range(0.25f, 0.4f);
-                    var b = Prim(PrimitiveType.Cube, "grass", new Vector3(bx, bh / 2, bz), new Vector3(0.03f, bh, 0.03f), grassMat,
-                                 Quaternion.Euler(UnityEngine.Random.Range(-15f, 15f), UnityEngine.Random.Range(0f, 180f), UnityEngine.Random.Range(-15f, 15f)));
-                    b.transform.SetParent(patch, true);
-                }
-                objs.Add(new Obj { kind = "grass", x = ox, z = oz, hw = 1.2f, hl = 0.75f, h = 0.35f, pass = true, tr = patch });
+                MakeGrass(ox, oz);
+                var g = Prim(PrimitiveType.Capsule, "person", new Vector3(ox, 0.2f, oz), new Vector3(0.4f, 0.85f, 0.4f), personMat, Quaternion.Euler(0, 0, 90));
+                objs.Add(new Obj { kind = "person_lying", x = ox, z = oz, hw = 0.85f, hl = 0.2f, h = 0.4f, pass = false, tr = g.transform });
                 break;
             }
         }
         Physics.SyncTransforms();
+    }
+
+    void MakeGrass(float ox, float oz)
+    {
+        var patch = new GameObject("grass_patch").transform; patch.SetParent(sceneRoot);
+        for (int i = 0; i < 500; i++)
+        {
+            float bx = ox + UnityEngine.Random.Range(-1.2f, 1.2f), bz = oz + UnityEngine.Random.Range(-0.75f, 0.75f);
+            float bh = UnityEngine.Random.Range(0.25f, 0.4f);
+            var b = Prim(PrimitiveType.Cube, "grass", new Vector3(bx, bh / 2, bz), new Vector3(0.03f, bh, 0.03f), grassMat,
+                         Quaternion.Euler(UnityEngine.Random.Range(-15f, 15f), UnityEngine.Random.Range(0f, 180f), UnityEngine.Random.Range(-15f, 15f)));
+            b.transform.SetParent(patch, true);
+        }
+        objs.Add(new Obj { kind = "grass", x = ox, z = oz, hw = 1.2f, hl = 0.75f, h = 0.35f, pass = true, tr = patch });
     }
 
     void Slab(float za, float zb)
